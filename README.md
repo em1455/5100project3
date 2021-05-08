@@ -3,7 +3,7 @@
 ### Driving questions: Which state offers the most number of veg/vegan restaurants per 100,000 residents? Which cuisine is the most popular amongst the existing veg/vegan restaurants? 
 
 ## Clean data 
-- Find state population dataset (Emily Lin)
+- Find and clean state population dataset (Emily Lin) ✅
 - Clean up restaurant dataset (Emily Lin)
     -  Get rid of unnecessary columns
     - Parse out cuisines
