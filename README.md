@@ -7,6 +7,7 @@
 - Clean up restaurant dataset (Emily Lin)
     -  Get rid of unnecessary columns
     - Parse out cuisines
+    - Categories: identify if restaurants are Vegan, Vegetarian, or Both 
     - Clean prices 
 
 ## Visualizations
