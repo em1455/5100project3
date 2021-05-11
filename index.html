@@ -180,6 +180,9 @@ const requestData = async () => {
                                 .attr("cy", d => d.position[1]);
     
 
+    //restaurant data
+    const restaurant = await d3.csv("./cleaned_restaurants_data.csv");
+    console.log(restaurant)
 
   }
   requestData();
