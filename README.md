@@ -4,7 +4,7 @@
 
 ## Clean data 
 - Find and clean state population dataset (Emily Lin) ✅
-- Clean up restaurant dataset (Emily Lin)
+- Clean up restaurant dataset (Emily Lin) ✅
     -  Get rid of unnecessary columns
     - Parse out cuisines
     - Categories: identify if restaurants are Vegan, Vegetarian, or Both 
@@ -12,7 +12,7 @@
 
 ## Visualizations
 - US Map 
-- Plot restaurants (Carolyn Morikawa)
+- Plot restaurants (Carolyn Morikawa) ✅
 - State color luminance/saturation by ratio of veg/vegan restaurants per 100,000 residents (Cynthia Shen)
 - Bar graphs
 - Graph #1: Distribution of cuisine
