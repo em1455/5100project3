@@ -1,1 +1,250 @@
 
+<!DOCTYPE HTML>
+
+<html lang="en">
+    <div class = "title">
+    <h1> Vegetarian & Vegan</h1>
+    <h3>INFO 5100</h3>
+    </div>
+<head>
+    <title>Project 2</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <style>
+    
+    h1{
+          padding-top: 100;
+          padding-bottom:100;
+          font-size: 50;
+          text-align: center;
+          font-family: 'Arial';
+          color:white;
+          font-weight: bolder;
+          background-color: navy;
+      }
+      .title {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 50;
+        }
+
+        .map_positioning{
+            width:50%;
+            display: block;
+            margin-left: 400px;
+            margin-right: 400px;
+            padding:10px;
+            margin-right: 200px;
+            outline: solid 1px black;
+            background-color:white;
+        }
+
+        </style>
+        </head>
+
+            <div class="map_positioning">
+    <svg id="us_map" height="800" width="1000"></svg>
+    </div>
+<script>
+const requestData = async () => {
+//LOAD Vegetarian/Vegan DATASET
+  var data = await d3.csv("Datafiniti_Vegetarian_and_Vegan_Restaurants.csv");
+       console.log(data)
+ //LOAD MAP DATASET   
+    const us = await d3.json("./us.json");
+    let filteredStates = ['02','15','60','66','69','72','74','78'];
+    us.objects.states.geometries = us.objects.states.geometries.filter( d => {
+                          return filteredStates.indexOf( d.id.toString().padStart(2,'0')  ) === -1;
+                        });
+    
+    const states = topojson.feature(us, us.objects.states);
+    const statesMesh = topojson.mesh(us, us.objects.states);
+    const counties = topojson.feature(us, us.objects.counties);
+    const countiesMesh = topojson.mesh(us, us.objects.counties);
+
+    let map = d3.select("#us_map");
+    let mapWidth = map.attr("width");
+    let mapHeight = map.attr("height");
+    let projection = d3.geoAlbers().fitSize([mapWidth, mapHeight], states);
+    let path = d3.geoPath().projection(projection);
+    let viewport = map.append("g");
+
+   //ADDING PATHS FOR ZOOM FEATURE
+    viewport.append("path")
+        .attr("class","graticule")
+        .attr("fill","none")
+        .attr("d",path(d3.geoGraticule10()));
+    viewport.selectAll(".state").data(states.features)
+        .enter()
+        .append("path")
+        .attr("class","state")
+        .attr("fill","none")
+        .attr("d", path);
+    viewport.selectAll(".county").data(counties.features)
+        .enter()
+        .append("path")
+        .attr("class","county")
+        .attr("fill","none")
+        .attr("visibility", "hidden")
+        .attr("d", path);
+    viewport.append("path")
+      .datum(countiesMesh)
+      .attr("class","county-outline")
+      .attr("visibility", "hidden")
+      .attr("fill","none")
+      .attr("d", path);
+    viewport.append("path")
+      .datum(statesMesh)
+      .attr("class","state-outline")
+      .style("stroke-width", 3)
+      .attr("fill","none")
+     .style("stroke", "black")
+      .attr("d", path);
+
+
+
+    // PAN AND ZOOM HERE
+    
+    var zoom = d3.zoom()
+                  .scaleExtent([1,10])
+                  //.translateExtent([[-50,-50],[mapWidth+50,mapHeight+50]])  // to lock to edges
+                  .on("zoom", mapZoomed);
+
+    map.call(zoom);
+
+    map.call(zoom.transform, d3.zoomIdentity); // Executes zoomed() once because we technically have changed the transform
+
+
+    function mapZoomed({transform}) {
+
+      // Transform the group object to reflect the zoom action
+      viewport.attr("transform", transform.toString() );
+
+      // Divide by scale to make sure strokes remain a consistent width during zooming
+      viewport.select(".state-outline")
+                  .style("stroke-width", 2 / transform.k);
+      viewport.select(".county-outline")
+                  .style("stroke-width", 1 / transform.k);
+
+      // Expose county layer when sufficiently zoomed
+      viewport.select(".county-outline")
+                .attr("visibility", (transform.k > 3) ? "visible" : "hidden");
+      viewport.selectAll(".county")
+                .attr("visibility", (transform.k > 3) ? "visible" : "hidden");
+
+    }
+
+    viewport.selectAll(".state").on("click",clicked);
+    viewport.selectAll(".county").on("click",clicked);
+
+
+    function clicked(event, d) {
+      console.log(d)
+
+      let bounds = path.bounds(d.geometry); // get bounds for clicked state/county
+      let dx = bounds[1][0] - bounds[0][0]; // width of state/county
+      let dy = bounds[1][1] - bounds[0][1]; // height of state/county
+      let x = (bounds[0][0] + bounds[1][0]) / 2; // center x of state/county
+      let y = (bounds[0][1] + bounds[1][1]) / 2; // center y of state/county
+
+
+      let scale = Math.max(1, Math.min(10, 0.9 / Math.max( dx / mapWidth, 
+                                                           dy / mapHeight )));
+
+      let translate = [mapWidth / 2 - x * scale, mapHeight / 2 - y * scale];
+
+
+      let newTransform = d3.zoomIdentity
+                            .translate(translate[0],translate[1])
+                            .scale(scale);
+
+      map.transition().duration(1000).call(zoom.transform, newTransform);
+
+    }
+    
+        data.forEach( d => {
+            d.latitude = Number(d.latitude);
+            d.longitude = Number(d.longitude);
+            d.position = projection( [d.longitude, d.latitude] );
+
+        });
+        console.log(data);
+
+    let circles = map.selectAll("circle.dot").data(data)
+                                .join("circle")
+                                .attr("class","dot")
+                                .attr("r", 5)
+                                .attr("fill", "blue")
+                                .attr("opacity", 0.6)
+                                .attr("cx", d => d.position[0])
+                                .attr("cy", d => d.position[1]);
+    
+
+
+  }
+  requestData();
+  
+  
+//   const svg = d3.select("#us_map");
+//   const width = svg.attr("width");
+//   const height = svg.attr("height");
+//   const margin = { top: 20, right: 20, bottom: 20, left:20};
+//   const mapWidth = width - margin.left - margin.right;
+//   const mapHeight = height - margin.top - margin.bottom;
+//   const map = svg.append("g")
+//                   .attr("transform","translate("+margin.left+","+margin.top+")");
+
+//     const requestData = async () => {
+
+
+//         //***LOAD DATASET
+//         var data = await d3.csv("Datafiniti_Vegetarian_and_Vegan_Restaurants.csv");
+//         console.log(data)
+    
+
+//         // //LOAD AND DISPLAY MAP DATA
+//         var us = await d3.json("us_map.json");
+//         console.log(us)
+//         var states = topojson.feature(us, us.objects.states);
+//         var statesMesh = topojson.mesh(us, us.objects.states);
+//         var projection = d3.geoAlbersUsa().fitSize([mapWidth, mapHeight], states);
+//         var path = d3.geoPath().projection(projection);
+//         console.log(statesMesh);
+
+   
+//     // 2c. Draw states and outlines
+//     map.selectAll("path.state").data(states.features)
+//        .join("path")
+//        .attr("class", "state")
+//        .attr("fill","none")
+//        .attr("note", d => d.id)
+//        .attr("d", path);
+  
+//     map.append("path").datum(statesMesh)
+//        .attr("class","outline")
+//        .attr("fill","none")
+//        .style("stroke-width", 3)
+//         .style("stroke", "black")
+//        .attr("d", path);
+
+//     data.forEach( d => {
+//             d.latitude = Number(d.latitude);
+//             d.longitude = Number(d.longitude);
+//             d.position = projection( [d.longitude, d.latitude] );
+
+//         });
+//         console.log(data);
+
+//     let circles = map.selectAll("circle.dot").data(data)
+//                                 .join("circle")
+//                                 .attr("class","dot")
+//                                 .attr("r", 5)
+//                                 .attr("fill", "blue")
+//                                 .attr("opacity", 0.6)
+//                                 .attr("cx", d => d.position[0])
+//                                 .attr("cy", d => d.position[1]);
+    
+//     }
+//     requestData();
+</script>
+        </html>
