@@ -54,7 +54,7 @@ const requestData = async () => {
     // us.objects.states.geometries = us.objects.states.geometries.filter( d => {
     //                       return filteredStates.indexOf( d.id.toString().padStart(2,'0')  ) === -1;
     //                     });
-
+  
     //LOAD Population DATASET
     let pop = await d3.csv('USpopulation2019.csv', d3.autoType);
     console.log(pop, "population csv")
