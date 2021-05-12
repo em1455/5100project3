@@ -49,13 +49,25 @@ const requestData = async () => {
   var data = await d3.csv("./cleaned_restaurants_data.csv");
        console.log(data)
  //LOAD MAP DATASET   
-    const us = await d3.json("./us.json");
-    let filteredStates = ['02','15','60','66','69','72','74','78'];
-    us.objects.states.geometries = us.objects.states.geometries.filter( d => {
-                          return filteredStates.indexOf( d.id.toString().padStart(2,'0')  ) === -1;
-                        });
-    
-    const states = topojson.feature(us, us.objects.states);
+    const us = await d3.json("./counties-10m.json");
+    // let filteredStates = ['02','15','60','66','69','72','74','78'];
+    // us.objects.states.geometries = us.objects.states.geometries.filter( d => {
+    //                       return filteredStates.indexOf( d.id.toString().padStart(2,'0')  ) === -1;
+    //                     });
+
+    //LOAD Population DATASET
+    let pop = await d3.csv('USpopulation2019.csv', d3.autoType);
+    console.log(pop, "population csv")
+    popByState = [];
+    pop.forEach(d => {
+        popByState[d.NAME] = d.population_estimate2019;
+    });
+    let popVals = d3.map(pop, d => d.population_estimate2019);
+    console.log(popVals);
+    console.log(popByState);
+
+    const states = topojson.feature(us, us.objects.states);                 
+
     const statesMesh = topojson.mesh(us, us.objects.states);
     const counties = topojson.feature(us, us.objects.counties);
     const countiesMesh = topojson.mesh(us, us.objects.counties);
@@ -67,6 +79,22 @@ const requestData = async () => {
     let path = d3.geoPath().projection(projection);
     let viewport = map.append("g");
 
+    //Add pop data to each of the states
+    states.features.forEach(d => {
+                    state = d.properties.name;
+                    if(state in popByState) {
+                        //add to the topojson
+                        d.properties.population = popByState[state];
+                    }
+                    else {
+                        d.properties.population = null;
+                    }
+                });
+console.log(states);
+                const colorScaleRange = ["#eaeff9", "#bec9e0", "#99abd1", "#6e86b8", "#4e6aa3", "#2e4a85", "#142854"];
+                let popScale = d3.scaleQuantile().domain(popVals).range(colorScaleRange);
+                console.log("popScale",popScale)
+
    //ADDING PATHS FOR ZOOM FEATURE
     viewport.append("path")
         .attr("class","graticule")
@@ -76,7 +104,10 @@ const requestData = async () => {
         .enter()
         .append("path")
         .attr("class","state")
-        .attr("fill","none")
+        .attr("fill", d => { if (d.properties.population===null) {
+                                            return  "#808080"; }
+                                         else {
+                                           return popScale(d.properties.population);}})
         .attr("d", path);
     viewport.selectAll(".county").data(counties.features)
         .enter()
