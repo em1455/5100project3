@@ -38,10 +38,8 @@
             outline: solid 1px black;
             background-color:white;
         }
-
         </style>
         </head>
-
             <div class="map_positioning">
     <svg id="us_map" height="800" width="1000"></svg>
     </div>
@@ -84,14 +82,16 @@ const requestData = async () => {
         .enter()
         .append("path")
         .attr("class","county")
-        .attr("fill","none")
+        .attr("fill","lightgrey")
         .attr("visibility", "hidden")
         .attr("d", path);
     viewport.append("path")
       .datum(countiesMesh)
       .attr("class","county-outline")
       .attr("visibility", "hidden")
-      .attr("fill","none")
+      .attr("fill","lightgrey")
+      .style("stroke-width", 3)
+      .style("stroke", "white")
       .attr("d", path);
     viewport.append("path")
       .datum(statesMesh)
@@ -102,18 +102,17 @@ const requestData = async () => {
       .attr("d", path);
 
 
-
-    // PAN AND ZOOM HERE
+    // pannign AND ZOOM HERE
     
     var zoom = d3.zoom()
                   .scaleExtent([1,10])
                   //.translateExtent([[-50,-50],[mapWidth+50,mapHeight+50]])  // to lock to edges
+    
                   .on("zoom", mapZoomed);
 
     map.call(zoom);
 
     map.call(zoom.transform, d3.zoomIdentity); // Executes zoomed() once because we technically have changed the transform
-
 
     function mapZoomed({transform}) {
 
@@ -122,16 +121,18 @@ const requestData = async () => {
 
       // Divide by scale to make sure strokes remain a consistent width during zooming
       viewport.select(".state-outline")
-                  .style("stroke-width", 2 / transform.k);
+                  .style("stroke-width", 3 / transform.k);
       viewport.select(".county-outline")
-                  .style("stroke-width", 1 / transform.k);
+                  .style("stroke-width", 2 / transform.k);
 
       // Expose county layer when sufficiently zoomed
       viewport.select(".county-outline")
-                .attr("visibility", (transform.k > 3) ? "visible" : "hidden");
+                .attr("visibility", (transform.k > 2) ? "visible" : "hidden");
       viewport.selectAll(".county")
-                .attr("visibility", (transform.k > 3) ? "visible" : "hidden");
+                .attr("visibility", (transform.k > 2) ? "visible" : "hidden");
+        
 
+    
     }
 
     viewport.selectAll(".state").on("click",clicked);
@@ -148,7 +149,7 @@ const requestData = async () => {
       let y = (bounds[0][1] + bounds[1][1]) / 2; // center y of state/county
 
 
-      let scale = Math.max(1, Math.min(10, 0.9 / Math.max( dx / mapWidth, 
+      let scale = Math.max(10, Math.min(10, 1.2 / Math.max( dx / mapWidth, 
                                                            dy / mapHeight )));
 
       let translate = [mapWidth / 2 - x * scale, mapHeight / 2 - y * scale];
@@ -161,8 +162,7 @@ const requestData = async () => {
       map.transition().duration(1000).call(zoom.transform, newTransform);
 
     }
-    
-        data.forEach( d => {
+    data.forEach( d => {
             d.latitude = Number(d.latitude);
             d.longitude = Number(d.longitude);
             d.position = projection( [d.longitude, d.latitude] );
@@ -177,8 +177,7 @@ const requestData = async () => {
                                 .attr("fill", "blue")
                                 .attr("opacity", 0.6)
                                 .attr("cx", d => d.position[0])
-                                .attr("cy", d => d.position[1]);
-    
+                                .attr("cy", d => d.position[1])
 
     // //restaurant data
     // const restaurant = await d3.csv("./cleaned_restaurants_data.csv");
