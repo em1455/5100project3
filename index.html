@@ -29,7 +29,7 @@
         }
 
         .map_positioning{
-            width:50%;
+            width:65%;
             display: block;
             margin-left: 400px;
             margin-right: 400px;
@@ -38,11 +38,37 @@
             outline: solid 1px black;
             background-color:white;
         }
+        .cruisine_filter{
+            height: 70px;
+            padding-left:20px;
+            text-align:left;
+            background-color: white;
+            margin-top: -20px;
+        }
+        .cruisine_filter span{
+            margin-right:10px;
+            padding: 8px;
+            border: solid black 2px;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .cruisine_filter span:hover{
+            margin-right:16px;
+            border: solid black 2px;
+        }
         </style>
         </head>
             <div class="map_positioning">
     <svg id="us_map" height="625" width="1150"></svg>
     </div>
+    <div class = "filters">
+    <h3>FILTERS</h3>
+    <div class = "cruisine_filter">
+        <h4>Cruisine:</h4>
+    </div>
+    </div>
+
+
 <script>
 const requestData = async () => {
 //LOAD Vegetarian/Vegan DATASET
@@ -214,8 +240,35 @@ console.log(states);
     // //restaurant data
     // const restaurant = await d3.csv("./cleaned_restaurants_data.csv");
     // console.log(restaurant)
+    // FILTERING 
+    const cruisine_id = ["American","General Mediterranean","Indian", "Italian", 
+    "Japanese","Kosher","Mexican","Middle Eastern","Thai",
+"Chinese", "All Cruisine"];
+
+//COLOR CHANGE FOR FILTERS
+
+
+// CRUISINE FILTER
+cruisine_id.forEach(function(d,i){
+            d3.select('.cruisine_filter')
+                .append("span")
+                .attr('id',d)
+                .text(d)
+                .on('click', function(){
+                    changeColor(d,"cruisine_id");
+                    if (d === 'All Cruisine'){
+                        al_filters['Cruisine']="All Cruisine";
+                    }
+                    else{
+                        all_filters['Cruisine']=d;
+                    }
+                    updateMap();
+                    // callgraphs('year', d);
+                })
+        })
 
   }
+
   requestData();
   
   
