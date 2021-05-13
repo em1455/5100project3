@@ -1,212 +1,212 @@
-,id,address,categories,city,country,cuisines,latitude,longitude,priceRangeCurrency,priceRangeMin,priceRangeMax,province,is_vegan,is_vegetarian,is_both
-0,AVwd3yXEkufWRAb59-sH,1045 San Pablo Ave,"Restaurant,Asian/Pacific,Cafe,Vegetarian / Vegan Restaurant,Vegetarian,Vegetarian Vegan Restaurant,Caf,Thai",Albany,US,Thai,37.885131,-122.29701299999999,,,,CA,True,True,True
-5,AVwddQkGkufWRAb56GvX,16411 Bernardo Center Dr,"Indian Restaurant,Restaurant,Caterers,Food Dining,Catering,Vegetarian Restaurants,Restaurants,Indian Restaurants,Food & Dining,Middle Eastern Restaurants",San Diego,US,Indian,33.012662,-117.07858999999999,USD,25.0,40.0,CA,False,True,False
-37,AVzHCLzmLD2H7whiWY6R,2265 Broadway,"Restaurant,Juice Bars,Smoothies and Juices,Vegetarian,Beverages Retail,Beverages,Healthy",New York,US,Unclassified,40.785469,-73.979105,,,,NY,False,True,False
-76,AVweaMjhByjofQCxx7-_,102 8th Ave,"Restaurant,Coffee Shops,Beverages Wholesale & Manufacturers,Local/Organic,Vegan Restaurants,Smoothies and Juices,Vegetarian / Vegan Restaurant,Vegetarian,Juice Bar,Vegetarian Restaurants,Healthy,Restaurants",New York,US,Unclassified,40.740559999999995,-74.00171,USD,0.0,25.0,NY,True,True,True
-386,AVwegg55ByjofQCxy31X,2019 Post Oak Blvd,"Italian Restaurant,Restaurant,Take Out,Italian,Deli & Sandwich,Vegetarian,Seafood,Government Contractors,Italian Foods,Italian Restaurant Uptown-Galleria,Family Restaurants,Restaurants",Houston,US,Italian,29.744809000000004,-95.460856,USD,25.0,40.0,TX,False,True,False
-477,AV8wUPgP3-Khe5l_YOz7,1702 Avenue M,"Restaurant,Sushi,Kosher,Vegan",Brooklyn,US,Kosher,40.61801,-73.95796999999999,,,,NY,True,False,False
-558,AV8wUqX7a4HuVbedF3Lh,395 Classon Ave,"Restaurant,Desserts,Bakery and Pastries,Vegan",Brooklyn,US,Unclassified,40.687556,-73.95958900000001,,,,NY,True,False,False
-570,AVzA09pIFcQ3k02bBW2d,307 E 9th St,"American (New),Restaurant,Coffee Shop,Coffee and Tea,Coffeehouses,Coffee Tea Shops,Restaurants",New York,US,American,40.729012,-73.98677099999999,USD,0.0,25.0,NY,False,False,False
-773,AVzA1eii-gnIPe8DScqD,338 E 11th St,"Restaurant,Gluten-free Restaurant,Vegetarian,Coffee and Tea,Bakery,Desserts,Cupcake Shop,Bakery and Pastries,Vegan",New York,US,Unclassified,40.729436,-73.984727,USD,25.0,40.0,NY,True,True,True
-783,AVwcq1-ZIN2L1WUfnk0I,264 Carlton Ave,"Restaurant,Local/Organic,Coffee Shop,Cafe,Vegetarian,Coffee and Tea,Caf,Healthy,Vegan,Australian Restaurant,Caf√©",Brooklyn,US,Unclassified,40.689791,-73.972179,,,,NY,True,True,True
-820,AVwcvAoE_7pvs4fzyYpg,46 Henry St,"Restaurant,Beer and beverages-wholesale and distributors,Vegetarian,Indian restaurants,American restaurants,Indian,Restaurants",Brooklyn,US,Indian,40.699664,-73.99218,USD,0.0,30.0,NY,False,True,False
-879,AVzA1F4h3D1zeR_xA_iA,115 Lexington Ave,"Indian Restaurant,Restaurant,Vegetarian,Indian",New York,US,Indian,40.742497,-73.982421,USD,25.0,40.0,NY,False,True,False
-916,AVzA19T-FcQ3k02bBX1q,24 Pell St,"Chinese Restaurant,Restaurant,Vegetarian / Vegan Restaurant,Vegetarian,Dim Sum,Chinese,Dim Sum Restaurant",New York,US,Chinese,40.715022,-73.998173,USD,0.0,25.0,NY,True,True,True
-1181,AVweTi_9kufWRAb5BxZd,54 7th Ave,"Restaurant,Indian Restaurant,Vegetarian,Indian,Indian Restaurant North Slope",Brooklyn,US,Indian,40.6761,-73.974711,,,,NY,False,True,False
-1215,AVwdTaPyIN2L1WUfuZSL,996 Broadway,"Restaurant,Vegetarian,Coffee and Tea",Brooklyn,US,Unclassified,40.695939,-73.933909,,,,NY,False,True,False
-1294,AVzA-gvgFcQ3k02bBadx,95 MacDougal St,"Restaurant,Indian Restaurant,Vegetarian,Indian",New York,US,Indian,40.72948,-74.001087,,,,NY,False,True,False
-1322,AV8wUYfV3-Khe5l_YO5X,135 Metropolitan Ave,"Restaurant,Vegetarian,Sandwiches,Deli / Bodega",Brooklyn,US,Unclassified,40.716353000000005,-73.962198,USD,0.0,25.0,NY,False,True,False
-1336,AVzA0-e_FcQ3k02bBW32,544 W 113th St,"Restaurant,Greek Restaurant,Vegetarian,Greek",New York,US,Greek,40.805628999999996,-73.964381,,,,NY,False,True,False
-1367,AVzA1z5y-gnIPe8DSc-y,93 1st Ave,"Indian Restaurant,Restaurant,Vegetarian,Indian",New York,US,Indian,40.726323,-73.98660100000001,USD,0.0,25.0,NY,False,True,False
-1396,AVzA1io5-gnIPe8DScus,12 E 32nd St,"Southeast Asian,Restaurant,Vegetarian / Vegan Restaurant,Vegetarian,Korean,Restaurants,Korean Restaurant",New York,US,Korean,40.747271999999995,-73.986576,USD,40.0,55.0,NY,True,True,True
-1542,AV8wUUuX3-Khe5l_YO3a,165 W 23rd St,"Restaurant,Vegetarian,Thai",New York,US,Thai,40.744126,-73.99495300000001,,,,NY,False,True,False
-1548,AWLJ4QGaa4HuVbedPgeD,2056 Broadway,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.777514000000004,-73.981746,,,,NY,False,True,False
-1576,AV1TrHycFcQ3k02bFeS-,1411 Foster Ave,"Restaurant,Vegetarian,Chinese",Brooklyn,US,Chinese,40.634074,-73.963581,,,,NY,False,True,False
-1577,AVwdeDlmIN2L1WUfwIsn,4424 16th Ave,"New York City,Restaurant,Vegetarian,Caf and Restaurant Kensington,Kosher,Sandwiches",Brooklyn,US,Kosher,40.633545,-73.983328,USD,7.0,12.0,NY,False,True,False
-1593,AV1c4UJua4HuVbed5qj4,41 Wilson Ave,"British (Modern),Vegetarian,Restaurants",Brooklyn,US,British,40.702908,-73.929092,,,,NY,False,True,False
-1603,AV8wUoZya4HuVbedF3K0,91 1st Ave,"Restaurant,Deli Food,Vegetarian,Indian",New York,US,Indian,40.726411,-73.986428,,,,NY,False,True,False
-1715,AWLDrFrYa4HuVbedPf7Y,1306 1st Ave,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.766884000000005,-73.956663,,,,NY,False,True,False
-1742,AV8wURXJ3-Khe5l_YO1P,498 9th Ave,"Restaurant,Middle Eastern,Vegetarian",New York,US,Middle Eastern,40.755618,-73.99426700000001,,,,NY,False,True,False
-1765,AV8wUU_53-Khe5l_YO3o,371 W 34th St,"Restaurant,Vegetarian,Indian",New York,US,Indian,40.753468,-73.995949,,,,NY,False,True,False
-1831,AVwcuSIYkufWRAb5yUxB,235 Dekalb Ave,"New York City,Restaurant,Vegetarian,Indian",Brooklyn,US,Indian,40.689679999999996,-73.96982,USD,12.0,18.0,NY,False,True,False
-1851,AV0BJkuP-gnIPe8DUvYQ,311 W 43rd St,"Chinese Restaurant,Restaurant,Cocktails,Vegetarian,Dim Sum,Chinese,Dim Sum Restaurant",New York,US,Chinese,40.758342999999996,-73.990152,USD,40.0,55.0,NY,False,True,False
-2226,AV8wU3vyIxWefVJwrRJM,413 Amsterdam Ave,"Restaurant,Vegetarian,Indian",New York,US,Indian,40.783649,-73.977937,,,,NY,False,True,False
-2281,AVzpCHqC-gnIPe8DUJlP,208 1st Ave,"Pizza,Restaurant,Middle Eastern,Vegetarian,Restaurants",New York,US,Lebanese,40.73025,-73.983001,,,,NY,False,True,False
-2404,AVzoKWkq3D1zeR_xCaeW,106 Bayard St,"Restaurant,Vegetarian,Thai,Restaurants",New York,US,Thai,40.716338,-73.99986700000001,,,,NY,False,True,False
-2406,AV8wUQH5IxWefVJwrQ-g,81 St Marks Pl,"Restaurant,Middle Eastern,Vegetarian",New York,US,Middle Eastern,40.727835999999996,-73.985442,,,,NY,False,True,False
-2473,AVzA0t9LLD2H7whiWEcl,2 W 32nd St,"Restaurant,Vegetarian,Dumpling Restaurant,Beverages-Distributors and Bottlers,Korean,Korean Restaurant",New York,US,Korean,40.74712,-73.986213,USD,25.0,40.0,NY,False,True,False
-2479,AV8wUMs0a4HuVbedF3A-,1185 6th Ave,"Restaurant,Vegetarian,Indian",New York,US,Indian,40.757872,-73.98254399999999,,,,NY,False,True,False
-2494,AV8wURVe3-Khe5l_YO1L,7706 New Utrecht Ave,"Restaurant,Vegetarian,Chinese",Brooklyn,US,Chinese,40.614072,-74.000703,,,,NY,False,True,False
-2525,AV8wUVNba4HuVbedF3Fu,4461 11th St,"Restaurant,Local/Organic,Vegetarian,Coffee and Tea,Vegan",Long Island City,US,Unclassified,40.747986,-73.94953199999999,,,,NY,True,True,True
-2594,AVwd3hqiByjofQCxtMxV,5906 8th Ave,"Vietnamese Restaurant Sunset Park,Restaurant,Vietnamese Restaurant,Vegetarian,Vietnamese",Brooklyn,US,Vietnamese,40.636009,-74.00936300000001,USD,25.0,40.0,NY,False,True,False
-2602,AWLCz6SJa4HuVbedPf4I,321 W 49th St,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.761909,-73.987143,,,,NY,False,True,False
-2624,AWLBuuCZ3-Khe5l_h7wj,600 3rd Ave,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.749256,-73.97584,,,,NY,False,True,False
-2651,AVzA0-cV-gnIPe8DScJl,95 Greenwich Ave,"American (New),Restaurant,Local/Organic,Vegetarian,Caf",New York,US,American,40.737417,-74.00175,USD,25.0,40.0,NY,False,True,False
-2687,AVzA151HFcQ3k02bBXyh,166 E 82nd St,"Mexican Restaurant,Restaurant,Mexican,Vegetarian",New York,US,Mexican,40.776571000000004,-73.956908,USD,40.0,55.0,NY,False,True,False
-2711,AV8wUlt43-Khe5l_YO8R,558 7th Ave,"Restaurant,Middle Eastern,Smoothies and Juices,Vegetarian",New York,US,Middle Eastern,40.754746999999995,-73.987932,,,,NY,False,True,False
-2731,AV8wUpf5IxWefVJwrRGR,11 W 56th St,"Restaurant,Local/Organic,Smoothies and Juices,Vegetarian,Healthy,Vegan",New York,US,Unclassified,40.762868,-73.975235,,,,NY,True,True,True
-2752,AVweaf76_7pvs4fzCws8,460 Bergen St,"Restaurant,Local/Organic,Vegetarian / Vegan Restaurant,Smoothies and Juices,Vegetarian,Vegetarian Vegan Restaurant,Vegetarian / Vegan Restaurant North Slope,Kosher,Healthy,Vegan",Brooklyn,US,Kosher,40.68087,-73.976151,USD,25.0,40.0,NY,True,True,True
-2931,AV8wUJYWIxWefVJwrQ56,512 Ave U,"Restaurant,Vegetarian,Sushi,Kosher,Japanese",Brooklyn,US,Japanese,40.597484,-73.96639499999999,,,,NY,False,True,False
-3050,AVzA2LwfLD2H7whiWF6x,37 Kenmare St,"Restaurant,Japanese Restaurant,Vegetarian,Noodle House,Japanese,Noodles",New York,US,Japanese,40.72072,-73.995352,USD,25.0,40.0,NY,False,True,False
-3100,AV8wUYd2a4HuVbedF3HF,171A Avenue A,"Restaurant,Mexican,Vegetarian",New York,US,Mexican,40.728276,-73.982026,,,,NY,False,True,False
-3109,AV8wUUQ_3-Khe5l_YO3E,124 2nd Ave,"Restaurant,Mexican,Vegetarian",New York,US,Mexican,40.728124,-73.987546,,,,NY,False,True,False
-3130,AVwc1YGZkufWRAb5zgwb,659 Washington Ave,"Restaurant,Sushi Restaurant,Vegetarian,Sushi,Japanese,Sushi Restaurant Prospect Heights",Brooklyn,US,Japanese,40.677572,-73.96370300000001,USD,25.0,40.0,NY,False,True,False
-3259,AV1TsGY4-gnIPe8DWqUE,102 Suffolk St,"Restaurant,Vegetarian,Japanese,Healthy",New York,US,Japanese,40.718602000000004,-73.986183,,,,NY,False,True,False
-3294,AVzA2COQFcQ3k02bBX6E,318 E 6th St,"Indian Restaurant,Restaurant,Vegetarian,Indian",New York,US,Indian,40.726915000000005,-73.987616,USD,40.0,55.0,NY,False,True,False
-3333,AVwd4peYkufWRAb5-GVK,6917 5th Ave,"New York City,Restaurant,Middle Eastern,Vegetarian",Brooklyn,US,Middle Eastern,40.632868,-74.020995,USD,7.0,12.0,NY,False,True,False
-3338,AWEIAFAq3-Khe5l_eG0V,28-28 Steinway St,"Mediterranean Restaurant,Middle Eastern,Vegetarian,Sandwiches",Astoria,US,Middle Eastern,40.764755,-73.914467,USD,25.0,40.0,NY,False,True,False
-3348,AVwdZ4wNkufWRAb55jOI,5114 13th Ave,"Pizza,New York City,Restaurant,Vegetarian,Kosher",Brooklyn,US,Kosher,40.63373,-73.99339,USD,7.0,12.0,NY,False,True,False
-3349,AV1Tq4vN-gnIPe8DWkl-,4514 13th Ave,"Pizza,Restaurant,Vegetarian,Kosher",Brooklyn,US,Kosher,40.637042,-73.990153,,,,NY,False,True,False
-3408,AVyoBVoNYuCoGd6wM5n4,946 Fulton St,"Restaurant,Vegetarian,African",Brooklyn,US,African,40.682689,-73.96309699999999,,,,NY,False,True,False
-3421,AV8wUcz6IxWefVJwrRDR,93 1st Ave,"Restaurant,Vegetarian,Indian",New York,US,Indian,40.726323,-73.98660100000001,,,,NY,False,True,False
-3459,AV5aKKwe3-Khe5l_Vk3W,342 E 6th St,"Asian Restaurants,Restaurant,Vietnamese Restaurants,Vegetarian,Take Out Restaurants,Vietnamese,Restaurants,Vegan",New York,US,Vietnamese,40.726478,-73.986611,,,,NY,True,True,True
-3515,AVzA1LDg3D1zeR_xA_om,108 Lexington Ave,"Restaurant,Indian Restaurant,Vegetarian,Indian",New York,US,Indian,40.742376,-73.982835,USD,25.0,40.0,NY,False,True,False
-3569,AVzA1JwXFcQ3k02bBXEW,156 5th Ave,"Restaurant,Bar,Vegetarian / Vegan Restaurant,Vegetarian,Eclectic and International,Kosher,Vegan",Brooklyn,US,Kosher,40.678065999999994,-73.97949,USD,25.0,40.0,NY,True,True,True
-3640,AVzF5SACLD2H7whiWYK1,180 Spring St,"Restaurant,French,Vegetarian,Bistro,French Restaurant",New York,US,French,40.724755,-74.002619,,,,NY,False,True,False
-3723,AVzo3faDLD2H7whiXstN,3 E 52nd St,"Restaurant,French,Vegetarian,French Restaurant,Restaurants",New York,US,French,40.759623,-73.975889,,,,NY,False,True,False
-3739,AV8wUpP1IxWefVJwrRGL,342 E 6th St,"Restaurant,Vegetarian,Indian",New York,US,Indian,40.72648,-73.98666800000001,,,,NY,False,True,False
-3757,AV0GiKKEFcQ3k02bDmuF,225 Park Ave S,"Restaurant,Italian Restaurant,Italian,Vegetarian",New York,US,Italian,40.737133,-73.98795,,,,NY,False,True,False
-3768,AWNS6lcZRxPSIh2RunLy,7227 37th Ave,"Restaurant,Vegetarian,Indian,Desserts",Jackson Heights,US,Indian,40.74902,-73.89299799999999,,,,NY,False,True,False
-3840,AV8wU3QDa4HuVbedF3O9,196a Stanton St,"Restaurant,Vegetarian,Healthy",New York,US,Unclassified,40.719994,-73.982916,,,,NY,False,True,False
-3843,AV8wUOQIa4HuVbedF3Bv,112 Smith St,"Restaurant,Asian Fusion,Vegan",Brooklyn,US,Asian,40.687915000000004,-73.989956,,,,NY,True,False,False
-3923,AVwd-K03IN2L1WUf02Fn,1596 3rd Ave,"Restaurant,Ramen Restaurant,Vegetarian,Noodle House,Ramen Restaurant and Noodle House Upper East Side,Noodle House Yorkville,Japanese,Noodles,Ramen Restaurant and Noodle House",New York,US,Japanese,40.781187,-73.95259399999999,USD,25.0,40.0,NY,False,True,False
-3969,AWK84wfs3-Khe5l_h6nj,90 Broad St,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.703753999999996,-74.011626,,,,NY,False,True,False
-3996,AWLCSpwqa4HuVbedPf1s,53 E 8th St,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.731107,-73.993617,,,,NY,False,True,False
-4028,AV8wUMW0RxPSIh2Rls5R,252 7th Ave,"Restaurant,Vegetarian,Salads",Brooklyn,US,Salads,40.669487,-73.97962199999999,,,,NY,False,True,False
-4060,AVweZHSikufWRAb5CgtN,1376 Lexington Ave,"Pizza,Falafel Restaurant,Restaurant,Middle Eastern,Vegetarian,Salads,Pizza Place,Kosher",New York,US,Middle Eastern,40.782644,-73.95348800000001,USD,0.0,25.0,NY,False,True,False
-4132,AWLCUI4H3-Khe5l_h7xW,1471 3rd Ave,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.776886,-73.955124,,,,NY,False,True,False
-4152,AWLBw7WQ3-Khe5l_h7wq,30 Rockefeller Plz,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.758761,-73.978701,,,,NY,False,True,False
-4187,AV8wURBz3-Khe5l_YO1B,1395 Lexington Ave,"Mediterranean,Restaurant,Vegetarian,Coffee and Tea,Kosher",New York,US,General Mediterranean,40.782752,-73.952907,,,,NY,False,True,False
-4217,AVyirtpcYuCoGd6wM27r,19 Kenmare St,"Restaurant,Vegetarian / Vegan Restaurant,Smoothies and Juices,Vegetarian,Coffee and Tea,Caf,Juice Bar,Healthy,Vegan",New York,US,Unclassified,40.720653999999996,-73.994736,USD,25.0,40.0,NY,True,True,True
-4267,AVzA1inA-gnIPe8DScur,460 Amsterdam Ave,"Restaurant,Vegetarian / Vegan Restaurant,Vegetarian,Breakfast & Brunch,Coffee and Tea,Bakery,Caf,Hungarian,Healthy,Vegan",New York,US,Hungarian,40.785278000000005,-73.977012,USD,25.0,40.0,NY,True,True,True
-4347,AV1TsJyf3D1zeR_xFFNt,19 Cleveland Pl,"Restaurant,Mexican,Vegetarian",New York,US,Mexican,40.7216,-73.997076,,,,NY,False,True,False
-4367,AV8wUWa2RxPSIh2Rls-v,128 1st Ave,"Restaurant,Mexican,Middle Eastern,Vegetarian,Turkish",New York,US,Mexican and Turkish,40.727354,-73.985309,,,,NY,False,True,False
-4391,AV8wUMsF3-Khe5l_YOyh,143 1st Ave,"Restaurant,Mexican,Vegetarian",New York,US,Mexican,40.728095,-73.98494699999999,,,,NY,False,True,False
-4421,AVwciQA0kufWRAb5wPST,605 Carlton Ave,"American (New),Restaurant,Local/Organic,New American Restaurant,Vegetarian",Brooklyn,US,American,40.678982,-73.971618,USD,25.0,40.0,NY,False,True,False
-4519,AVwdiNdmIN2L1WUfwwoU,21309 Hawthorne Blvd,"Restaurant,Salad Place,Breakfast & Brunch,Certified Green Restaurant(r),American Restaurant,Salad Place, Soup Place, and American Restaurant,Soup Place,Bakeries,Healthy,Salad,Restaurants,Produce Markets",Torrance,US,American,33.835769,-118.35636299999999,USD,25.0,40.0,CA,False,False,False
-4528,AVzA1iVW-gnIPe8DScug,60 W 23rd St,"Vegetarian / Vegan Restaurant,Vegetarian Vegan Restaurant,Juice Bar,Restaurants",New York,US,Unclassified,40.742529,-73.992312,USD,0.0,25.0,NY,True,True,True
-4554,AVwdfI_5IN2L1WUfwSp0,2257 Chestnut St,"Restaurant,Sandwich Place,Restaurants",San Francisco,US,Mexican,37.80032,-122.44046000000002,,,,CA,False,False,False
-4580,AVzBBZTA-gnIPe8DShaR,2703 W Sunset Blvd,"Restaurant,Vegetarian / Vegan Restaurant,Restaurants",Los Angeles,US,Vegetarian,34.081028,-118.270394,,,,CA,True,True,True
-4655,AV8wUKMW3-Khe5l_YOwk,7310 37th Ave,"Restaurant,Vegetarian,Indian",Jackson Heights,US,Indian,40.748721999999994,-73.89237299999999,,,,NY,False,True,False
-4684,AVwdH4-wkufWRAb52iNr,26 N Main St,"Mexican Restaurant,Restaurant,Mexican Restaurants,Caterers,Vegan Restaurants,Latin American Restaurants,Burrito Place and Mexican Restaurant,Vegetarian Restaurants,Catering,Restaurants,Burrito Place",Concord,US,Mexican,43.282465,-71.601809,USD,25.0,40.0,NH,True,True,True
-4734,AVwc5QsV_7pvs4fz0Gqo,5605 N Clark St,"Restaurant,Mediterranean Restaurants,Vegetarian Restaurants,Restaurants,Middle Eastern Restaurants",Chicago,US,General Mediterranean,41.98365,-87.668717,,,,IL,False,True,False
-4754,AV8wUu983-Khe5l_YO--,13216 14th Ave,"Restaurant,Vegetarian,Sushi,Japanese",College Point,US,Japanese,40.785790999999996,-73.836019,,,,NY,False,True,False
-4858,AV8wUj0rIxWefVJwrRE5,24803 Union Tpk,"Restaurant,Vegetarian,Indian",Bellerose,US,Indian,40.742540999999996,-73.721599,,,,NY,False,True,False
-4899,AV8wUvQ_IxWefVJwrRHX,25907 Hillside Ave,"Restaurant,Vegetarian,Indian",Glen Oaks,US,Indian,40.737211,-73.708897,,,,NY,False,True,False
-4923,AVwdOzo-IN2L1WUftmrN,3704 Kerbey Ln,"Breakfast Spot,Restaurant,Cafe,Dessert Shops,Diner,Caf,Restaurants",Austin,US,Mexican and American,30.308317,-97.750057,USD,25.0,40.0,TX,False,False,False
-4973,AVweedXDByjofQCxyj8e,1502 W Thomas Rd,"Asian Restaurants,Bars Clubs,Restaurant,Caterers,Vegan Restaurants,Taverns,Chinese Restaurants,Bar and Grills,Chinese,Restaurants,Bars",Phoenix,US,Chinese,33.480677,-112.09154299999999,,,,AZ,True,False,False
-4990,AVzA1KDV3D1zeR_xA_nV,22323 Sherman Way Ste 11,"Indian Restaurant,Restaurant,Caterers,Indian restaurants,American restaurants,Asian restaurants,Catering,Restaurants",Canoga Park,US,Indian,34.201068,-118.61339199999999,USD,25.0,40.0,CA,False,False,False
-5021,AVwdiIgZByjofQCxqC5X,3351 Adams Ave,"Restaurant,Vegetarian / Vegan Restaurant,Vegetarian,Breakfast & Brunch,Vegan,Restaurants,International",San Diego,US,Asian,32.763092,-117.121473,USD,25.0,40.0,CA,True,True,True
-5078,AV1TpfQc-gnIPe8DWW-4,1805 E Elliot Rd Ste 115,"Restaurant,Vegetarian,Thai",Tempe,US,Thai,33.347827,-111.910257,,,,AZ,False,True,False
-5085,AV1Tso0J-gnIPe8DWscT,3827 N Lincoln Ave,"Restaurant,Breakfast & Brunch,Coffeehouses,Restaurants,Vegan",Chicago,US,American,41.951325,-87.676736,,,,IL,True,False,False
-5100,AVwc-fCFIN2L1WUfq7A6,3215 W Broad St,"Asian Restaurants,Restaurant,Caterers,Restaurants,Indian Restaurants,Middle Eastern Restaurants",Richmond,US,Indian,37.566179999999996,-77.47498,,,,VA,False,False,False
-5228,AVwco353_7pvs4fzxWCs,1200 Bison Ave,"Mediterranean Restaurant,Restaurant,Greek Restaurant,Vegetarian / Vegan Restaurant,Vegetarian Vegan Restaurant,Restaurants",Newport Beach,US,Greek,33.638462,-117.86390700000001,USD,25.0,40.0,CA,True,True,True
-5251,AVwdfOCBByjofQCxpmij,173 W Broadway,"Restaurant,American Restaurants,Seafood Restaurants,Family Style Restaurants,Vegetarian Restaurants,Restaurants",Salt Lake City,US,American,40.762734,-111.89581000000001,,,,UT,False,True,False
-5261,AVwejIh5IN2L1WUf5-qq,17499 Ventura Blvd,"Natural food restaurants,American restaurants,Caf,Bistro restaurants,Cafes,Restaurants,Juice bars,Breakfast Spot,Restaurant,Vegetarian restaurants,Beer and beverages-wholesale and distributors,Restaurants-breakfast and diners,Health food restaurants",Encino,US,Unclassified,34.161494,-118.514036,USD,40.0,55.0,CA,False,True,False
-5390,AVwc7a8r_7pvs4fz0d09,4738 Beechnut St,"Mediterranean Restaurant,Restaurant,Mediterranean,Falafel Restaurant,Middle Eastern Restaurant,Middle Eastern Restaurant, Falafel Restaurant, and Mediterranean Restaurant,Middle Eastern & African,Restaurants",Houston,US,Middle Eastern,29.689110999999997,-95.460374,USD,25.0,40.0,TX,False,False,False
-5429,AVwc2E-a_7pvs4fzzj_y,410 N Ocean Dr,"Bars Clubs,Restaurant,Catering Companies,Seafood Restaurants,Greek Restaurant,Bars & Clubs,Greek Restaurants,Mediterranean Restaurants,Vegetarian Restaurants,Catering,Restaurants",Hollywood,US,Greek,26.014695,-80.117549,USD,40.0,55.0,FL,False,True,False
-5597,AVwdN4Ut_7pvs4fz3gKF,1320 E Valley Pkwy,"Restaurant,Vegetarian,Sandwich Place,Californian",Escondido,US,American,33.131871999999994,-117.063804,,,,CA,False,True,False
-5602,AVwc3k4JByjofQCxjEfY,2531 Chain Bridge Rd,"Asian Restaurants,Restaurant,Chinese Restaurant,Vegetarian / Vegan Restaurant and Chinese Restaurant,Vegetarian / Vegan Restaurant,Chinese Restaurants,Take Out Restaurants,Family Style Restaurants,Vegetarian Restaurants,Restaurants",Vienna,US,Unclassified,38.892958,-77.27570300000001,USD,0.0,25.0,VA,True,True,True
-5710,AVwc5NFFIN2L1WUfqC_B,655 N Cass Ave,"Asian Restaurants,Restaurant,Family Style Restaurants,Vegetarian Restaurants,Restaurants,Indian Restaurants,Middle Eastern Restaurants",Westmont,US,Indian,41.810579,-87.975883,,,,IL,False,True,False
-5783,AV1Tp4A7-gnIPe8DWbH7,95 Massachusetts Ave,"Restaurant,Vegetarian,Indian",Boston,US,Indian,42.348304,-71.08821400000001,,,,MA,False,True,False
-5805,AVwcpKn8_7pvs4fzxY5t,325 Oliver Ave,"Restaurant,Barbecue Restaurants,Restaurants,Pittsburgh Restaurants",Pittsburgh,US,American,40.441272,-79.999545,,,,PA,False,False,False
-5820,AV1TqXaj-gnIPe8DWgFC,200 E Ohio St,"Mexican Restaurant,Restaurant,Mexican,Vegetarian,Breakfast & Brunch,Diners,Burrito Place",Chicago,US,Mexican,41.892621000000005,-87.62260699999999,,,,IL,False,True,False
-5835,AV8wUnVr3-Khe5l_YO8q,4908 43rd Ave,"Restaurant,Vegetarian,Thai",Woodside,US,Thai,40.744326,-73.915236,,,,NY,False,True,False
-5861,AV12jNcfRxPSIh2RcbEH,76 Orchard St,"Restaurant,Dessert Shops",New York,US,Chinese and Thai,40.717656,-73.990185,,,,NY,False,False,False
-5872,AVwc9W3-_7pvs4fz0xJ7,1460 W Chicago Ave,"Restaurant,Vegetarian / Vegan Restaurant,Vegetarian,Restaurants",Chicago,US,Unclassified,41.896114000000004,-87.664651,USD,40.0,55.0,IL,True,True,True
-5895,AVwdVowVkufWRAb542Tw,2533 Pacific Coast Hwy,"Restaurant,Vegetarian / Vegan Restaurant,Vegetarian",Torrance,US,Vegetarian,33.791073,-118.328934,USD,25.0,40.0,CA,True,True,True
-5937,AV1Tr-_h3D1zeR_xFEhf,15 W 44th St,"Restaurant,Vegetarian,Catering,Restaurants",New York,US,Indian,40.755321,-73.980698,,,,NY,False,True,False
-5947,AVwd5QBXByjofQCxtcHI,1634 Irving St,"Hot Dog Joint,Restaurant,Vegetarian / Vegan Restaurant,American Restaurant,Bistros,Restaurants",San Francisco,US,American,37.763687,-122.47543200000001,USD,25.0,40.0,CA,True,True,True
-5960,AVwdu2eJIN2L1WUfysFY,607 Richmond Ave,"Restaurant,Vegetarian / Vegan Restaurant,Vegetarian / Vegan Restaurant, Salad Place, and Caf Neartown - Montrose,Salad Place,Vegetarian / Vegan Restaurant, Salad Place, and Caf,Caf,Catering,Restaurants,Caf√©",Houston,US,Italian,29.734299,-95.387069,USD,25.0,40.0,TX,True,True,True
-5986,AVwdB8LBIN2L1WUfrejh,329 Market St,"Indian Restaurant,Restaurant,Vegetarian,Indian,Restaurants",San Diego,US,Indian,32.711371,-117.16139299999999,USD,0.0,25.0,CA,False,True,False
-6021,AVwd6lA5kufWRAb5-Xci,2501 Cerrillos Rd,"Restaurant,Indian Restaurant,Catering,Restaurants",Santa Fe,US,Greek and Indian,35.660273,-105.98296299999998,USD,25.0,40.0,NM,False,False,False
-6087,AVweeYPSkufWRAb5DQgX,343 Kearny St,"Restaurant,Japanese Restaurant Chinatown,Japanese Restaurant,Fast Food,Japanese",San Francisco,US,Japanese,37.791467,-122.404063,USD,0.0,25.0,CA,False,False,False
-6107,AV8NhyFXa4HuVbedFxMt,73 NE 167th St,"Restaurant,Breakfast & Brunch,Vegan",Miami,US,Unclassified,25.933695999999998,-80.13724599999999,,,,FL,True,False,False
-6109,AVwdJH-pIN2L1WUfsozT,267 S Beverly Dr,"Coffee Shop,Breakfast & Brunch,Caf,Desserts,Restaurants,Restaurant,Breakfast Spot,Vegan Restaurants,Ice Cream and Desserts,Coffee and Tea,Dessert Shops,Coffeehouses,Vegetarian Restaurants",Beverly Hills,US,Unclassified,34.06281,-118.398955,USD,25.0,40.0,CA,True,True,True
-6250,AVwd2a-kIN2L1WUfzxBn,303 S Diamond Bar Blvd,"Restaurant,Caterers,Indian restaurants,Indian,Restaurants",Diamond Bar,US,Indian,34.01959,-117.81031000000002,USD,0.0,30.0,CA,False,False,False
-6263,AVwdG-N0IN2L1WUfsTFk,1401 University Ave,"Pizza,Restaurant,Italian restaurants,Restaurants",Berkeley,US,Italian,37.870026,-122.28458,,,,CA,False,False,False
-6307,AVwc02_z_7pvs4fzzYGl,1405 S Neil St,"Natural food restaurants,Mexican Restaurants,Tex-mex restaurants,Southwestern restaurants,Latin American Restaurants,Karaoke,Restaurants,Juice bars,Mexican Restaurant,American Restaurants,Restaurant,Seafood Restaurants,Vegan Restaurants,Bar and Grills,Health food restaurants,Vegetarian Restaurants",Champaign,US,American,40.099605,-88.2447,USD,0.0,25.0,IL,True,True,True
-6314,AVwdKojjByjofQCxmLy0,503 Main St,"Restaurant,Asian Restaurant,Thai restaurants,Restaurants",Evanston,US,Thai and Japanese,42.033935,-87.677839,USD,0.0,25.0,IL,False,False,False
-6420,AVzA1WNd-gnIPe8DScjO,2828 Steinway St,"Mediterranean Restaurant,Restaurant,Middle Eastern,Vegetarian,Sandwiches",Astoria,US,Middle Eastern,40.764755,-73.914467,USD,25.0,40.0,NY,False,True,False
-6437,AVzA1Tzb-gnIPe8DSchA,426 N Fairfax Ave,"Restaurant,Burger Joint,Beer Bar,Restaurants",Los Angeles,US,Unclassified,34.079057,-118.36114099999999,USD,25.0,40.0,CA,False,False,False
-6443,AV8wUbc03-Khe5l_YO6O,11311 101st Ave,"Restaurant,Vegetarian,Indian",South Richmond Hill,US,Indian,40.688679,-73.830495,,,,NY,False,True,False
-6449,AV4u0H0ARxPSIh2Rex-0,257 Washington St,"Restaurant,Thai Restaurant,Restaurants",Wellesley Hills,US,Thai,42.313014,-71.27389699999999,USD,25.0,40.0,MA,False,False,False
-6546,AVwd29YvByjofQCxtH-J,1601 Central Ave,"Restaurant,American Restaurants,Coffee Shops,Gluten-free Restaurant,Caterers,Vegan Restaurants,Caf,Breakfast Brunch and Lunch Restaurants,,Vegetarian Restaurants,Restaurants,Caf√©",Charlotte,US,American,35.220338,-80.811749,USD,25.0,40.0,NC,True,True,True
-6563,AVwdRi7FIN2L1WUfuFIT,1843 Penfield Rd,"Restaurant,Bar,Thai restaurants,Thai Restaurant,Restaurants",Penfield,US,Chinese and Thai,43.130472,-77.474122,,,,NY,False,False,False
-6628,AVwdh5r_IN2L1WUfwtqp,7212 Melrose Ave,"Restaurant,Catering,Restaurants",Los Angeles,US,Indian,34.083484000000006,-118.346774,USD,0.0,30.0,CA,False,False,False
-6663,AVwdoBjHByjofQCxq9pR,5709 E 12 Mile Rd,"Mediterranean Restaurant,Restaurant,Restaurants",Warren,US,General Mediterranean,42.506671000000004,-83.049498,USD,25.0,40.0,MI,False,False,False
-6734,AVzoKN-cFcQ3k02bC0N9,301 E 49th St,"Restaurant,Juice Smoothie Shops,Restaurants,Sandwich Shops",New York,US,Unclassified,40.754282,-73.96889399999999,,,,NY,False,False,False
-6762,AV1c31lYIxWefVJweNd7,1140 Main St,"Restaurant,Restaurants",Napa,US,Unclassified,38.300193,-122.28608799999999,,,,CA,False,False,False
-6772,AV1Tq250FcQ3k02bFcu0,672 Lexington Ave,"Restaurant,Restaurants",New York,US,Unclassified,40.760149,-73.96969200000001,,,,NY,False,False,False
-6790,AVzYRQmE3D1zeR_xBp5b,16719 Bernardo Center Dr,"Restaurant,Greek Restaurant,Vegetarian,Greek",San Diego,US,Greek,33.017505,-117.075748,USD,25.0,40.0,CA,False,True,False
-6824,AVwdigwW_7pvs4fz64qp,1700 Shattuck Ave,"Asian Restaurants,Indian Restaurant,Restaurant,Vegan Restaurants,Vegetarian Restaurants,Indian Restaurant North Berkeley,Indian Restaurants,Restaurants,Middle Eastern Restaurants",Berkeley,US,Indian,37.876574,-122.26895,USD,25.0,40.0,CA,True,True,True
-6866,AVwd7XWzByjofQCxtvH-,2440 Park Rd,"Restaurant,Restaurants",Charlotte,US,Japanese,35.197672,-80.851772,,,,NC,False,False,False
-6919,AV12lSgBa4HuVbed9qTS,16650 Redmond Way,"Restaurant,Restaurants",Redmond,US,Indian,47.673384999999996,-122.118117,,,,WA,False,False,False
-6923,AVwdQyLBkufWRAb54DHY,156 S Brand Blvd,"Restaurant,Indian Restaurant City Center,Glendale Restaurants,Indian,Restaurants",Glendale,US,Indian,34.1446,-118.254902,USD,25.0,40.0,CA,False,False,False
-6938,AV8wUaxK3-Khe5l_YO54,24808 Union Turnpike,"Restaurant,Vegetarian,Indian",Bellerose,US,Indian,40.742408000000005,-73.72166,,,,NY,False,True,False
-6961,AV8wUpbFRxPSIh2RltC3,3118 Broadway,"Restaurant,Mediterranean,Vegetarian",Astoria,US,General Mediterranean,40.761586,-73.924816,,,,NY,False,True,False
-6994,AV1TpeIlLD2H7whiZ5P1,8104 W 3rd St,"Restaurant,American,Breakfast & Brunch",Los Angeles,US,American,34.07205,-118.36613500000001,,,,CA,False,False,False
-7007,AVzA9YIn-gnIPe8DSe8F,9918 W 87th St,"Indian Restaurant,Restaurant,Catering,Restaurants",Overland Park,US,Indian,38.971233000000005,-94.700551,USD,25.0,40.0,KS,False,False,False
-7035,AV1TshrT3D1zeR_xFGzw,903 S Rural Rd,"Restaurant,Mediterranean,Lebanese,Vegetarian,Middle Eastern & African",Tempe,US,Lebanese,33.420085,-111.926272,,,,AZ,False,True,False
-7072,AV1TrQ0xLD2H7whiaJUw,879 Ralph David Abernathy SW,"Restaurant,American,Vegetarian",Atlanta,US,American,33.738157,-84.416542,,,,GA,False,True,False
-7077,AVwcqjAG_7pvs4fzxoFp,2855 Stevens Creek Blvd,"Restaurant,Vegan Restaurants,Vegetarian / Vegan Restaurant,Take Out Restaurants,Fast Food Restaurants,Health Food Restaurants,Vegetarian Restaurants,Vegan,Restaurants",Santa Clara,US,Unclassified,37.325845,-121.94561499999999,,,,CA,True,True,True
-7101,AVwctNEHkufWRAb5yJhh,1601 Riverside Dr,"Restaurant,Vegetarian Restaurants,Restaurants",Nashville,US,Unclassified,36.254558,-86.640569,,,,TN,False,True,False
-7118,AVwdMdwxIN2L1WUftNQV,20700 Avalon Blvd,"Restaurant,Chain Restaurant,Restaurants",Carson,US,American,33.844145000000005,-118.26051799999999,,,,CA,False,False,False
-7138,AVwdXJ68ByjofQCxoUPa,4209 Lassiter Mill Rd,"Italian Restaurant and Wine Bar,Restaurant,Italian Restaurant,Wine Bar",Raleigh,US,Italian,35.838587,-78.64420600000001,USD,0.0,30.0,NC,False,False,False
-7198,AVwd-hCF_7pvs4fz-8Qq,361 Moody St,"Restaurant,Restaurants",Waltham,US,Italian,42.369996,-71.23713199999999,,,,MA,False,False,False
-7199,AVzA90_S-gnIPe8DSfRO,801 Ne 65th St,"Restaurant,Vegetarian / Vegan Restaurant,Breakfast & Brunch,Vegan",Seattle,US,Unclassified,47.675643,-122.319829,USD,25.0,40.0,WA,True,True,True
-7249,AV1TsD-u-gnIPe8DWqIB,311 Bond St,"Natural food restaurants,Southern / Soul,Caterers,African restaurants,Soul food restaurants,Vegetarian,Breakfast & Brunch,American restaurants,Restaurants,Vegan,Juice bars,Restaurant,Vegetarian restaurants,Southern / Soul Food Restaurant,Health food restaurants",Asbury Park,US,American,40.2168,-74.01176,USD,25.0,40.0,NJ,True,True,True
-7291,AVyis8uAgXLl9CNj_AfE,450 Massachusetts Ave,"Restaurant,Caterers,Vegan Restaurants,Vegetarian / Vegan Restaurant,Continental Restaurants,Diner,Breakfast Brunch and Lunch Restaurants,,Bakeries,Vegetarian Restaurants,Restaurants",Cambridge,US,European,42.36234,-71.10127,USD,25.0,40.0,MA,True,True,True
-7315,AVwdLoMEByjofQCxmW-x,505 W Lake Blvd,"Restaurant,Ice Cream and Desserts,Vegetarian,Vegan",Tahoe City,US,American,39.159286,-120.14573899999999,,,,CA,True,True,True
-7357,AVwc-i8kkufWRAb51A6w,3133 Grand Ave,"Restaurant,Vegetarian / Vegan Restaurant,Salad Place,Vegetarian,Vegetarian / Vegan Restaurant and Sandwich Place Northeast Coconut Grove,wich Place,Sandwich Place",Miami,US,Vegetarian,25.728379999999998,-80.243973,USD,25.0,40.0,FL,True,True,True
-7429,AVweOjiTIN2L1WUf3F_V,3640 SE Belmont St,"Restaurant,Restaurants",Portland,US,American,45.516232,-122.626277,,,,OR,False,False,False
-7437,AV1TsT4CLD2H7whiaNjG,18101 Preston Rd,"Restaurant,Restaurants",Dallas,US,American,32.998484999999995,-96.797713,,,,TX,False,False,False
-7459,AVweekMDByjofQCxyk_b,1860 The Alameda,"Restaurant,Restaurants",San Jose,US,Ethiopian,37.339938000000004,-121.922151,,,,CA,False,False,False
-7466,AV12gnF2IxWefVJwhsCa,1920 W Division St 1,"Delis And Delicatessens,Restaurant,Dessert Shops,Bakeries,Cafes,Restaurants",Chicago,US,American,41.903442,-87.675732,,,,IL,False,False,False
-7485,AV0ZO1vlFcQ3k02bEbNq,7314 Greenwood Ave N,"Restaurant,Mediterranean,Vegetarian,Restaurants",Seattle,US,General Mediterranean,47.682262,-122.354996,,,,WA,False,True,False
-7505,AVwd859pIN2L1WUf0qhv,3250 E Speedway Blvd,"Asian Restaurants,Restaurant,Caterers,Chinese Restaurants,Party & Event Planners,Take Out Restaurants,Catering,Restaurants",Tucson,US,Chinese,32.235779,-110.923404,,,,AZ,False,False,False
-7541,AVwc09YokufWRAb5zcsR,1540 S Commercial St,"Restaurant,Catering,Restaurants",Neenah,US,American,44.154652,-88.462336,USD,0.0,25.0,WI,False,False,False
-7588,AVwc7UHJkufWRAb50gE-,1681 Crystal Square Arc,"Restaurant,Health Food Stores,Greek Restaurants,Mediterranean Restaurants,American Restaurant,Restaurants",Arlington,US,Greek,38.858191999999995,-77.051507,USD,0.0,25.0,VA,False,False,False
-7620,AVwc6YmE_7pvs4fz0Sw6,3105 Commodore Plz,"New American Restaurant,Tapas Restaurant,New American Restaurant, Cocktail Bar, and Tapas Restaurant Northeast Coconut Grove,Cocktail Bar,New American Restaurant, Cocktail Bar, and Tapas Restaurant,Restaurants",Miami,US,American,25.726881,-80.243931,USD,25.0,40.0,FL,False,False,False
-7755,AVwclqRL_7pvs4fzwxWa,8180 Melrose Ave,"Ice Cream & Frozen Desserts,Restaurant,Vegetarian,Breakfast & Brunch,Juice Smoothie Shops,Juices,Health & Diet Food Products,Juice Bar,Restaurants",Los Angeles,US,Unclassified,34.083686,-118.367558,USD,25.0,40.0,CA,False,True,False
-7779,AVwejUZUByjofQCxzSp_,323 13th Ave Ne,"Restaurant,American Restaurants,Steak Houses,Seafood Restaurants,Breakfast Brunch & Lunch Restaurants,,Vegetarian Restaurants,Restaurants",Minneapolis,US,Unclassified,45.001165,-93.263373,,,,MN,False,True,False
-7789,AV8wUd0oIxWefVJwrRDu,8306 Austin St,"Restaurant,Vegetarian,Indian",Kew Gardens,US,Indian,40.709088,-73.829399,,,,NY,False,True,False
-7801,AVwejh3bIN2L1WUf6Csy,319 Crossroads Blvd,"Restaurant,Catering,Restaurants",Cary,US,General Mediterranean,35.761165999999996,-78.737999,,,,NC,False,False,False
-7814,AVwdkgt9kufWRAb57MLk,1515 S 4th St,"Coffee Shop,Delicatessens,Vegetarian / Vegan Restaurant,Vegetarian,Coffee and Espresso Restaurants,Caf,Restaurants,Vegan,Coffee Shops,Restaurant,Vegan Restaurants,Coffee and Tea,Coffee Shop, Caf, and Vegetarian / Vegan Restaurant",Philadelphia,US,Unclassified,39.929111,-75.151957,USD,25.0,40.0,PA,True,True,True
-7853,AV8wUMF0RxPSIh2Rls5B,7210 Main St,"Restaurant,Vegetarian,Eastern European,Kosher",Flushing,US,Kosher,40.726279,-73.821841,,,,NY,False,True,False
-7929,AVzxqtUj3D1zeR_xC1Nb,1819 S Kihei Rd,"Southeast Asian,Restaurant,Thai,Catering,Restaurants",Kƒ´hei,US,Thai,20.734835,-156.452451,,,,HI,False,False,False
-7955,AWE7OJzxa4HuVbedNZRV,72-27 37th Ave,"Indian Restaurant,Vegetarian,Indian,Desserts",Jackson Heights,US,Indian,40.748847,-73.892875,USD,0.0,25.0,NY,False,True,False
-8040,AVwda2e4IN2L1WUfvn69,5129 43rd Ave,"Restaurant,Latin American Restaurant Woodside,American,Vegetarian,Latin American Restaurant",Woodside,US,American,40.744415999999994,-73.912526,USD,25.0,40.0,NY,False,True,False
-8060,AV0Z4EeXLD2H7whiZOR0,9889 Bellaire Blvd,"Restaurant,Asian/Pacific,Dessert Shops,Juice Smoothie Shops,Restaurants",Houston,US,Chinese,29.704541,-95.555054,,,,TX,False,False,False
-8134,AVzA2gYJ-gnIPe8DSddo,617 9th Ave,"Restaurant,Vegetarian / Vegan Restaurant,Vegetarian,Breakfast & Brunch,Vegetarian Vegan Restaurant",New York,US,Unclassified,40.759434000000006,-73.991848,USD,0.0,25.0,NY,True,True,True
-8187,AVwdhbW4kufWRAb56uNE,15000 Minnetonka Blvd,"Beauty Salons,Event Space,Art Gallery,Gym / Fitness Center,Restaurants",Minnetonka,US,American,44.9375,-93.4708,,,,MN,False,False,False
-8252,AVwdkWwTByjofQCxqY5o,4563 Bowne St,"Indian Restaurant,Restaurant,Vegetarian,Indian restaurants,American restaurants,Indian,Restaurants",Flushing,US,Indian,40.752542,-73.81675899999999,USD,25.0,40.0,NY,False,True,False
-8274,AVweI0xJIN2L1WUf2UQf,51 W Kinzie St,"Bars Clubs,Restaurant,Italian Restaurant,Halls Auditoriums,Bars Pubs,Italian Restaurant Near North Side,Restaurants",Chicago,US,Italian,41.889212,-87.630268,USD,40.0,55.0,IL,False,False,False
-8447,AVyisfBdgXLl9CNj_AWu,404 4th Ave E,"Bars Clubs,Restaurant,Vegetarian / Vegan Restaurant,Restaurants",Olympia,US,Vegetarian,47.045206,-122.89783200000001,USD,0.0,25.0,WA,True,True,True
-8472,AVzBGDbxFcQ3k02bBeXU,146 6th St,"Restaurant,Bar,Beer Garden,American Restaurant,Bistros,Restaurants",Pittsburgh,US,American,40.442822,-80.002382,USD,25.0,40.0,PA,False,False,False
-8689,AVwcombu_7pvs4fzxS1P,550 19th Ave E,"Restaurant,Bar,Cafe,American,Breakfast & Brunch,American Restaurant,Cocktail Bar",Seattle,US,American,47.62441,-122.3073,USD,25.0,40.0,WA,False,False,False
-8788,AVwc38jakufWRAb5z7_A,4628 Meridian Ave,"Restaurant,Caterers,Mediterranean Restaurants,Persian,Take Out Restaurants,Family Style Restaurants,Vegetarian Restaurants,Restaurants,Middle Eastern Restaurants",San Jose,US,Persian,37.257359,-121.89801000000001,,,,CA,False,True,False
-8800,AVyisOzUKV4T4IkwNaa7,1346 Washington Ave,"Restaurant,Health Food Stores,Vegetarian / Vegan Restaurant,Vegetarian,Breakfast & Brunch,Juice Smoothie Shops,Restaurants",Miami Beach,US,Unclassified,25.785057000000002,-80.13221,USD,25.0,40.0,FL,True,True,True
-8912,AVyisC7VYuCoGd6wM3FO,509 Southard St,"Restaurant,Vegetarian / Vegan Restaurant,Restaurants",Key West,US,Vegetarian,24.55486,-81.80175,USD,25.0,40.0,FL,True,True,True
-8948,AVyoCqphgXLl9CNj_Dkt,912 E 900 S,"Restaurant,Middle Eastern Restaurant,Restaurants",Salt Lake City,US,Lebanese,40.7496,-111.8649,USD,0.0,25.0,UT,False,False,False
-9038,AVz3a62Q-gnIPe8DUk3J,4255 West Bell Rd,"Restaurant,Restaurants",Phoenix,US,Indian,33.63917,-112.151106,,,,AZ,False,False,False
-9050,AVwc8zhtByjofQCxj89O,410 SW Broadway,"Restaurant,Hotels and motels,American Restaurant,American restaurants,Restaurants",Portland,US,American,45.5211,-122.6783,USD,25.0,40.0,OR,False,False,False
-9358,AVwdBZgzkufWRAb51e67,6009 Paseo Delicias,"Restaurant,American Restaurant,French Restaurant,Restaurants,Produce Markets,Restaurant, American Restaurant, and French Restaurant,French Restaurants",Rancho Santa Fe,US,French,33.019395,-117.203704,USD,31.0,50.0,CA,False,False,False
-9380,AVwd3JCRIN2L1WUfz3Fh,3555 Rosecrans St,"Caf,Breakfast Spot,Restaurant,Vegetarian,Breakfast & Brunch,Caf√©",San Diego,US,Unclassified,32.74943,-117.205,USD,25.0,40.0,CA,False,True,False
-9390,AV8wVOIgIxWefVJwrRMo,53 E 8th St,"Restaurant,Salads,Vegetarian",New York,US,Salads,40.731107,-73.993617,,,,NY,False,True,False
-9413,AVwdI6oHByjofQCxl5Mw,221 W Parkdale Ave,"Pizza,Restaurants,Pizza Place,Restaurant,Catering",Manistee,US,Italian,44.26559,-86.31023,USD,0.0,25.0,MI,False,False,False
-9437,AVwdUgLr_7pvs4fz4ott,1601 Elizabeth Ave,"New American Restaurant,American Restaurant,Seafood Restaurant,Restaurants,Catering",Charlotte,US,Italian,35.2138,-80.8265,USD,40.0,55.0,NC,False,False,False
-9599,AVzA2-oLLD2H7whiWGUc,164 W 75th St,"Italian Restaurant,Bar,Restaurant,American,Italian,Healthy,Vegetarian,Restaurants,Bars Clubs",New York,US,Italian,40.780322999999996,-73.979965,USD,40.0,55.0,NY,False,True,False
-9683,AV8wUgzGIxWefVJwrREt,2056 Broadway,"Restaurant,Salads,Vegetarian",New York,US,Salads,40.777514000000004,-73.981746,,,,NY,False,True,False
-9705,AV8wUvSH3-Khe5l_YO_E,30 Rockefeller Plz,"Restaurant,Salads,Vegetarian",New York,US,Salads,40.758761,-73.978701,,,,NY,False,True,False
-9730,AV8wUXFB3-Khe5l_YO4p,16825 Hillside Ave,"Restaurant,Indian,Vegetarian",Jamaica,US,Indian,40.710358,-73.794013,,,,NY,False,True,False
-9756,AVwcjDZzkufWRAb5wYXU,101 E Weaver St,"Grocery Store,Caf,Bakery,Grocery Stores,Bars Clubs,Bakeries,Bars Pubs,Restaurants,Caf√©,Bars & Clubs,Bars & Pubs,Grocery Store, Caf, and Bakery",Carrboro,US,American,35.9111,-79.0723,,,,NC,False,False,False
-9774,AV8wU5yTa4HuVbedF3Pe,1306 1st Ave,"Restaurant,Salads,Vegetarian",New York,US,Salads,40.766884000000005,-73.956663,,,,NY,False,True,False
-9798,AVwc0UvjIN2L1WUfpOXr,112 Madison Ave,"Health Food Restaurants,Delicatessens,Sandwich Shops,Vegetarian Restaurants,Vegan Restaurants,Restaurants,Sandwich Place",Skowhegan,US,Unclassified,44.76893,-69.72134,,,,ME,True,True,True
-9806,AVwdZPcqByjofQCxoqLH,206 N Virginia St,"Japanese Restaurant,Sushi Restaurant,Restaurants,Catering,Grocery Stores,Ethnic Food Markets",Reno,US,Japanese,39.5306,-119.8143,USD,40.0,55.0,NV,False,False,False
-9812,AV8wUvqERxPSIh2RltEQ,14009 Cherry Ave,"Restaurant,Chinese,Vegetarian",Flushing,US,Chinese,40.754073999999996,-73.82249399999999,,,,NY,False,True,False
-9830,AV1Tp59p3D1zeR_xE2DL,1665 Mt Diablo Blvd,"Restaurant,Thai,Asian/Pacific,Fusion",Walnut Creek,US,Thai,37.897304999999996,-122.0625,,,,CA,False,False,False
-9833,AV8wVUZERxPSIh2RltJ4,321 W 49th St,"Restaurant,Salads,Vegetarian",New York,US,Salads,40.761909,-73.987143,,,,NY,False,True,False
-9852,AV1Ts_JULD2H7whiaPxH,5960 West County Road 30A,"Restaurant,Seafood,Breakfast & Brunch,Bar",Santa Rosa Beach,US,American,30.354066999999997,-86.254196,,,,FL,False,False,False
-9855,AVwc3vov_7pvs4fzz2Tj,3016 Guadalupe St,"Gluten-free Restaurant,Bakery,Restaurant,American,Vegan,Gluten Free",Austin,US,American,30.29768,-97.74136999999999,USD,25.0,40.0,TX,True,False,False
-9943,AVwd88lK_7pvs4fz-toI,1335 W Thomas Rd,"Vegetarian / Vegan Restaurant,Restaurant,Mediterranean,Vegetarian,Persian,Restaurants",Phoenix,US,Persian,33.48048,-112.09064,USD,40.0,55.0,AZ,True,True,True
+,id,address,categories,city,country,cuisines,latitude,longitude,priceRangeCurrency,priceRangeMin,priceRangeMax,province,dietary,is_vegan,is_vegetarian,is_both
+0,AVwd3yXEkufWRAb59-sH,1045 San Pablo Ave,"Restaurant,Asian/Pacific,Cafe,Vegetarian / Vegan Restaurant,Vegetarian,Vegetarian Vegan Restaurant,Caf,Thai",Albany,US,Thai,37.885131,-122.297013,,,,CA,Both,TRUE,TRUE,TRUE
+5,AVwddQkGkufWRAb56GvX,16411 Bernardo Center Dr,"Indian Restaurant,Restaurant,Caterers,Food Dining,Catering,Vegetarian Restaurants,Restaurants,Indian Restaurants,Food & Dining,Middle Eastern Restaurants",San Diego,US,Indian,33.012662,-117.07859,USD,25,40,CA,Vegetarian,FALSE,TRUE,FALSE
+37,AVzHCLzmLD2H7whiWY6R,2265 Broadway,"Restaurant,Juice Bars,Smoothies and Juices,Vegetarian,Beverages Retail,Beverages,Healthy",New York,US,Unclassified,40.785469,-73.979105,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+76,AVweaMjhByjofQCxx7-_,102 8th Ave,"Restaurant,Coffee Shops,Beverages Wholesale & Manufacturers,Local/Organic,Vegan Restaurants,Smoothies and Juices,Vegetarian / Vegan Restaurant,Vegetarian,Juice Bar,Vegetarian Restaurants,Healthy,Restaurants",New York,US,Unclassified,40.74056,-74.00171,USD,0,25,NY,Vegetarian,TRUE,TRUE,TRUE
+386,AVwegg55ByjofQCxy31X,2019 Post Oak Blvd,"Italian Restaurant,Restaurant,Take Out,Italian,Deli & Sandwich,Vegetarian,Seafood,Government Contractors,Italian Foods,Italian Restaurant Uptown-Galleria,Family Restaurants,Restaurants",Houston,US,Italian,29.744809,-95.460856,USD,25,40,TX,Vegetarian,FALSE,TRUE,FALSE
+477,AV8wUPgP3-Khe5l_YOz7,1702 Avenue M,"Restaurant,Sushi,Kosher,Vegan",Brooklyn,US,Kosher,40.61801,-73.95797,,,,NY,Vegan,TRUE,FALSE,FALSE
+558,AV8wUqX7a4HuVbedF3Lh,395 Classon Ave,"Restaurant,Desserts,Bakery and Pastries,Vegan",Brooklyn,US,Unclassified,40.687556,-73.959589,,,,NY,Vegan,TRUE,FALSE,FALSE
+570,AVzA09pIFcQ3k02bBW2d,307 E 9th St,"American (New),Restaurant,Coffee Shop,Coffee and Tea,Coffeehouses,Coffee Tea Shops,Restaurants",New York,US,American,40.729012,-73.986771,USD,0,25,NY,Vegan,TRUE,FALSE,FALSE
+773,AVzA1eii-gnIPe8DScqD,338 E 11th St,"Restaurant,Gluten-free Restaurant,Vegetarian,Coffee and Tea,Bakery,Desserts,Cupcake Shop,Bakery and Pastries,Vegan",New York,US,Unclassified,40.729436,-73.984727,USD,25,40,NY,Both,TRUE,TRUE,TRUE
+783,AVwcq1-ZIN2L1WUfnk0I,264 Carlton Ave,"Restaurant,Local/Organic,Coffee Shop,Cafe,Vegetarian,Coffee and Tea,Caf,Healthy,Vegan,Australian Restaurant,Caf√©",Brooklyn,US,Unclassified,40.689791,-73.972179,,,,NY,Both,TRUE,TRUE,TRUE
+820,AVwcvAoE_7pvs4fzyYpg,46 Henry St,"Restaurant,Beer and beverages-wholesale and distributors,Vegetarian,Indian restaurants,American restaurants,Indian,Restaurants",Brooklyn,US,Indian,40.699664,-73.99218,USD,0,30,NY,Vegetarian,FALSE,TRUE,FALSE
+879,AVzA1F4h3D1zeR_xA_iA,115 Lexington Ave,"Indian Restaurant,Restaurant,Vegetarian,Indian",New York,US,Indian,40.742497,-73.982421,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+916,AVzA19T-FcQ3k02bBX1q,24 Pell St,"Chinese Restaurant,Restaurant,Vegetarian / Vegan Restaurant,Vegetarian,Dim Sum,Chinese,Dim Sum Restaurant",New York,US,Chinese,40.715022,-73.998173,USD,0,25,NY,Both,TRUE,TRUE,TRUE
+1181,AVweTi_9kufWRAb5BxZd,54 7th Ave,"Restaurant,Indian Restaurant,Vegetarian,Indian,Indian Restaurant North Slope",Brooklyn,US,Indian,40.6761,-73.974711,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+1215,AVwdTaPyIN2L1WUfuZSL,996 Broadway,"Restaurant,Vegetarian,Coffee and Tea",Brooklyn,US,Unclassified,40.695939,-73.933909,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+1294,AVzA-gvgFcQ3k02bBadx,95 MacDougal St,"Restaurant,Indian Restaurant,Vegetarian,Indian",New York,US,Indian,40.72948,-74.001087,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+1322,AV8wUYfV3-Khe5l_YO5X,135 Metropolitan Ave,"Restaurant,Vegetarian,Sandwiches,Deli / Bodega",Brooklyn,US,Unclassified,40.716353,-73.962198,USD,0,25,NY,Vegetarian,FALSE,TRUE,FALSE
+1336,AVzA0-e_FcQ3k02bBW32,544 W 113th St,"Restaurant,Greek Restaurant,Vegetarian,Greek",New York,US,Greek,40.805629,-73.964381,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+1367,AVzA1z5y-gnIPe8DSc-y,93 1st Ave,"Indian Restaurant,Restaurant,Vegetarian,Indian",New York,US,Indian,40.726323,-73.986601,USD,0,25,NY,Vegetarian,FALSE,TRUE,FALSE
+1396,AVzA1io5-gnIPe8DScus,12 E 32nd St,"Southeast Asian,Restaurant,Vegetarian / Vegan Restaurant,Vegetarian,Korean,Restaurants,Korean Restaurant",New York,US,Korean,40.747272,-73.986576,USD,40,55,NY,Vegetarian,TRUE,TRUE,TRUE
+1542,AV8wUUuX3-Khe5l_YO3a,165 W 23rd St,"Restaurant,Vegetarian,Thai",New York,US,Thai,40.744126,-73.994953,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+1548,AWLJ4QGaa4HuVbedPgeD,2056 Broadway,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.777514,-73.981746,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+1576,AV1TrHycFcQ3k02bFeS-,1411 Foster Ave,"Restaurant,Vegetarian,Chinese",Brooklyn,US,Chinese,40.634074,-73.963581,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+1577,AVwdeDlmIN2L1WUfwIsn,4424 16th Ave,"New York City,Restaurant,Vegetarian,Caf and Restaurant Kensington,Kosher,Sandwiches",Brooklyn,US,Kosher,40.633545,-73.983328,USD,7,12,NY,Vegetarian,FALSE,TRUE,FALSE
+1593,AV1c4UJua4HuVbed5qj4,41 Wilson Ave,"British (Modern),Vegetarian,Restaurants",Brooklyn,US,British,40.702908,-73.929092,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+1603,AV8wUoZya4HuVbedF3K0,91 1st Ave,"Restaurant,Deli Food,Vegetarian,Indian",New York,US,Indian,40.726411,-73.986428,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+1715,AWLDrFrYa4HuVbedPf7Y,1306 1st Ave,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.766884,-73.956663,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+1742,AV8wURXJ3-Khe5l_YO1P,498 9th Ave,"Restaurant,Middle Eastern,Vegetarian",New York,US,Middle Eastern,40.755618,-73.994267,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+1765,AV8wUU_53-Khe5l_YO3o,371 W 34th St,"Restaurant,Vegetarian,Indian",New York,US,Indian,40.753468,-73.995949,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+1831,AVwcuSIYkufWRAb5yUxB,235 Dekalb Ave,"New York City,Restaurant,Vegetarian,Indian",Brooklyn,US,Indian,40.68968,-73.96982,USD,12,18,NY,Vegetarian,FALSE,TRUE,FALSE
+1851,AV0BJkuP-gnIPe8DUvYQ,311 W 43rd St,"Chinese Restaurant,Restaurant,Cocktails,Vegetarian,Dim Sum,Chinese,Dim Sum Restaurant",New York,US,Chinese,40.758343,-73.990152,USD,40,55,NY,Vegetarian,FALSE,TRUE,FALSE
+2226,AV8wU3vyIxWefVJwrRJM,413 Amsterdam Ave,"Restaurant,Vegetarian,Indian",New York,US,Indian,40.783649,-73.977937,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+2281,AVzpCHqC-gnIPe8DUJlP,208 1st Ave,"Pizza,Restaurant,Middle Eastern,Vegetarian,Restaurants",New York,US,Lebanese,40.73025,-73.983001,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+2404,AVzoKWkq3D1zeR_xCaeW,106 Bayard St,"Restaurant,Vegetarian,Thai,Restaurants",New York,US,Thai,40.716338,-73.999867,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+2406,AV8wUQH5IxWefVJwrQ-g,81 St Marks Pl,"Restaurant,Middle Eastern,Vegetarian",New York,US,Middle Eastern,40.727836,-73.985442,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+2473,AVzA0t9LLD2H7whiWEcl,2 W 32nd St,"Restaurant,Vegetarian,Dumpling Restaurant,Beverages-Distributors and Bottlers,Korean,Korean Restaurant",New York,US,Korean,40.74712,-73.986213,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+2479,AV8wUMs0a4HuVbedF3A-,1185 6th Ave,"Restaurant,Vegetarian,Indian",New York,US,Indian,40.757872,-73.982544,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+2494,AV8wURVe3-Khe5l_YO1L,7706 New Utrecht Ave,"Restaurant,Vegetarian,Chinese",Brooklyn,US,Chinese,40.614072,-74.000703,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+2525,AV8wUVNba4HuVbedF3Fu,4461 11th St,"Restaurant,Local/Organic,Vegetarian,Coffee and Tea,Vegan",Long Island City,US,Unclassified,40.747986,-73.949532,,,,NY,Both,TRUE,TRUE,TRUE
+2594,AVwd3hqiByjofQCxtMxV,5906 8th Ave,"Vietnamese Restaurant Sunset Park,Restaurant,Vietnamese Restaurant,Vegetarian,Vietnamese",Brooklyn,US,Vietnamese,40.636009,-74.009363,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+2602,AWLCz6SJa4HuVbedPf4I,321 W 49th St,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.761909,-73.987143,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+2624,AWLBuuCZ3-Khe5l_h7wj,600 3rd Ave,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.749256,-73.97584,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+2651,AVzA0-cV-gnIPe8DScJl,95 Greenwich Ave,"American (New),Restaurant,Local/Organic,Vegetarian,Caf",New York,US,American,40.737417,-74.00175,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+2687,AVzA151HFcQ3k02bBXyh,166 E 82nd St,"Mexican Restaurant,Restaurant,Mexican,Vegetarian",New York,US,Mexican,40.776571,-73.956908,USD,40,55,NY,Vegetarian,FALSE,TRUE,FALSE
+2711,AV8wUlt43-Khe5l_YO8R,558 7th Ave,"Restaurant,Middle Eastern,Smoothies and Juices,Vegetarian",New York,US,Middle Eastern,40.754747,-73.987932,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+2731,AV8wUpf5IxWefVJwrRGR,11 W 56th St,"Restaurant,Local/Organic,Smoothies and Juices,Vegetarian,Healthy,Vegan",New York,US,Unclassified,40.762868,-73.975235,,,,NY,Both,TRUE,TRUE,TRUE
+2752,AVweaf76_7pvs4fzCws8,460 Bergen St,"Restaurant,Local/Organic,Vegetarian / Vegan Restaurant,Smoothies and Juices,Vegetarian,Vegetarian Vegan Restaurant,Vegetarian / Vegan Restaurant North Slope,Kosher,Healthy,Vegan",Brooklyn,US,Kosher,40.68087,-73.976151,USD,25,40,NY,Both,TRUE,TRUE,TRUE
+2931,AV8wUJYWIxWefVJwrQ56,512 Ave U,"Restaurant,Vegetarian,Sushi,Kosher,Japanese",Brooklyn,US,Japanese,40.597484,-73.966395,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3050,AVzA2LwfLD2H7whiWF6x,37 Kenmare St,"Restaurant,Japanese Restaurant,Vegetarian,Noodle House,Japanese,Noodles",New York,US,Japanese,40.72072,-73.995352,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+3100,AV8wUYd2a4HuVbedF3HF,171A Avenue A,"Restaurant,Mexican,Vegetarian",New York,US,Mexican,40.728276,-73.982026,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3109,AV8wUUQ_3-Khe5l_YO3E,124 2nd Ave,"Restaurant,Mexican,Vegetarian",New York,US,Mexican,40.728124,-73.987546,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3130,AVwc1YGZkufWRAb5zgwb,659 Washington Ave,"Restaurant,Sushi Restaurant,Vegetarian,Sushi,Japanese,Sushi Restaurant Prospect Heights",Brooklyn,US,Japanese,40.677572,-73.963703,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+3259,AV1TsGY4-gnIPe8DWqUE,102 Suffolk St,"Restaurant,Vegetarian,Japanese,Healthy",New York,US,Japanese,40.718602,-73.986183,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3294,AVzA2COQFcQ3k02bBX6E,318 E 6th St,"Indian Restaurant,Restaurant,Vegetarian,Indian",New York,US,Indian,40.726915,-73.987616,USD,40,55,NY,Vegetarian,FALSE,TRUE,FALSE
+3333,AVwd4peYkufWRAb5-GVK,6917 5th Ave,"New York City,Restaurant,Middle Eastern,Vegetarian",Brooklyn,US,Middle Eastern,40.632868,-74.020995,USD,7,12,NY,Vegetarian,FALSE,TRUE,FALSE
+3338,AWEIAFAq3-Khe5l_eG0V,28-28 Steinway St,"Mediterranean Restaurant,Middle Eastern,Vegetarian,Sandwiches",Astoria,US,Middle Eastern,40.764755,-73.914467,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+3348,AVwdZ4wNkufWRAb55jOI,5114 13th Ave,"Pizza,New York City,Restaurant,Vegetarian,Kosher",Brooklyn,US,Kosher,40.63373,-73.99339,USD,7,12,NY,Vegetarian,FALSE,TRUE,FALSE
+3349,AV1Tq4vN-gnIPe8DWkl-,4514 13th Ave,"Pizza,Restaurant,Vegetarian,Kosher",Brooklyn,US,Kosher,40.637042,-73.990153,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3408,AVyoBVoNYuCoGd6wM5n4,946 Fulton St,"Restaurant,Vegetarian,African",Brooklyn,US,African,40.682689,-73.963097,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3421,AV8wUcz6IxWefVJwrRDR,93 1st Ave,"Restaurant,Vegetarian,Indian",New York,US,Indian,40.726323,-73.986601,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3459,AV5aKKwe3-Khe5l_Vk3W,342 E 6th St,"Asian Restaurants,Restaurant,Vietnamese Restaurants,Vegetarian,Take Out Restaurants,Vietnamese,Restaurants,Vegan",New York,US,Vietnamese,40.726478,-73.986611,,,,NY,Both,TRUE,TRUE,TRUE
+3515,AVzA1LDg3D1zeR_xA_om,108 Lexington Ave,"Restaurant,Indian Restaurant,Vegetarian,Indian",New York,US,Indian,40.742376,-73.982835,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+3569,AVzA1JwXFcQ3k02bBXEW,156 5th Ave,"Restaurant,Bar,Vegetarian / Vegan Restaurant,Vegetarian,Eclectic and International,Kosher,Vegan",Brooklyn,US,Kosher,40.678066,-73.97949,USD,25,40,NY,Both,TRUE,TRUE,TRUE
+3640,AVzF5SACLD2H7whiWYK1,180 Spring St,"Restaurant,French,Vegetarian,Bistro,French Restaurant",New York,US,French,40.724755,-74.002619,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3723,AVzo3faDLD2H7whiXstN,3 E 52nd St,"Restaurant,French,Vegetarian,French Restaurant,Restaurants",New York,US,French,40.759623,-73.975889,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3739,AV8wUpP1IxWefVJwrRGL,342 E 6th St,"Restaurant,Vegetarian,Indian",New York,US,Indian,40.72648,-73.986668,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3757,AV0GiKKEFcQ3k02bDmuF,225 Park Ave S,"Restaurant,Italian Restaurant,Italian,Vegetarian",New York,US,Italian,40.737133,-73.98795,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3768,AWNS6lcZRxPSIh2RunLy,7227 37th Ave,"Restaurant,Vegetarian,Indian,Desserts",Jackson Heights,US,Indian,40.74902,-73.892998,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3840,AV8wU3QDa4HuVbedF3O9,196a Stanton St,"Restaurant,Vegetarian,Healthy",New York,US,Unclassified,40.719994,-73.982916,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3843,AV8wUOQIa4HuVbedF3Bv,112 Smith St,"Restaurant,Asian Fusion,Vegan",Brooklyn,US,Asian,40.687915,-73.989956,,,,NY,Vegan,TRUE,FALSE,FALSE
+3923,AVwd-K03IN2L1WUf02Fn,1596 3rd Ave,"Restaurant,Ramen Restaurant,Vegetarian,Noodle House,Ramen Restaurant and Noodle House Upper East Side,Noodle House Yorkville,Japanese,Noodles,Ramen Restaurant and Noodle House",New York,US,Japanese,40.781187,-73.952594,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+3969,AWK84wfs3-Khe5l_h6nj,90 Broad St,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.703754,-74.011626,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+3996,AWLCSpwqa4HuVbedPf1s,53 E 8th St,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.731107,-73.993617,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+4028,AV8wUMW0RxPSIh2Rls5R,252 7th Ave,"Restaurant,Vegetarian,Salads",Brooklyn,US,Salads,40.669487,-73.979622,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+4060,AVweZHSikufWRAb5CgtN,1376 Lexington Ave,"Pizza,Falafel Restaurant,Restaurant,Middle Eastern,Vegetarian,Salads,Pizza Place,Kosher",New York,US,Middle Eastern,40.782644,-73.953488,USD,0,25,NY,Vegetarian,FALSE,TRUE,FALSE
+4132,AWLCUI4H3-Khe5l_h7xW,1471 3rd Ave,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.776886,-73.955124,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+4152,AWLBw7WQ3-Khe5l_h7wq,30 Rockefeller Plz,"Restaurant,Vegetarian,Salads",New York,US,Salads,40.758761,-73.978701,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+4187,AV8wURBz3-Khe5l_YO1B,1395 Lexington Ave,"Mediterranean,Restaurant,Vegetarian,Coffee and Tea,Kosher",New York,US,General Mediterranean,40.782752,-73.952907,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+4217,AVyirtpcYuCoGd6wM27r,19 Kenmare St,"Restaurant,Vegetarian / Vegan Restaurant,Smoothies and Juices,Vegetarian,Coffee and Tea,Caf,Juice Bar,Healthy,Vegan",New York,US,Unclassified,40.720654,-73.994736,USD,25,40,NY,Both,TRUE,TRUE,TRUE
+4267,AVzA1inA-gnIPe8DScur,460 Amsterdam Ave,"Restaurant,Vegetarian / Vegan Restaurant,Vegetarian,Breakfast & Brunch,Coffee and Tea,Bakery,Caf,Hungarian,Healthy,Vegan",New York,US,Hungarian,40.785278,-73.977012,USD,25,40,NY,Both,TRUE,TRUE,TRUE
+4347,AV1TsJyf3D1zeR_xFFNt,19 Cleveland Pl,"Restaurant,Mexican,Vegetarian",New York,US,Mexican,40.7216,-73.997076,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+4367,AV8wUWa2RxPSIh2Rls-v,128 1st Ave,"Restaurant,Mexican,Middle Eastern,Vegetarian,Turkish",New York,US,Mexican and Turkish,40.727354,-73.985309,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+4391,AV8wUMsF3-Khe5l_YOyh,143 1st Ave,"Restaurant,Mexican,Vegetarian",New York,US,Mexican,40.728095,-73.984947,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+4421,AVwciQA0kufWRAb5wPST,605 Carlton Ave,"American (New),Restaurant,Local/Organic,New American Restaurant,Vegetarian",Brooklyn,US,American,40.678982,-73.971618,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+4519,AVwdiNdmIN2L1WUfwwoU,21309 Hawthorne Blvd,"Restaurant,Salad Place,Breakfast & Brunch,Certified Green Restaurant(r),American Restaurant,Salad Place, Soup Place, and American Restaurant,Soup Place,Bakeries,Healthy,Salad,Restaurants,Produce Markets",Torrance,US,American,33.835769,-118.356363,USD,25,40,CA,Vegetarian,FALSE,FALSE,FALSE
+4528,AVzA1iVW-gnIPe8DScug,60 W 23rd St,"Vegetarian / Vegan Restaurant,Vegetarian Vegan Restaurant,Juice Bar,Restaurants",New York,US,Unclassified,40.742529,-73.992312,USD,0,25,NY,Both,TRUE,TRUE,TRUE
+4554,AVwdfI_5IN2L1WUfwSp0,2257 Chestnut St,"Restaurant,Sandwich Place,Restaurants",San Francisco,US,Mexican,37.80032,-122.44046,,,,CA,Vegan,TRUE,FALSE,FALSE
+4580,AVzBBZTA-gnIPe8DShaR,2703 W Sunset Blvd,"Restaurant,Vegetarian / Vegan Restaurant,Restaurants",Los Angeles,US,Vegetarian,34.081028,-118.270394,,,,CA,Both,TRUE,TRUE,TRUE
+4655,AV8wUKMW3-Khe5l_YOwk,7310 37th Ave,"Restaurant,Vegetarian,Indian",Jackson Heights,US,Indian,40.748722,-73.892373,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+4684,AVwdH4-wkufWRAb52iNr,26 N Main St,"Mexican Restaurant,Restaurant,Mexican Restaurants,Caterers,Vegan Restaurants,Latin American Restaurants,Burrito Place and Mexican Restaurant,Vegetarian Restaurants,Catering,Restaurants,Burrito Place",Concord,US,Mexican,43.282465,-71.601809,USD,25,40,NH,Both,TRUE,TRUE,TRUE
+4734,AVwc5QsV_7pvs4fz0Gqo,5605 N Clark St,"Restaurant,Mediterranean Restaurants,Vegetarian Restaurants,Restaurants,Middle Eastern Restaurants",Chicago,US,General Mediterranean,41.98365,-87.668717,,,,IL,Vegetarian,FALSE,TRUE,FALSE
+4754,AV8wUu983-Khe5l_YO--,13216 14th Ave,"Restaurant,Vegetarian,Sushi,Japanese",College Point,US,Japanese,40.785791,-73.836019,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+4858,AV8wUj0rIxWefVJwrRE5,24803 Union Tpk,"Restaurant,Vegetarian,Indian",Bellerose,US,Indian,40.742541,-73.721599,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+4899,AV8wUvQ_IxWefVJwrRHX,25907 Hillside Ave,"Restaurant,Vegetarian,Indian",Glen Oaks,US,Indian,40.737211,-73.708897,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+4923,AVwdOzo-IN2L1WUftmrN,3704 Kerbey Ln,"Breakfast Spot,Restaurant,Cafe,Dessert Shops,Diner,Caf,Restaurants",Austin,US,Mexican and American,30.308317,-97.750057,USD,25,40,TX,Vegan,TRUE,FALSE,FALSE
+4973,AVweedXDByjofQCxyj8e,1502 W Thomas Rd,"Asian Restaurants,Bars Clubs,Restaurant,Caterers,Vegan Restaurants,Taverns,Chinese Restaurants,Bar and Grills,Chinese,Restaurants,Bars",Phoenix,US,Chinese,33.480677,-112.091543,,,,AZ,Vegan,TRUE,FALSE,FALSE
+4990,AVzA1KDV3D1zeR_xA_nV,22323 Sherman Way Ste 11,"Indian Restaurant,Restaurant,Caterers,Indian restaurants,American restaurants,Asian restaurants,Catering,Restaurants",Canoga Park,US,Indian,34.201068,-118.613392,USD,25,40,CA,Vegan,TRUE,FALSE,FALSE
+5021,AVwdiIgZByjofQCxqC5X,3351 Adams Ave,"Restaurant,Vegetarian / Vegan Restaurant,Vegetarian,Breakfast & Brunch,Vegan,Restaurants,International",San Diego,US,Asian,32.763092,-117.121473,USD,25,40,CA,Vegan,TRUE,TRUE,TRUE
+5078,AV1TpfQc-gnIPe8DWW-4,1805 E Elliot Rd Ste 115,"Restaurant,Vegetarian,Thai",Tempe,US,Thai,33.347827,-111.910257,,,,AZ,Vegetarian,FALSE,TRUE,FALSE
+5085,AV1Tso0J-gnIPe8DWscT,3827 N Lincoln Ave,"Restaurant,Breakfast & Brunch,Coffeehouses,Restaurants,Vegan",Chicago,US,American,41.951325,-87.676736,,,,IL,Vegan,TRUE,FALSE,FALSE
+5100,AVwc-fCFIN2L1WUfq7A6,3215 W Broad St,"Asian Restaurants,Restaurant,Caterers,Restaurants,Indian Restaurants,Middle Eastern Restaurants",Richmond,US,Indian,37.56618,-77.47498,,,,VA,Vegan,TRUE,FALSE,FALSE
+5228,AVwco353_7pvs4fzxWCs,1200 Bison Ave,"Mediterranean Restaurant,Restaurant,Greek Restaurant,Vegetarian / Vegan Restaurant,Vegetarian Vegan Restaurant,Restaurants",Newport Beach,US,Greek,33.638462,-117.863907,USD,25,40,CA,Both,TRUE,TRUE,TRUE
+5251,AVwdfOCBByjofQCxpmij,173 W Broadway,"Restaurant,American Restaurants,Seafood Restaurants,Family Style Restaurants,Vegetarian Restaurants,Restaurants",Salt Lake City,US,American,40.762734,-111.89581,,,,UT,Vegetarian,FALSE,TRUE,FALSE
+5261,AVwejIh5IN2L1WUf5-qq,17499 Ventura Blvd,"Natural food restaurants,American restaurants,Caf,Bistro restaurants,Cafes,Restaurants,Juice bars,Breakfast Spot,Restaurant,Vegetarian restaurants,Beer and beverages-wholesale and distributors,Restaurants-breakfast and diners,Health food restaurants",Encino,US,Unclassified,34.161494,-118.514036,USD,40,55,CA,Vegetarian,FALSE,TRUE,FALSE
+5390,AVwc7a8r_7pvs4fz0d09,4738 Beechnut St,"Mediterranean Restaurant,Restaurant,Mediterranean,Falafel Restaurant,Middle Eastern Restaurant,Middle Eastern Restaurant, Falafel Restaurant, and Mediterranean Restaurant,Middle Eastern & African,Restaurants",Houston,US,Middle Eastern,29.689111,-95.460374,USD,25,40,TX,Vegan,TRUE,FALSE,FALSE
+5429,AVwc2E-a_7pvs4fzzj_y,410 N Ocean Dr,"Bars Clubs,Restaurant,Catering Companies,Seafood Restaurants,Greek Restaurant,Bars & Clubs,Greek Restaurants,Mediterranean Restaurants,Vegetarian Restaurants,Catering,Restaurants",Hollywood,US,Greek,26.014695,-80.117549,USD,40,55,FL,Vegetarian,FALSE,TRUE,FALSE
+5597,AVwdN4Ut_7pvs4fz3gKF,1320 E Valley Pkwy,"Restaurant,Vegetarian,Sandwich Place,Californian",Escondido,US,American,33.131872,-117.063804,,,,CA,Vegetarian,FALSE,TRUE,FALSE
+5602,AVwc3k4JByjofQCxjEfY,2531 Chain Bridge Rd,"Asian Restaurants,Restaurant,Chinese Restaurant,Vegetarian / Vegan Restaurant and Chinese Restaurant,Vegetarian / Vegan Restaurant,Chinese Restaurants,Take Out Restaurants,Family Style Restaurants,Vegetarian Restaurants,Restaurants",Vienna,US,Unclassified,38.892958,-77.275703,USD,0,25,VA,Vegetarian,TRUE,TRUE,TRUE
+5710,AVwc5NFFIN2L1WUfqC_B,655 N Cass Ave,"Asian Restaurants,Restaurant,Family Style Restaurants,Vegetarian Restaurants,Restaurants,Indian Restaurants,Middle Eastern Restaurants",Westmont,US,Indian,41.810579,-87.975883,,,,IL,Vegetarian,FALSE,TRUE,FALSE
+5783,AV1Tp4A7-gnIPe8DWbH7,95 Massachusetts Ave,"Restaurant,Vegetarian,Indian",Boston,US,Indian,42.348304,-71.088214,,,,MA,Vegetarian,FALSE,TRUE,FALSE
+5805,AVwcpKn8_7pvs4fzxY5t,325 Oliver Ave,"Restaurant,Barbecue Restaurants,Restaurants,Pittsburgh Restaurants",Pittsburgh,US,American,40.441272,-79.999545,,,,PA,Vegan,TRUE,FALSE,FALSE
+5820,AV1TqXaj-gnIPe8DWgFC,200 E Ohio St,"Mexican Restaurant,Restaurant,Mexican,Vegetarian,Breakfast & Brunch,Diners,Burrito Place",Chicago,US,Mexican,41.892621,-87.622607,,,,IL,Vegetarian,FALSE,TRUE,FALSE
+5835,AV8wUnVr3-Khe5l_YO8q,4908 43rd Ave,"Restaurant,Vegetarian,Thai",Woodside,US,Thai,40.744326,-73.915236,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+5861,AV12jNcfRxPSIh2RcbEH,76 Orchard St,"Restaurant,Dessert Shops",New York,US,Chinese and Thai,40.717656,-73.990185,,,,NY,Vegan,TRUE,FALSE,FALSE
+5872,AVwc9W3-_7pvs4fz0xJ7,1460 W Chicago Ave,"Restaurant,Vegetarian / Vegan Restaurant,Vegetarian,Restaurants",Chicago,US,Unclassified,41.896114,-87.664651,USD,40,55,IL,Both,TRUE,TRUE,TRUE
+5895,AVwdVowVkufWRAb542Tw,2533 Pacific Coast Hwy,"Restaurant,Vegetarian / Vegan Restaurant,Vegetarian",Torrance,US,Vegetarian,33.791073,-118.328934,USD,25,40,CA,Both,TRUE,TRUE,TRUE
+5937,AV1Tr-_h3D1zeR_xFEhf,15 W 44th St,"Restaurant,Vegetarian,Catering,Restaurants",New York,US,Indian,40.755321,-73.980698,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+5947,AVwd5QBXByjofQCxtcHI,1634 Irving St,"Hot Dog Joint,Restaurant,Vegetarian / Vegan Restaurant,American Restaurant,Bistros,Restaurants",San Francisco,US,American,37.763687,-122.475432,USD,25,40,CA,Vegetarian,TRUE,TRUE,TRUE
+5960,AVwdu2eJIN2L1WUfysFY,607 Richmond Ave,"Restaurant,Vegetarian / Vegan Restaurant,Vegetarian / Vegan Restaurant, Salad Place, and Caf Neartown - Montrose,Salad Place,Vegetarian / Vegan Restaurant, Salad Place, and Caf,Caf,Catering,Restaurants,Caf√©",Houston,US,Italian,29.734299,-95.387069,USD,25,40,TX,Vegetarian,TRUE,TRUE,TRUE
+5986,AVwdB8LBIN2L1WUfrejh,329 Market St,"Indian Restaurant,Restaurant,Vegetarian,Indian,Restaurants",San Diego,US,Indian,32.711371,-117.161393,USD,0,25,CA,Vegetarian,FALSE,TRUE,FALSE
+6021,AVwd6lA5kufWRAb5-Xci,2501 Cerrillos Rd,"Restaurant,Indian Restaurant,Catering,Restaurants",Santa Fe,US,Greek and Indian,35.660273,-105.982963,USD,25,40,NM,Vegan,TRUE,FALSE,FALSE
+6087,AVweeYPSkufWRAb5DQgX,343 Kearny St,"Restaurant,Japanese Restaurant Chinatown,Japanese Restaurant,Fast Food,Japanese",San Francisco,US,Japanese,37.791467,-122.404063,USD,0,25,CA,Vegan,TRUE,FALSE,FALSE
+6107,AV8NhyFXa4HuVbedFxMt,73 NE 167th St,"Restaurant,Breakfast & Brunch,Vegan",Miami,US,Unclassified,25.933696,-80.137246,,,,FL,Vegan,TRUE,FALSE,FALSE
+6109,AVwdJH-pIN2L1WUfsozT,267 S Beverly Dr,"Coffee Shop,Breakfast & Brunch,Caf,Desserts,Restaurants,Restaurant,Breakfast Spot,Vegan Restaurants,Ice Cream and Desserts,Coffee and Tea,Dessert Shops,Coffeehouses,Vegetarian Restaurants",Beverly Hills,US,Unclassified,34.06281,-118.398955,USD,25,40,CA,Both,TRUE,TRUE,TRUE
+6250,AVwd2a-kIN2L1WUfzxBn,303 S Diamond Bar Blvd,"Restaurant,Caterers,Indian restaurants,Indian,Restaurants",Diamond Bar,US,Indian,34.01959,-117.81031,USD,0,30,CA,Vegan,TRUE,FALSE,FALSE
+6263,AVwdG-N0IN2L1WUfsTFk,1401 University Ave,"Pizza,Restaurant,Italian restaurants,Restaurants",Berkeley,US,Italian,37.870026,-122.28458,,,,CA,Vegan,TRUE,FALSE,FALSE
+6307,AVwc02_z_7pvs4fzzYGl,1405 S Neil St,"Natural food restaurants,Mexican Restaurants,Tex-mex restaurants,Southwestern restaurants,Latin American Restaurants,Karaoke,Restaurants,Juice bars,Mexican Restaurant,American Restaurants,Restaurant,Seafood Restaurants,Vegan Restaurants,Bar and Grills,Health food restaurants,Vegetarian Restaurants",Champaign,US,American,40.099605,-88.2447,USD,0,25,IL,Both,TRUE,TRUE,TRUE
+6314,AVwdKojjByjofQCxmLy0,503 Main St,"Restaurant,Asian Restaurant,Thai restaurants,Restaurants",Evanston,US,Thai and Japanese,42.033935,-87.677839,USD,0,25,IL,Vegan,TRUE,FALSE,FALSE
+6420,AVzA1WNd-gnIPe8DScjO,2828 Steinway St,"Mediterranean Restaurant,Restaurant,Middle Eastern,Vegetarian,Sandwiches",Astoria,US,Middle Eastern,40.764755,-73.914467,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+6437,AVzA1Tzb-gnIPe8DSchA,426 N Fairfax Ave,"Restaurant,Burger Joint,Beer Bar,Restaurants",Los Angeles,US,Unclassified,34.079057,-118.361141,USD,25,40,CA,Vegan,TRUE,FALSE,FALSE
+6443,AV8wUbc03-Khe5l_YO6O,11311 101st Ave,"Restaurant,Vegetarian,Indian",South Richmond Hill,US,Indian,40.688679,-73.830495,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+6449,AV4u0H0ARxPSIh2Rex-0,257 Washington St,"Restaurant,Thai Restaurant,Restaurants",Wellesley Hills,US,Thai,42.313014,-71.273897,USD,25,40,MA,Vegan,TRUE,FALSE,FALSE
+6546,AVwd29YvByjofQCxtH-J,1601 Central Ave,"Restaurant,American Restaurants,Coffee Shops,Gluten-free Restaurant,Caterers,Vegan Restaurants,Caf,Breakfast Brunch and Lunch Restaurants,,Vegetarian Restaurants,Restaurants,Caf√©",Charlotte,US,American,35.220338,-80.811749,USD,25,40,NC,Vegan,TRUE,TRUE,TRUE
+6563,AVwdRi7FIN2L1WUfuFIT,1843 Penfield Rd,"Restaurant,Bar,Thai restaurants,Thai Restaurant,Restaurants",Penfield,US,Chinese and Thai,43.130472,-77.474122,,,,NY,Vegan,TRUE,FALSE,FALSE
+6628,AVwdh5r_IN2L1WUfwtqp,7212 Melrose Ave,"Restaurant,Catering,Restaurants",Los Angeles,US,Indian,34.083484,-118.346774,USD,0,30,CA,Vegan,TRUE,FALSE,FALSE
+6663,AVwdoBjHByjofQCxq9pR,5709 E 12 Mile Rd,"Mediterranean Restaurant,Restaurant,Restaurants",Warren,US,General Mediterranean,42.506671,-83.049498,USD,25,40,MI,Vegan,TRUE,FALSE,FALSE
+6734,AVzoKN-cFcQ3k02bC0N9,301 E 49th St,"Restaurant,Juice Smoothie Shops,Restaurants,Sandwich Shops",New York,US,Unclassified,40.754282,-73.968894,,,,NY,Vegan,TRUE,FALSE,FALSE
+6762,AV1c31lYIxWefVJweNd7,1140 Main St,"Restaurant,Restaurants",Napa,US,Unclassified,38.300193,-122.286088,,,,CA,Vegan,TRUE,FALSE,FALSE
+6772,AV1Tq250FcQ3k02bFcu0,672 Lexington Ave,"Restaurant,Restaurants",New York,US,Unclassified,40.760149,-73.969692,,,,NY,Vegan,TRUE,FALSE,FALSE
+6790,AVzYRQmE3D1zeR_xBp5b,16719 Bernardo Center Dr,"Restaurant,Greek Restaurant,Vegetarian,Greek",San Diego,US,Greek,33.017505,-117.075748,USD,25,40,CA,Vegetarian,FALSE,TRUE,FALSE
+6824,AVwdigwW_7pvs4fz64qp,1700 Shattuck Ave,"Asian Restaurants,Indian Restaurant,Restaurant,Vegan Restaurants,Vegetarian Restaurants,Indian Restaurant North Berkeley,Indian Restaurants,Restaurants,Middle Eastern Restaurants",Berkeley,US,Indian,37.876574,-122.26895,USD,25,40,CA,Both,TRUE,TRUE,TRUE
+6866,AVwd7XWzByjofQCxtvH-,2440 Park Rd,"Restaurant,Restaurants",Charlotte,US,Japanese,35.197672,-80.851772,,,,NC,Vegan,TRUE,FALSE,FALSE
+6919,AV12lSgBa4HuVbed9qTS,16650 Redmond Way,"Restaurant,Restaurants",Redmond,US,Indian,47.673385,-122.118117,,,,WA,Vegan,TRUE,FALSE,FALSE
+6923,AVwdQyLBkufWRAb54DHY,156 S Brand Blvd,"Restaurant,Indian Restaurant City Center,Glendale Restaurants,Indian,Restaurants",Glendale,US,Indian,34.1446,-118.254902,USD,25,40,CA,Vegan,TRUE,FALSE,FALSE
+6938,AV8wUaxK3-Khe5l_YO54,24808 Union Turnpike,"Restaurant,Vegetarian,Indian",Bellerose,US,Indian,40.742408,-73.72166,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+6961,AV8wUpbFRxPSIh2RltC3,3118 Broadway,"Restaurant,Mediterranean,Vegetarian",Astoria,US,General Mediterranean,40.761586,-73.924816,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+6994,AV1TpeIlLD2H7whiZ5P1,8104 W 3rd St,"Restaurant,American,Breakfast & Brunch",Los Angeles,US,American,34.07205,-118.366135,,,,CA,Vegan,TRUE,FALSE,FALSE
+7007,AVzA9YIn-gnIPe8DSe8F,9918 W 87th St,"Indian Restaurant,Restaurant,Catering,Restaurants",Overland Park,US,Indian,38.971233,-94.700551,USD,25,40,KS,Vegan,TRUE,FALSE,FALSE
+7035,AV1TshrT3D1zeR_xFGzw,903 S Rural Rd,"Restaurant,Mediterranean,Lebanese,Vegetarian,Middle Eastern & African",Tempe,US,Lebanese,33.420085,-111.926272,,,,AZ,Vegetarian,FALSE,TRUE,FALSE
+7072,AV1TrQ0xLD2H7whiaJUw,879 Ralph David Abernathy SW,"Restaurant,American,Vegetarian",Atlanta,US,American,33.738157,-84.416542,,,,GA,Vegetarian,FALSE,TRUE,FALSE
+7077,AVwcqjAG_7pvs4fzxoFp,2855 Stevens Creek Blvd,"Restaurant,Vegan Restaurants,Vegetarian / Vegan Restaurant,Take Out Restaurants,Fast Food Restaurants,Health Food Restaurants,Vegetarian Restaurants,Vegan,Restaurants",Santa Clara,US,Unclassified,37.325845,-121.945615,,,,CA,Vegetarian,TRUE,TRUE,TRUE
+7101,AVwctNEHkufWRAb5yJhh,1601 Riverside Dr,"Restaurant,Vegetarian Restaurants,Restaurants",Nashville,US,Unclassified,36.254558,-86.640569,,,,TN,Vegetarian,FALSE,TRUE,FALSE
+7118,AVwdMdwxIN2L1WUftNQV,20700 Avalon Blvd,"Restaurant,Chain Restaurant,Restaurants",Carson,US,American,33.844145,-118.260518,,,,CA,Vegan,TRUE,FALSE,FALSE
+7138,AVwdXJ68ByjofQCxoUPa,4209 Lassiter Mill Rd,"Italian Restaurant and Wine Bar,Restaurant,Italian Restaurant,Wine Bar",Raleigh,US,Italian,35.838587,-78.644206,USD,0,30,NC,Vegan,TRUE,FALSE,FALSE
+7198,AVwd-hCF_7pvs4fz-8Qq,361 Moody St,"Restaurant,Restaurants",Waltham,US,Italian,42.369996,-71.237132,,,,MA,Vegan,TRUE,FALSE,FALSE
+7199,AVzA90_S-gnIPe8DSfRO,801 Ne 65th St,"Restaurant,Vegetarian / Vegan Restaurant,Breakfast & Brunch,Vegan",Seattle,US,Unclassified,47.675643,-122.319829,USD,25,40,WA,Both,TRUE,TRUE,TRUE
+7249,AV1TsD-u-gnIPe8DWqIB,311 Bond St,"Natural food restaurants,Southern / Soul,Caterers,African restaurants,Soul food restaurants,Vegetarian,Breakfast & Brunch,American restaurants,Restaurants,Vegan,Juice bars,Restaurant,Vegetarian restaurants,Southern / Soul Food Restaurant,Health food restaurants",Asbury Park,US,American,40.2168,-74.01176,USD,25,40,NJ,Both,TRUE,TRUE,TRUE
+7291,AVyis8uAgXLl9CNj_AfE,450 Massachusetts Ave,"Restaurant,Caterers,Vegan Restaurants,Vegetarian / Vegan Restaurant,Continental Restaurants,Diner,Breakfast Brunch and Lunch Restaurants,,Bakeries,Vegetarian Restaurants,Restaurants",Cambridge,US,European,42.36234,-71.10127,USD,25,40,MA,Both,TRUE,TRUE,TRUE
+7315,AVwdLoMEByjofQCxmW-x,505 W Lake Blvd,"Restaurant,Ice Cream and Desserts,Vegetarian,Vegan",Tahoe City,US,American,39.159286,-120.145739,,,,CA,Both,TRUE,TRUE,TRUE
+7357,AVwc-i8kkufWRAb51A6w,3133 Grand Ave,"Restaurant,Vegetarian / Vegan Restaurant,Salad Place,Vegetarian,Vegetarian / Vegan Restaurant and Sandwich Place Northeast Coconut Grove,wich Place,Sandwich Place",Miami,US,Vegetarian,25.72838,-80.243973,USD,25,40,FL,Both,TRUE,TRUE,TRUE
+7429,AVweOjiTIN2L1WUf3F_V,3640 SE Belmont St,"Restaurant,Restaurants",Portland,US,American,45.516232,-122.626277,,,,OR,Vegan,TRUE,FALSE,FALSE
+7437,AV1TsT4CLD2H7whiaNjG,18101 Preston Rd,"Restaurant,Restaurants",Dallas,US,American,32.998485,-96.797713,,,,TX,Vegan,TRUE,FALSE,FALSE
+7459,AVweekMDByjofQCxyk_b,1860 The Alameda,"Restaurant,Restaurants",San Jose,US,Ethiopian,37.339938,-121.922151,,,,CA,Vegan,TRUE,FALSE,FALSE
+7466,AV12gnF2IxWefVJwhsCa,1920 W Division St 1,"Delis And Delicatessens,Restaurant,Dessert Shops,Bakeries,Cafes,Restaurants",Chicago,US,American,41.903442,-87.675732,,,,IL,Vegan,TRUE,FALSE,FALSE
+7485,AV0ZO1vlFcQ3k02bEbNq,7314 Greenwood Ave N,"Restaurant,Mediterranean,Vegetarian,Restaurants",Seattle,US,General Mediterranean,47.682262,-122.354996,,,,WA,Vegetarian,FALSE,TRUE,FALSE
+7505,AVwd859pIN2L1WUf0qhv,3250 E Speedway Blvd,"Asian Restaurants,Restaurant,Caterers,Chinese Restaurants,Party & Event Planners,Take Out Restaurants,Catering,Restaurants",Tucson,US,Chinese,32.235779,-110.923404,,,,AZ,Vegan,TRUE,FALSE,FALSE
+7541,AVwc09YokufWRAb5zcsR,1540 S Commercial St,"Restaurant,Catering,Restaurants",Neenah,US,American,44.154652,-88.462336,USD,0,25,WI,Vegan,TRUE,FALSE,FALSE
+7588,AVwc7UHJkufWRAb50gE-,1681 Crystal Square Arc,"Restaurant,Health Food Stores,Greek Restaurants,Mediterranean Restaurants,American Restaurant,Restaurants",Arlington,US,Greek,38.858192,-77.051507,USD,0,25,VA,Vegan,TRUE,FALSE,FALSE
+7620,AVwc6YmE_7pvs4fz0Sw6,3105 Commodore Plz,"New American Restaurant,Tapas Restaurant,New American Restaurant, Cocktail Bar, and Tapas Restaurant Northeast Coconut Grove,Cocktail Bar,New American Restaurant, Cocktail Bar, and Tapas Restaurant,Restaurants",Miami,US,American,25.726881,-80.243931,USD,25,40,FL,Vegan,TRUE,FALSE,FALSE
+7755,AVwclqRL_7pvs4fzwxWa,8180 Melrose Ave,"Ice Cream & Frozen Desserts,Restaurant,Vegetarian,Breakfast & Brunch,Juice Smoothie Shops,Juices,Health & Diet Food Products,Juice Bar,Restaurants",Los Angeles,US,Unclassified,34.083686,-118.367558,USD,25,40,CA,Vegan,TRUE,TRUE,FALSE
+7779,AVwejUZUByjofQCxzSp_,323 13th Ave Ne,"Restaurant,American Restaurants,Steak Houses,Seafood Restaurants,Breakfast Brunch & Lunch Restaurants,,Vegetarian Restaurants,Restaurants",Minneapolis,US,Unclassified,45.001165,-93.263373,,,,MN,Vegetarian,FALSE,TRUE,FALSE
+7789,AV8wUd0oIxWefVJwrRDu,8306 Austin St,"Restaurant,Vegetarian,Indian",Kew Gardens,US,Indian,40.709088,-73.829399,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+7801,AVwejh3bIN2L1WUf6Csy,319 Crossroads Blvd,"Restaurant,Catering,Restaurants",Cary,US,General Mediterranean,35.761166,-78.737999,,,,NC,Vegan,TRUE,FALSE,FALSE
+7814,AVwdkgt9kufWRAb57MLk,1515 S 4th St,"Coffee Shop,Delicatessens,Vegetarian / Vegan Restaurant,Vegetarian,Coffee and Espresso Restaurants,Caf,Restaurants,Vegan,Coffee Shops,Restaurant,Vegan Restaurants,Coffee and Tea,Coffee Shop, Caf, and Vegetarian / Vegan Restaurant",Philadelphia,US,Unclassified,39.929111,-75.151957,USD,25,40,PA,Both,TRUE,TRUE,TRUE
+7853,AV8wUMF0RxPSIh2Rls5B,7210 Main St,"Restaurant,Vegetarian,Eastern European,Kosher",Flushing,US,Kosher,40.726279,-73.821841,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+7929,AVzxqtUj3D1zeR_xC1Nb,1819 S Kihei Rd,"Southeast Asian,Restaurant,Thai,Catering,Restaurants",Kƒ´hei,US,Thai,20.734835,-156.452451,,,,HI,Vegetarian,FALSE,TRUE,FALSE
+7955,AWE7OJzxa4HuVbedNZRV,72-27 37th Ave,"Indian Restaurant,Vegetarian,Indian,Desserts",Jackson Heights,US,Indian,40.748847,-73.892875,USD,0,25,NY,Vegetarian,FALSE,TRUE,FALSE
+8040,AVwda2e4IN2L1WUfvn69,5129 43rd Ave,"Restaurant,Latin American Restaurant Woodside,American,Vegetarian,Latin American Restaurant",Woodside,US,American,40.744416,-73.912526,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+8060,AV0Z4EeXLD2H7whiZOR0,9889 Bellaire Blvd,"Restaurant,Asian/Pacific,Dessert Shops,Juice Smoothie Shops,Restaurants",Houston,US,Chinese,29.704541,-95.555054,,,,TX,Vegan,TRUE,FALSE,FALSE
+8134,AVzA2gYJ-gnIPe8DSddo,617 9th Ave,"Restaurant,Vegetarian / Vegan Restaurant,Vegetarian,Breakfast & Brunch,Vegetarian Vegan Restaurant",New York,US,Unclassified,40.759434,-73.991848,USD,0,25,NY,Both,TRUE,TRUE,TRUE
+8187,AVwdhbW4kufWRAb56uNE,15000 Minnetonka Blvd,"Beauty Salons,Event Space,Art Gallery,Gym / Fitness Center,Restaurants",Minnetonka,US,American,44.9375,-93.4708,,,,MN,Both,TRUE,TRUE,TRUE
+8252,AVwdkWwTByjofQCxqY5o,4563 Bowne St,"Indian Restaurant,Restaurant,Vegetarian,Indian restaurants,American restaurants,Indian,Restaurants",Flushing,US,Indian,40.752542,-73.816759,USD,25,40,NY,Vegetarian,FALSE,TRUE,FALSE
+8274,AVweI0xJIN2L1WUf2UQf,51 W Kinzie St,"Bars Clubs,Restaurant,Italian Restaurant,Halls Auditoriums,Bars Pubs,Italian Restaurant Near North Side,Restaurants",Chicago,US,Italian,41.889212,-87.630268,USD,40,55,IL,Both,TRUE,TRUE,TRUE
+8447,AVyisfBdgXLl9CNj_AWu,404 4th Ave E,"Bars Clubs,Restaurant,Vegetarian / Vegan Restaurant,Restaurants",Olympia,US,Vegetarian,47.045206,-122.897832,USD,0,25,WA,Both,TRUE,TRUE,TRUE
+8472,AVzBGDbxFcQ3k02bBeXU,146 6th St,"Restaurant,Bar,Beer Garden,American Restaurant,Bistros,Restaurants",Pittsburgh,US,American,40.442822,-80.002382,USD,25,40,PA,Vegan,TRUE,FALSE,FALSE
+8689,AVwcombu_7pvs4fzxS1P,550 19th Ave E,"Restaurant,Bar,Cafe,American,Breakfast & Brunch,American Restaurant,Cocktail Bar",Seattle,US,American,47.62441,-122.3073,USD,25,40,WA,Vegan,TRUE,FALSE,FALSE
+8788,AVwc38jakufWRAb5z7_A,4628 Meridian Ave,"Restaurant,Caterers,Mediterranean Restaurants,Persian,Take Out Restaurants,Family Style Restaurants,Vegetarian Restaurants,Restaurants,Middle Eastern Restaurants",San Jose,US,Persian,37.257359,-121.89801,,,,CA,Vegetarian,FALSE,TRUE,FALSE
+8800,AVyisOzUKV4T4IkwNaa7,1346 Washington Ave,"Restaurant,Health Food Stores,Vegetarian / Vegan Restaurant,Vegetarian,Breakfast & Brunch,Juice Smoothie Shops,Restaurants",Miami Beach,US,Unclassified,25.785057,-80.13221,USD,25,40,FL,Both,TRUE,TRUE,TRUE
+8912,AVyisC7VYuCoGd6wM3FO,509 Southard St,"Restaurant,Vegetarian / Vegan Restaurant,Restaurants",Key West,US,Vegetarian,24.55486,-81.80175,USD,25,40,FL,Both,TRUE,TRUE,TRUE
+8948,AVyoCqphgXLl9CNj_Dkt,912 E 900 S,"Restaurant,Middle Eastern Restaurant,Restaurants",Salt Lake City,US,Lebanese,40.7496,-111.8649,USD,0,25,UT,Both,FALSE,FALSE,FALSE
+9038,AVz3a62Q-gnIPe8DUk3J,4255 West Bell Rd,"Restaurant,Restaurants",Phoenix,US,Indian,33.63917,-112.151106,,,,AZ,Vegetarian,FALSE,TRUE,FALSE
+9050,AVwc8zhtByjofQCxj89O,410 SW Broadway,"Restaurant,Hotels and motels,American Restaurant,American restaurants,Restaurants",Portland,US,American,45.5211,-122.6783,USD,25,40,OR,Vegetarian,FALSE,TRUE,FALSE
+9358,AVwdBZgzkufWRAb51e67,6009 Paseo Delicias,"Restaurant,American Restaurant,French Restaurant,Restaurants,Produce Markets,Restaurant, American Restaurant, and French Restaurant,French Restaurants",Rancho Santa Fe,US,French,33.019395,-117.203704,USD,31,50,CA,Vegetarian,FALSE,TRUE,FALSE
+9380,AVwd3JCRIN2L1WUfz3Fh,3555 Rosecrans St,"Caf,Breakfast Spot,Restaurant,Vegetarian,Breakfast & Brunch,Caf√©",San Diego,US,Unclassified,32.74943,-117.205,USD,25,40,CA,Vegetarian,FALSE,TRUE,FALSE
+9390,AV8wVOIgIxWefVJwrRMo,53 E 8th St,"Restaurant,Salads,Vegetarian",New York,US,Salads,40.731107,-73.993617,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+9413,AVwdI6oHByjofQCxl5Mw,221 W Parkdale Ave,"Pizza,Restaurants,Pizza Place,Restaurant,Catering",Manistee,US,Italian,44.26559,-86.31023,USD,0,25,MI,Vegan,TRUE,FALSE,FALSE
+9437,AVwdUgLr_7pvs4fz4ott,1601 Elizabeth Ave,"New American Restaurant,American Restaurant,Seafood Restaurant,Restaurants,Catering",Charlotte,US,Italian,35.2138,-80.8265,USD,40,55,NC,Vegan,TRUE,FALSE,FALSE
+9599,AVzA2-oLLD2H7whiWGUc,164 W 75th St,"Italian Restaurant,Bar,Restaurant,American,Italian,Healthy,Vegetarian,Restaurants,Bars Clubs",New York,US,Italian,40.780323,-73.979965,USD,40,55,NY,Vegetarian,FALSE,TRUE,FALSE
+9683,AV8wUgzGIxWefVJwrREt,2056 Broadway,"Restaurant,Salads,Vegetarian",New York,US,Salads,40.777514,-73.981746,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+9705,AV8wUvSH3-Khe5l_YO_E,30 Rockefeller Plz,"Restaurant,Salads,Vegetarian",New York,US,Salads,40.758761,-73.978701,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+9730,AV8wUXFB3-Khe5l_YO4p,16825 Hillside Ave,"Restaurant,Indian,Vegetarian",Jamaica,US,Indian,40.710358,-73.794013,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+9756,AVwcjDZzkufWRAb5wYXU,101 E Weaver St,"Grocery Store,Caf,Bakery,Grocery Stores,Bars Clubs,Bakeries,Bars Pubs,Restaurants,Caf√©,Bars & Clubs,Bars & Pubs,Grocery Store, Caf, and Bakery",Carrboro,US,American,35.9111,-79.0723,,,,NC,Vegan,TRUE,FALSE,FALSE
+9774,AV8wU5yTa4HuVbedF3Pe,1306 1st Ave,"Restaurant,Salads,Vegetarian",New York,US,Salads,40.766884,-73.956663,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+9798,AVwc0UvjIN2L1WUfpOXr,112 Madison Ave,"Health Food Restaurants,Delicatessens,Sandwich Shops,Vegetarian Restaurants,Vegan Restaurants,Restaurants,Sandwich Place",Skowhegan,US,Unclassified,44.76893,-69.72134,,,,ME,Both,TRUE,TRUE,TRUE
+9806,AVwdZPcqByjofQCxoqLH,206 N Virginia St,"Japanese Restaurant,Sushi Restaurant,Restaurants,Catering,Grocery Stores,Ethnic Food Markets",Reno,US,Japanese,39.5306,-119.8143,USD,40,55,NV,Vegan,TRUE,FALSE,FALSE
+9812,AV8wUvqERxPSIh2RltEQ,14009 Cherry Ave,"Restaurant,Chinese,Vegetarian",Flushing,US,Chinese,40.754074,-73.822494,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+9830,AV1Tp59p3D1zeR_xE2DL,1665 Mt Diablo Blvd,"Restaurant,Thai,Asian/Pacific,Fusion",Walnut Creek,US,Thai,37.897305,-122.0625,,,,CA,Vegetarian,FALSE,TRUE,FALSE
+9833,AV8wVUZERxPSIh2RltJ4,321 W 49th St,"Restaurant,Salads,Vegetarian",New York,US,Salads,40.761909,-73.987143,,,,NY,Vegetarian,FALSE,TRUE,FALSE
+9852,AV1Ts_JULD2H7whiaPxH,5960 West County Road 30A,"Restaurant,Seafood,Breakfast & Brunch,Bar",Santa Rosa Beach,US,American,30.354067,-86.254196,,,,FL,Vegan,TRUE,FALSE,FALSE
+9855,AVwc3vov_7pvs4fzz2Tj,3016 Guadalupe St,"Gluten-free Restaurant,Bakery,Restaurant,American,Vegan,Gluten Free",Austin,US,American,30.29768,-97.74137,USD,25,40,TX,Vegan,TRUE,FALSE,FALSE
+9943,AVwd88lK_7pvs4fz-toI,1335 W Thomas Rd,"Vegetarian / Vegan Restaurant,Restaurant,Mediterranean,Vegetarian,Persian,Restaurants",Phoenix,US,Persian,33.48048,-112.09064,USD,40,55,AZ,Both,TRUE,TRUE,TRUE

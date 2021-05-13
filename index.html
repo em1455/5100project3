@@ -52,10 +52,7 @@
             border-radius: 5px;
             background-color: white;
         }
-        .cruisine_filter span:hover{
-            margin-right:16px;
-            border: solid black 2px;
-        }
+
         </style>
         </head>
             <div class="map_positioning">
@@ -245,6 +242,8 @@ console.log(states);
     "Japanese","Kosher","Mexican","Middle Eastern","Thai",
 "Chinese", "All Cruisines"];
 
+    const style_id = ["Vegan","Vegetarian", "Both"]
+
 // // CHANGE FITER COLOR
 function filterColor(type, filter_name){
         var element = document.getElementById(type);
@@ -265,29 +264,27 @@ function filterColor(type, filter_name){
         }
     }
 //MAKE COUNT DATA
-var all_count = 0;
+var total_count = 0;
         //make count dictionaries
-        function count_resturants(all_array){
-            values = {};
-            for (var i=0; i<all_array.length-1; i++){
-                values[ [all_array[i]] ] = 0;
+        function make_count_dict(id_array){
+            dictionary = {};
+            for (var i=0; i<id_array.length-1; i++){
+                dictionary[ [id_array[i]] ] = 0;
             }
-            return values;
+            return dictionary;
         }
-cruisine_counts = count_resturants(cruisine_id);
-
-data.forEach(d=>{
+        cruisine_counts = make_count_dict(cruisine_id);
+        console.log(cruisine_counts);
+      
+        //put counts of crashes in dictionaries
+        data.forEach(d=>{
             cruisine_counts[d.cruisines] +=1;
+            total_count += 1;
         });
 
-// function make_resturant_extent(resturant_data){
-//         var extent = d3.extent(resturant_data, d=>d['count']);
-//         return extent;
-//         }
-
-// cruisine_data = make_resturant_extent(cruisine_counts,"cruisines");
-
 var filters_now = {"cruisines":"All Cruisines"};
+
+console.log(filters_now)
 // CRUISINE FILTER
 cruisine_id.forEach(function(d,i){
             d3.select('.cruisine_filter')
@@ -306,15 +303,15 @@ cruisine_id.forEach(function(d,i){
                     
                 })
         })
-        var circle_count = all_count;
+        var circle_count = total_count;
 
-        function updateResturant(){
-            circles.attr('visibility', circleD => {
-                if ((circleD['cruisines'] !=filters_now['cruisines']) && filters_now['cruisines']!="All Cruisines"){
-                    return 'hidden';
+function updateResturant(){
+    circles.attr('visibility', circleD => {
+        if ((circleD['cruisines']!= filters_now['cruisines']) && filters_now['cruisines']!="All Cruisines"){
+                return 'hidden';
                 }
-                else{
-                    return "";
+            else{
+                return "";
                 }
 
             })
