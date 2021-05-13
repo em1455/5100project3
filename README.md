@@ -13,7 +13,7 @@
 ## Visualizations
 - US Map 
 - Plot restaurants (Carolyn Morikawa) ✅
-- State color luminance/saturation by ratio of veg/vegan restaurants per 100,000 residents (Cynthia Shen)
+- State color luminance/saturation by ratio of veg/vegan restaurants per 100,000 residents (Cynthia Shen) ✅
 - Bar graphs
 - Graph #1: Distribution of cuisine
 - Graph #2: Lollipop graph of min and max price
