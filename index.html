@@ -41,7 +41,7 @@
         </style>
         </head>
             <div class="map_positioning">
-    <svg id="us_map" height="800" width="1000"></svg>
+    <svg id="us_map" height="625" width="1150"></svg>
     </div>
 <script>
 const requestData = async () => {
@@ -75,7 +75,7 @@ const requestData = async () => {
     let map = d3.select("#us_map");
     let mapWidth = map.attr("width");
     let mapHeight = map.attr("height");
-    let projection = d3.geoAlbers().fitSize([mapWidth, mapHeight], states);
+    var projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305]);
     let path = d3.geoPath().projection(projection);
     let viewport = map.append("g");
 
@@ -94,6 +94,7 @@ console.log(states);
                 const colorScaleRange = ["#eaeff9", "#bec9e0", "#99abd1", "#6e86b8", "#4e6aa3", "#2e4a85", "#142854"];
                 let popScale = d3.scaleQuantile().domain(popVals).range(colorScaleRange);
                 console.log("popScale",popScale)
+                console.log(counties, "counties")
 
    //ADDING PATHS FOR ZOOM FEATURE
     viewport.append("path")
