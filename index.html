@@ -232,7 +232,7 @@ console.log(states);
                                 .join("circle")
                                 .attr("class","dot")
                                 .attr("r", 5)
-                                .attr("fill", "blue")
+                                .attr("fill", "red")
                                 .attr("opacity", 0.6)
                                 .attr("cx", d => d.position[0])
                                 .attr("cy", d => d.position[1])
@@ -241,13 +241,53 @@ console.log(states);
     // const restaurant = await d3.csv("./cleaned_restaurants_data.csv");
     // console.log(restaurant)
     // FILTERING 
-    const cruisine_id = ["American","General Mediterranean","Indian", "Italian", 
+    const cruisine_id = ["American","General Mediterranean", "Italian", 
     "Japanese","Kosher","Mexican","Middle Eastern","Thai",
-"Chinese", "All Cruisine"];
+"Chinese", "All Cruisines"];
 
-//COLOR CHANGE FOR FILTERS
+// // CHANGE FITER COLOR
+function filterColor(type, filter_name){
+        var element = document.getElementById(type);
+        element.style.backgroundColor = "skyblue";
+        //find what array to sort through
+        if (filter_name === 'cruisine_id'){
+            view_ids = cruisine_id;
+        }//else for other array names
+        
+        for (var i=0; i<view_ids.length;i++){
+            var value = view_ids[i];
+            if (value != type){
+                element = document.getElementById(value);
+                if (element.style.backgroundColor === "skyblue"){
+                    element.style.backgroundColor = "white";
+                }
+            }
+        }
+    }
+//MAKE COUNT DATA
+var all_count = 0;
+        //make count dictionaries
+        function count_resturants(all_array){
+            values = {};
+            for (var i=0; i<all_array.length-1; i++){
+                values[ [all_array[i]] ] = 0;
+            }
+            return values;
+        }
+cruisine_counts = count_resturants(cruisine_id);
 
+data.forEach(d=>{
+            cruisine_counts[d.cruisines] +=1;
+        });
 
+// function make_resturant_extent(resturant_data){
+//         var extent = d3.extent(resturant_data, d=>d['count']);
+//         return extent;
+//         }
+
+// cruisine_data = make_resturant_extent(cruisine_counts,"cruisines");
+
+var filters_now = {"cruisines":"All Cruisines"};
 // CRUISINE FILTER
 cruisine_id.forEach(function(d,i){
             d3.select('.cruisine_filter')
@@ -255,17 +295,31 @@ cruisine_id.forEach(function(d,i){
                 .attr('id',d)
                 .text(d)
                 .on('click', function(){
-                    changeColor(d,"cruisine_id");
-                    if (d === 'All Cruisine'){
-                        al_filters['Cruisine']="All Cruisine";
+                    filterColor(d,"cruisine_id");
+                    if (d === 'All Cruisines'){
+                        filters_now['cruisines']="All Cruisines";
                     }
                     else{
-                        all_filters['Cruisine']=d;
+                        filters_now['cruisines']=d;
                     }
-                    updateMap();
-                    // callgraphs('year', d);
+                    updateResturant();
+                    
                 })
         })
+        var circle_count = all_count;
+
+        function updateResturant(){
+            circles.attr('visibility', circleD => {
+                if ((circleD['cruisines'] !=filters_now['cruisines']) && filters_now['cruisines']!="All Cruisines"){
+                    return 'hidden';
+                }
+                else{
+                    return "";
+                }
+
+            })
+
+        };
 
   }
 
