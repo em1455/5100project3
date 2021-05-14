@@ -328,7 +328,7 @@ console.log(dietary_counts);
 
         // cruisine_extent = make_resturant_extent(cruisine_data);
 
-var filters_now = {"dietary":"All","cruisines":"All Cruisines",};
+var filters_now = {"dietary":"All","cruisines":"All Cruisines"};
 
 console.log(filters_now)
 
@@ -373,12 +373,12 @@ cruisine_id.forEach(function(d,i){
 function updateResturant(){
     circles.attr('visibility', circleD => {
         if ((circleD['dietary'] !=filters_now['dietary']) && filters_now['dietary']!="All"){
-                    return 'hidden';
+                return 'hidden';
                 }
         else if ((circleD['cruisines']!= filters_now['cruisines']) && filters_now['cruisines']!="All Cruisines"){
                 return 'hidden';
                 }
-            else{
+        else{
                 return "";
                 }
 
