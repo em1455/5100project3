@@ -3,11 +3,11 @@
 
 <html lang="en">
     <div class = "title">
-    <h1> Vegetarian & Vegan</h1>
-    <h3>INFO 5100</h3>
+        <h1> Vegetarian & Vegan Dining in the U.S. </h1>
+        <h3>INFO 5100 Final Project</h3>
     </div>
 <head>
-    <title>Project 2</title>
+    <title>Project 3</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://d3js.org/topojson.v3.min.js"></script>
     <style>
@@ -22,7 +22,7 @@
           font-weight: bolder;
           background-color: navy;
       }
-      .title {
+    .title {
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 50;
@@ -35,7 +35,17 @@
             background-color: white;
         }
 
-        .map_positioning{
+    .map_positioning{
+        width:65%;
+        display: block; 
+        margin-left:auto;
+        margin-right: auto;
+        padding:10px;
+        outline: solid 1px black;
+        background-color:white;
+    }
+
+    /* .map_positioning{
             width:50%;
             float: right;
             margin-left: 800px;
@@ -44,53 +54,71 @@
             margin-right: 400px;
             outline: solid 1px black;
             background-color:white;
-        }
-        .cuisines_filter{
-            height: 70px;
-            padding-left:20px;
-            text-align:left;
-            background-color: white;
-            margin-top: -20px;
-        }
-        .dietary_filter{
-            height: 70px;
-            padding-left:20px;
-            text-align:left;
-            background-color: white;
-            margin-top: -20px;
-        }
-        .dietary_filter span{
-            margin-right:10px;
-            padding: 8px;
-            border: solid black 2px;
-            border-radius: 5px;
-            background-color: white;
-        }
-        .cuisines_filter span{
-            margin-right:10px;
-            margin-bottom:5px;
-            margin-left:3px;
-            float:left;
-            padding: 8px;
-            border: solid black 1px;
-            border-radius: 5px;
-            background-color: white;
-        }
+    } */
+
+    .cuisines_filter{
+        height: 70px;
+        padding-left:20px;
+        text-align:left;
+        background-color: white;
+        margin-top: -20px;
+    }
+    .dietary_filter{
+        height: 70px;
+        padding-left:20px;
+        text-align:left;
+        background-color: white;
+        margin-top: -20px;
+    }
+    .dietary_filter span{
+        margin-right:10px;
+        padding: 8px;
+        border: solid black 2px;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .cuisines_filter span{
+        margin-right:10px;
+        margin-bottom:5px;
+        margin-left:3px;
+        float:left;
+        padding: 8px;
+        border: solid black 1px;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    .barchart-container {
+        width:50%;
+        padding:10px;
+        float: right;
+        outline: solid 1px black;
+        background-color:white;
+    }
 
         </style>
         </head>
-            <div class="map_positioning">
-    <svg id="us_map" height="700" width="800"></svg>
-    </div>
-    <div class = "filters">
-    <h3>FILTERS</h3>
-    <div class = "dietary_filter">
-        <h4>Dietary</h4>
-    </div>
-    <div class = "cuisines_filter">
-        <h4>Cuisines:</h4>
-    </div>
+        <div class="map_positioning">
+            <svg id="us_map" height="700" width="800"></svg>
+        </div>
 
+        <div class = "filters">
+            <h3>FILTERS</h3>
+            <div class = "dietary_filter">
+                <h4>Dietary</h4>
+            </div>
+            <div class = "cruisine_filter">
+                <h4>Cuisine:</h4> </div>
+        </div>
+
+        <!-- <div id="barchart-container" height="400" width="850" style="position: absolute; top:845px; left:601px; 
+        outline: solid 1px black; margin-left:10px; padding:5px; 
+        text-align: center;"> -->
+
+        <div class="barchart-container" height="400" width="850">
+            <h4> Distribution of Restaurants by Cuisine </h4>
+            <svg id="barchart" height="322" width="800" style ="padding-left: 20px; padding-right: 10px"></svg>            
+        </div>
 
 <script>
  // FILTERING 
@@ -336,6 +364,53 @@ function updateMap(){
 
          })
         };
+
+        //Cuisine Distribution Bar Chart 
+
+        const svg = d3.select("svg#barchart");
+        const width = svg.attr("width");
+        const height = svg.attr("height");
+        const margin = {top: 10, right: 10, bottom: 50, left: 50};
+        const chartWidth = width - margin.left - margin.right;
+        const chartHeight = height - margin.top - margin.bottom;
+
+        let annotations = svg.append("g").attr("id","annotations");
+        let chartArea = svg.append("g").attr("id","points")
+                        .attr("transform",`translate(${margin.left},${margin.top})`);
+
+        const cuisine_ct = await d3.csv("./cuisine_count.csv");
+
+        cuisine_ct.forEach ( d => {
+            d["cuisines"] = Number(d["cuisines"])          
+        })
+        console.log(cuisine_ct)
+
+        const countScale = d3.scaleLinear().domain([0,40]).range([chartHeight, 0]);
+        let leftAxis = d3.axisLeft(countScale).tickFormat(d3.format('0'));
+        let leftGridlines = d3.axisLeft(countScale)
+                                .tickSize(-chartWidth-10)
+                                .tickFormat("")
+        annotations.append("g")
+                    .attr("class", "y axis")
+                    .attr("transform",`translate(${margin.left-10},${margin.top})`)
+                    .call(leftAxis)
+        annotations.append("g")
+                    .attr("class", "y gridlines")
+                    .attr("transform",`translate(${margin.left-10},${margin.top})`)
+                    .call(leftGridlines);
+
+        let bottomAxis = d3.axisBottom()
+        let bottomAxisG = annotations.append("g")
+                                    .attr("class", "x axis")
+                                    .attr("transform",`translate(${margin.left},${chartHeight+margin.top+10})`)
+        
+        const cuisine_types = ["American", "Chinese", "Mediterranean", "Italian", "Japanese", "Kosher", "Mexican", 
+                                "Middle Eastern", "Thai", "Other"] 
+        const cuisineScale = d3.scaleBand().domain(cuisine_types).range([0, chartWidth])
+                                        .padding(0.05);
+        
+        bottomAxis.scale(cuisineScale)
+        bottomAxisG.transition().call(bottomAxis);
 
 
   }
