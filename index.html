@@ -45,7 +45,7 @@
             outline: solid 1px black;
             background-color:white;
         }
-        .cruisine_filter{
+        .cuisines_filter{
             height: 70px;
             padding-left:20px;
             text-align:left;
@@ -66,7 +66,7 @@
             border-radius: 5px;
             background-color: white;
         }
-        .cruisine_filter span{
+        .cuisines_filter span{
             margin-right:10px;
             margin-bottom:5px;
             margin-left:3px;
@@ -87,22 +87,46 @@
     <div class = "dietary_filter">
         <h4>Dietary</h4>
     </div>
-    <div class = "cruisine_filter">
-        <h4>Cruisine:</h4>
+    <div class = "cuisines_filter">
+        <h4>Cuisines:</h4>
     </div>
 
 
 <script>
+ // FILTERING 
+    const dietary_ids = ["Vegan","Vegetarian", "Both", "All Dietary"];
+    const cuisines_ids = ["American","General Mediterranean", "Italian", 
+    "Japanese","Kosher","Mexican","Middle Eastern","Thai","Chinese", "All Cuisines"];
+
+// // CHANGE FITER COLOR
+function changeColor(name, array_name){
+        var element = document.getElementById(name);
+        element.style.backgroundColor = "skyblue";
+        //find what array to sort through
+        if (array_name === 'dietary_ids'){
+            list_ids = dietary_ids;
+        }//else for other array names
+        else if (array_name === 'cuisines_ids'){
+            list_ids = cuisines_ids;
+        }//else for other array names
+        for (var i=0; i<list_ids.length;i++){
+            var value = list_ids[i];
+            if (value != name){
+                element = document.getElementById(value);
+                if (element.style.backgroundColor === "skyblue"){
+                    element.style.backgroundColor = "white";
+                }
+            }
+        }
+    }
+
 const requestData = async () => {
 //LOAD Vegetarian/Vegan DATASET
   var data = await d3.csv("./cleaned_restaurants_data.csv");
        console.log(data)
  //LOAD MAP DATASET   
     const us = await d3.json("./counties-10m.json");
-    // let filteredStates = ['02','15','60','66','69','72','74','78'];
-    // us.objects.states.geometries = us.objects.states.geometries.filter( d => {
-    //                       return filteredStates.indexOf( d.id.toString().padStart(2,'0')  ) === -1;
-    //                     });
+
   
     //LOAD Population DATASET
     let pop = await d3.csv('USpopulation2019.csv', d3.autoType);
@@ -258,129 +282,61 @@ console.log(states);
                                 .attr("cx", d => d.position[0])
                                 .attr("cy", d => d.position[1])
 
-    // FILTERING 
-    const dietary_id = ["Vegan","Vegetarian", "Both", "All Dietary"];
-    const cruisine_id = ["American","General Mediterranean", "Italian", 
-    "Japanese","Kosher","Mexican","Middle Eastern","Thai","Chinese", "All Cruisines"];
- 
 
-// // CHANGE FITER COLOR
-function filterColor(type, filter_name){
-        var element = document.getElementById(type);
-        element.style.backgroundColor = "skyblue";
-        if (filter_name === 'dietary_id'){
-            view_ids = dietary_id;
-        }
-        else if (filter_name === 'cruisine_id'){
-            view_ids = cruisine_id;
-        }
-        for (var i=0; i<view_ids.length;i++){
-            var value = view_ids[i];
-            if (value != type){
-                element = document.getElementById(value);
-                if (element.style.backgroundColor === "skyblue"){
-                    element.style.backgroundColor = "white";
-                }
-            }
-        }
-    }
-//MAKE COUNT DATA
-var total_count = 0;
-        //make count dictionaries
-    function make_count_dict(id_array){
-            dictionary = {};
-            for (var i=0; i<id_array.length-1; i++){
-                dictionary[ [id_array[i]] ] = 0;
-            }
-        return dictionary;
-        }
-dietary_counts = make_count_dict(dietary_id);
-cruisine_counts = make_count_dict(cruisine_id);
-
-        //put counts of crashes in dictionaries
-    data.forEach(d=>{
-            dietary_counts[d.dietary] +=1;
-            cruisine_counts[d.cruisines] +=1;
-            total_count += 1;
-        });
-console.log(dietary_counts)
-console.log(cruisine_counts)
-        // function make_resturant_data(counts, name){
-        //     var crash_data = [];
-        //     for (var key in counts){
-        //         if (!isNaN(counts[key])){
-        //             crash_data.push({ [name] : key , "count": counts[key]});
-        //         }
-        //     }
-        //     return crash_data;
-        // }
-
-        // function make_resturant_extent(crash_data){
-        //     var extent = d3.extent(crash_data, d=>d['count']);
-        //     return extent;
-        // }
-        // //get the count data
-        // cruisine_data = make_resturant_data(cruisine_counts, "cruisines");
-
-        // cruisine_extent = make_resturant_extent(cruisine_data);
-
-var filters_now = {"dietary":"All Dietary","cruisines":"All Cruisines"};
-
-console.log(filters_now)
-
+var current_filters = {"dietary":"All Dietary","cuisines":"All Cuisines" };
+console.log(current_filters);
 //DIETARY FILTER
-dietary_id.forEach(function(d,i){
+dietary_ids.forEach(function(d,i){
     d3.select('.dietary_filter')
-            .append("span")
-            .attr('id',d)
-            .text(d)
-            .on('click', function(){
-                filterColor(d,"dietary_id");
-                if (d === 'All'){
-                    filters_now['dietary']="All Dietary";
-                    }
-                else{
-                    filters_now['dietary']=d;
-                    }
-                    updateResturant;
-                })
+        .append("span")
+        .attr('id',d)
+        .text(d)
+        .on('click', function(){
+            changeColor(d,"dietary_ids");
+            if (d === 'All Dietary'){
+                current_filters['dietary']="All Dietary";
+            }
+            else{
+                current_filters['dietary']=d;
+            }
+            updateMap();
+            // callgraphs('year', d);
         })
-// CRUISINE FILTER
-cruisine_id.forEach(function(d,i){
-            d3.select('.cruisine_filter')
-                .append("span")
-                .attr('id',d)
-                .text(d)
-                .on('click', function(){
-                    filterColor(d,"cruisine_id");
-                    if (d === 'All Cruisines'){
-                        filters_now['cruisines']="All Cruisines";
-                    }
-                    else{
-                        filters_now['cruisines']= d;
-                    }
-                    updateResturant();
-                    
-                })
+})
+//CUISINE FILTER
+cuisines_ids .forEach(function(d,i){
+    d3.select('.cuisines_filter')
+        .append("span")
+        .attr('id',d)
+        .text(d)
+        .on('click', function(){
+            changeColor(d,"cuisines_ids");
+            if (d === 'All Cuisines'){
+                current_filters['cuisines']="All Cuisines";
+            }
+            else{
+                current_filters['cuisines']=d;
+            }
+            updateMap();
+    
         })
+})
 
-        var circle_count = total_count;
-
-function updateResturant(){
-    circles.attr('visibility', circleD => {
-        if ((circleD['dietary'].toString()!=filters_now['dietary']) && filters_now['dietary']!= "All Dietary"){
+function updateMap(){
+            circles.attr('visibility', circleD => {
+                if ((circleD['dietary'].toString() !=current_filters['dietary']) && current_filters['dietary']!="All Dietary"){
                     return 'hidden';
                 }
-        else if ((circleD['cruisines']!= filters_now['cruisines']) && filters_now['cruisines']!="All Cruisines"){
-                return 'hidden';
+                else if ((circleD['cuisines'].toString() !=current_filters['cuisines']) && current_filters['cuisines']!="All Cuisines"){
+                    return 'hidden';
                 }
-        else{
-                return "";
+                else{
+                    return "";
                 }
 
-            })
-
+         })
         };
+
 
   }
 
