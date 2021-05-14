@@ -258,14 +258,10 @@ console.log(states);
                                 .attr("cx", d => d.position[0])
                                 .attr("cy", d => d.position[1])
 
-    // //restaurant data
-    // const restaurant = await d3.csv("./cleaned_restaurants_data.csv");
-    // console.log(restaurant)
     // FILTERING 
-    const dietary_id = ["Vegan","Vegetarian", "Both", "All"]
+    const dietary_id = ["Vegan","Vegetarian", "Both", "All Dietary"];
     const cruisine_id = ["American","General Mediterranean", "Italian", 
-    "Japanese","Kosher","Mexican","Middle Eastern","Thai",
-"Chinese", "All Cruisines"];
+    "Japanese","Kosher","Mexican","Middle Eastern","Thai","Chinese", "All Cruisines"];
  
 
 // // CHANGE FITER COLOR
@@ -291,24 +287,24 @@ function filterColor(type, filter_name){
 //MAKE COUNT DATA
 var total_count = 0;
         //make count dictionaries
-        function make_count_dict(id_array){
+    function make_count_dict(id_array){
             dictionary = {};
             for (var i=0; i<id_array.length-1; i++){
                 dictionary[ [id_array[i]] ] = 0;
             }
-            return dictionary;
+        return dictionary;
         }
-cruisine_counts = make_count_dict(cruisine_id);
 dietary_counts = make_count_dict(dietary_id);
+cruisine_counts = make_count_dict(cruisine_id);
 
-        console.log(cruisine_counts);
-console.log(dietary_counts);
         //put counts of crashes in dictionaries
-        data.forEach(d=>{
-            cruisine_counts[d.cruisines] +=1;
+    data.forEach(d=>{
             dietary_counts[d.dietary] +=1;
+            cruisine_counts[d.cruisines] +=1;
             total_count += 1;
         });
+console.log(dietary_counts)
+console.log(cruisine_counts)
         // function make_resturant_data(counts, name){
         //     var crash_data = [];
         //     for (var key in counts){
@@ -328,7 +324,7 @@ console.log(dietary_counts);
 
         // cruisine_extent = make_resturant_extent(cruisine_data);
 
-var filters_now = {"dietary":"All","cruisines":"All Cruisines"};
+var filters_now = {"dietary":"All Dietary","cruisines":"All Cruisines"};
 
 console.log(filters_now)
 
@@ -341,7 +337,7 @@ dietary_id.forEach(function(d,i){
             .on('click', function(){
                 filterColor(d,"dietary_id");
                 if (d === 'All'){
-                    filters_now['dietary']="All";
+                    filters_now['dietary']="All Dietary";
                     }
                 else{
                     filters_now['dietary']=d;
@@ -372,8 +368,8 @@ cruisine_id.forEach(function(d,i){
 
 function updateResturant(){
     circles.attr('visibility', circleD => {
-        if ((circleD['dietary'] !=filters_now['dietary']) && filters_now['dietary']!="All"){
-                return 'hidden';
+        if ((circleD['dietary'].toString()!=filters_now['dietary']) && filters_now['dietary']!= "All Dietary"){
+                    return 'hidden';
                 }
         else if ((circleD['cruisines']!= filters_now['cruisines']) && filters_now['cruisines']!="All Cruisines"){
                 return 'hidden';
@@ -391,66 +387,5 @@ function updateResturant(){
   requestData();
   
   
-//   const svg = d3.select("#us_map");
-//   const width = svg.attr("width");
-//   const height = svg.attr("height");
-//   const margin = { top: 20, right: 20, bottom: 20, left:20};
-//   const mapWidth = width - margin.left - margin.right;
-//   const mapHeight = height - margin.top - margin.bottom;
-//   const map = svg.append("g")
-//                   .attr("transform","translate("+margin.left+","+margin.top+")");
-
-//     const requestData = async () => {
-
-
-//         //***LOAD DATASET
-//         var data = await d3.csv("Datafiniti_Vegetarian_and_Vegan_Restaurants.csv");
-//         console.log(data)
-    
-
-//         // //LOAD AND DISPLAY MAP DATA
-//         var us = await d3.json("us_map.json");
-//         console.log(us)
-//         var states = topojson.feature(us, us.objects.states);
-//         var statesMesh = topojson.mesh(us, us.objects.states);
-//         var projection = d3.geoAlbersUsa().fitSize([mapWidth, mapHeight], states);
-//         var path = d3.geoPath().projection(projection);
-//         console.log(statesMesh);
-
-   
-//     // 2c. Draw states and outlines
-//     map.selectAll("path.state").data(states.features)
-//        .join("path")
-//        .attr("class", "state")
-//        .attr("fill","none")
-//        .attr("note", d => d.id)
-//        .attr("d", path);
-  
-//     map.append("path").datum(statesMesh)
-//        .attr("class","outline")
-//        .attr("fill","none")
-//        .style("stroke-width", 3)
-//         .style("stroke", "black")
-//        .attr("d", path);
-
-//     data.forEach( d => {
-//             d.latitude = Number(d.latitude);
-//             d.longitude = Number(d.longitude);
-//             d.position = projection( [d.longitude, d.latitude] );
-
-//         });
-//         console.log(data);
-
-//     let circles = map.selectAll("circle.dot").data(data)
-//                                 .join("circle")
-//                                 .attr("class","dot")
-//                                 .attr("r", 5)
-//                                 .attr("fill", "blue")
-//                                 .attr("opacity", 0.6)
-//                                 .attr("cx", d => d.position[0])
-//                                 .attr("cy", d => d.position[1]);
-    
-//     }
-//     requestData();
 </script>
         </html>
