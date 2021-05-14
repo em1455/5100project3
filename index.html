@@ -391,52 +391,67 @@ function updateMap(){
          })
         };
 
-        //Cuisine Distribution Bar Chart 
+        // //Cuisine Distribution Bar Chart 
 
-        const svg = d3.select("svg#barchart");
-        const width = svg.attr("width");
-        const height = svg.attr("height");
-        const margin = {top: 10, right: 10, bottom: 50, left: 50};
-        const chartWidth = width - margin.left - margin.right;
-        const chartHeight = height - margin.top - margin.bottom;
+        // const svg = d3.select("svg#barchart");
+        // const width = svg.attr("width");
+        // const height = svg.attr("height");
+        // const margin = {top: 10, right: 10, bottom: 50, left: 50};
+        // const chartWidth = width - margin.left - margin.right;
+        // const chartHeight = height - margin.top - margin.bottom;
 
-        let annotations = svg.append("g").attr("id","annotations");
-        let chartArea = svg.append("g").attr("id","points")
-                        .attr("transform",`translate(${margin.left},${margin.top})`);
+        // let annotations = svg.append("g").attr("id","annotations");
+        // let chartArea = svg.append("g").attr("id","points")
+        //                 .attr("transform",`translate(${margin.left},${margin.top})`);
 
-        const cuisine_ct = await d3.csv("./cuisine_count.csv");
+        // const cuisine_ct = await d3.csv("./cuisine_count.csv");
 
-        cuisine_ct.forEach ( d => {
-            d["cuisines"] = Number(d["cuisines"])          
-        })
-        console.log(cuisine_ct)
+        // cuisine_ct.forEach ( d => {
+        //     d["cuisines"] = Number(d["cuisines"])          
+        // })
+        // console.log(cuisine_ct)
 
-        const countScale = d3.scaleLinear().domain([0,40]).range([chartHeight, 0]);
-        let leftAxis = d3.axisLeft(countScale).tickFormat(d3.format('0'));
-        let leftGridlines = d3.axisLeft(countScale)
-                                .tickSize(-chartWidth-10)
-                                .tickFormat("")
-        annotations.append("g")
-                    .attr("class", "y axis")
-                    .attr("transform",`translate(${margin.left-10},${margin.top})`)
-                    .call(leftAxis)
-        annotations.append("g")
-                    .attr("class", "y gridlines")
-                    .attr("transform",`translate(${margin.left-10},${margin.top})`)
-                    .call(leftGridlines);
+        // var topCuisines = cuisine_ct.sort(function(a, b) {
+        //     return d3.descending(+a.Impressions, +b.Impressions);
+        // }).slice(0, 10);
+        // console.log(topCuisines)
 
-        let bottomAxis = d3.axisBottom()
-        let bottomAxisG = annotations.append("g")
-                                    .attr("class", "x axis")
-                                    .attr("transform",`translate(${margin.left},${chartHeight+margin.top+10})`)
+        // const countScale = d3.scaleLinear().domain([0,40]).range([chartHeight, 0]);
+        // let leftAxis = d3.axisLeft(countScale).tickFormat(d3.format('0'));
+        // let leftGridlines = d3.axisLeft(countScale)
+        //                         .tickSize(-chartWidth-10)
+        //                         .tickFormat("")
+        // annotations.append("g")
+        //             .attr("class", "y axis")
+        //             .attr("transform",`translate(${margin.left-10},${margin.top})`)
+        //             .call(leftAxis)
+        // annotations.append("g")
+        //             .attr("class", "y gridlines")
+        //             .attr("transform",`translate(${margin.left-10},${margin.top})`)
+        //             .call(leftGridlines);
+
+        // let bottomAxis = d3.axisBottom()
+        // let bottomAxisG = annotations.append("g")
+        //                             .attr("class", "x axis")
+        //                             .attr("transform",`translate(${margin.left},${chartHeight+margin.top+10})`)
         
-        const cuisine_types = ["American", "Chinese", "Mediterranean", "Italian", "Japanese", "Kosher", "Mexican", 
-                                "Middle Eastern", "Thai", "Other"] 
-        const cuisineScale = d3.scaleBand().domain(cuisine_types).range([0, chartWidth])
-                                        .padding(0.05);
+        // const cuisine_types = ["American", "Chinese", "Mediterranean", "Italian", "Japanese", "Kosher", "Mexican", 
+        //                         "Middle Eastern", "Thai", "Other"] 
+        // const cuisineScale = d3.scaleBand().domain(cuisine_types).range([0, chartWidth])
+        //                                 .padding(0.05);
         
-        bottomAxis.scale(cuisineScale)
-        bottomAxisG.transition().call(bottomAxis);
+        // bottomAxis.scale(cuisineScale)
+        // bottomAxisG.transition().call(bottomAxis);
+
+        // chartArea.selectAll('rect.bar').data( cuisine_ct, d => d.cuisines )
+        //      .join( enter => enter.append('rect')
+        //                           .attr('class','bar')
+        //                           .attr("fill", "steelblue")
+        //                           .attr("x", cuisineScale)
+        //                           .attr("y", d => countScale(d.cuisines))
+        //                           .attr("height", d => countScale(0) - countScale(d.cuisines))
+        //                           .attr("width", cuisineScale.bandwidth())
+        //                           .attr("opacity", 0)) // Set opacity low, then animate to 1 to make them fade in
 
 
   }
