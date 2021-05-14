@@ -27,34 +27,34 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 50;
         }
-    .filters{
-            width: 38%;
-            height: 400px;
-            float:left;
-            outline: solid 1px black;
-            background-color: white;
-        }
+
+    .box_1 {
+        display: flex;
+        width:1440px;
+        margin-left: auto; 
+        margin-right: auto;
+    }
 
     .map_positioning{
-        width:65%;
-        display: block; 
-        margin-left:auto;
-        margin-right: auto;
+        flex: 1;
+        width:900px;
+        height: 600px;
+        margin-left:0px;
         padding:10px;
         outline: solid 1px black;
         background-color:white;
     }
 
-    /* .map_positioning{
-            width:50%;
-            float: right;
-            margin-left: 800px;
-            margin-right: 800px;
-            padding:10px;
-            margin-right: 400px;
-            outline: solid 1px black;
-            background-color:white;
-    } */
+    .filters{
+        width: 500px;
+        height: 600px;
+        /* top: 50px; */
+        margin-left:1px;
+        margin-right: 20px;
+        padding: 10px;
+        outline: solid 1px black;
+        background-color: white;
+    }
 
     .cuisines_filter{
         height: 70px;
@@ -88,36 +88,62 @@
         background-color: white;
     }
 
+    .box_2 {
+        display: flex;
+        width:1440px;
+        margin-left: auto; 
+        margin-right: auto;
+    }
+
     .barchart-container {
-        width:50%;
-        padding:10px;
-        float: right;
+        width:720px;
+        height: 500px;
+        padding-left:10px;
+        padding-right:10px;
+        margin-left:0px;
         outline: solid 1px black;
         background-color:white;
     }
 
+    .rectangle{
+        width: 720px;
+        height: 500px;
+        margin-left:1px;
+        margin-right: 20px;
+        padding-left: 10px;
+        padding-right:10px;
+        outline: solid 1px black;
+        background-color: white;
+    }
+
         </style>
         </head>
-        <div class="map_positioning">
-            <svg id="us_map" height="700" width="800"></svg>
-        </div>
 
-        <div class = "filters">
-            <h3>FILTERS</h3>
-            <div class = "dietary_filter">
-                <h4>Dietary</h4>
+        <div class = "box_1">
+            <div class="map_positioning">
+                <svg id="us_map" height="600" width="900"></svg>
             </div>
-            <div class = "cruisine_filter">
-                <h4>Cuisine:</h4> </div>
+
+            <div class = "filters">
+                <h3>FILTERS</h3>
+                <div class = "dietary_filter">
+                    <h4>Dietary</h4>
+                </div>
+                <div class = "cruisine_filter">
+                    <h4>Cuisine:</h4> 
+                </div>
+            </div>
         </div>
 
-        <!-- <div id="barchart-container" height="400" width="850" style="position: absolute; top:845px; left:601px; 
-        outline: solid 1px black; margin-left:10px; padding:5px; 
-        text-align: center;"> -->
+        <div class = box_2>
+            <div class="barchart-container">
+                <h4> Distribution of Restaurants by Cuisine </h4>
+                <svg id="barchart" height="450" width="720" ></svg>            
+            </div>
 
-        <div class="barchart-container" height="400" width="850">
-            <h4> Distribution of Restaurants by Cuisine </h4>
-            <svg id="barchart" height="322" width="800" style ="padding-left: 20px; padding-right: 10px"></svg>            
+            <div class = "rectangle">
+                <h4> whatever other chart we decide to add </h4>
+            </div>
         </div>
 
 <script>
