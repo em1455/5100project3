@@ -516,10 +516,10 @@ const requestData = async () => {
 
         function updateMap(){
                     circles.attr('visibility', circleD => {
-                        if ((circleD['dietary'].toString() !=current_filters['dietary']) && current_filters['dietary']!="All Dietary"){
+                        if ((circleD['dietary'] !=current_filters['dietary']) && current_filters['dietary']!="All Dietary"){
                             return 'hidden';
                         }
-                        else if ((circleD['cuisines'].toString() !=current_filters['cuisines']) && current_filters['cuisines']!="All Cuisines"){
+                        else if ((circleD['cuisines']!=current_filters['cuisines']) && current_filters['cuisines']!="All Cuisines"){
                             return 'hidden';
                         }
                         else{
