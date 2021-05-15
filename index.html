@@ -30,7 +30,7 @@
 
     .box_1 {
         display: flex;
-        width:1440px;
+        width:1430px;
         margin-left: auto; 
         margin-right: auto;
     }
@@ -90,23 +90,23 @@
 
     .box_2 {
         display: flex;
-        width:1440px;
+        width:1430px;
         margin-left: auto; 
         margin-right: auto;
     }
 
     .barchart-container {
-        width:720px;
+        width:750px;
         height: 500px;
-        padding-left:10px;
-        padding-right:10px;
+        padding-left:5px;
+        padding-right:5px;
         margin-left:0px;
         outline: solid 1px black;
         background-color:white;
     }
 
     .rectangle{
-        width: 720px;
+        width: 700px;
         height: 500px;
         margin-left:1px;
         margin-right: 20px;
@@ -141,7 +141,7 @@
         <div class = box_2>
             <div class="barchart-container">
                 <h4> Distribution of Restaurants by Cuisine </h4>
-                <svg id="barchart" height="450" width="720" ></svg>            
+                <svg id="barchart" height="450" width="750" ></svg>            
             </div>
 
             <div class = "rectangle">
@@ -453,6 +453,7 @@ const requestData = async () => {
                 })
                 };
 
+
         //Cuisine Distribution Bar Chart 
 
         const svg = d3.select("svg#barchart");
@@ -468,10 +469,6 @@ const requestData = async () => {
 
         const cuisine_ct = await d3.json("./cuisine_count_top10.json");
         console.log(cuisine_ct)
-
-        // cuisine_ct.forEach ( d => {
-        //     d["cuisines"] = Number(d["cuisines"])   
-        // })  //only needed for dictionary 
 
         let countScale = d3.scaleLinear().domain([0,40]).range([chartHeight, 0]);
 
@@ -492,15 +489,6 @@ const requestData = async () => {
         let bottomAxisG = annotations.append("g")
                                     .attr("class", "x axis")
                                     .attr("transform",`translate(${margin.left},${chartHeight+margin.top+10})`)
-
-        // var topCuisines = cuisine_ct.sort(function(a, b) {
-        //     return d3.descending(+a.Impressions, +b.Impressions);
-        // }).slice(1, 11);
-        // console.log(topCuisines)
-
-        // var dict = new Object();
-        // dict = {"American": 29, "Chinese": 8, "Mediterranean": 6, "Indian": 38, "Italian": 18, "Japanese": 5, "Kosher": 6, 
-        //         "Mexican": 8, "Middle Eastern": 8, "Thai": 8 };
 
         const cuisine_key = Object.keys(cuisine_ct)
         console.log(cuisine_key)
