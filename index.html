@@ -180,7 +180,7 @@ function changeColor(name, array_name){
 const requestData = async () => {
 //LOAD Vegetarian/Vegan DATASET
   var data = await d3.csv("./cleaned_restaurants_data.csv");
-       console.log(data)
+       console.log(data, "restauraunt data")
  //LOAD MAP DATASET   
     const us = await d3.json("./counties-10m.json");
 
@@ -189,17 +189,25 @@ const requestData = async () => {
     let pop = await d3.csv('USpopulation2019.csv', d3.autoType);
     console.log(pop, "population csv")
     popByState = [];
+    stateByAbbrev = [];
+    abbrevByState=[];
     pop.forEach(d => {
         popByState[d.NAME] = d.population_estimate2019;
+        stateByAbbrev[d.abbreviation] = d.NAME;
+        abbrevByState[d.NAME] = d.abbreviation;
     });
     let popVals = d3.map(pop, d => d.population_estimate2019);
-    console.log(popVals);
-    console.log(popByState);
+    // console.log(popVals);
+    // console.log(popByState);
+    // console.log(abbrevByState, "state abbreviations")
+   
 
-    const states = topojson.feature(us, us.objects.states);                 
+    const states = topojson.feature(us, us.objects.states);       
+   
 
     const statesMesh = topojson.mesh(us, us.objects.states);
     const counties = topojson.feature(us, us.objects.counties);
+     console.log(counties, "counties")          
     const countiesMesh = topojson.mesh(us, us.objects.counties);
 
     let map = d3.select("#us_map");
@@ -209,49 +217,117 @@ const requestData = async () => {
     let path = d3.geoPath().projection(projection);
     let viewport = map.append("g");
 
+
+    //Process restaraunt data to get counts per state as well as to update lat and long
+    restCountByState = {"CA": {restCount: 0, ratio:0}, "NY": {restCount:0, ratio:0}};
+    data.forEach( d => {
+            d.latitude = Number(d.latitude);
+            d.longitude = Number(d.longitude);
+            d.position = projection( [d.longitude, d.latitude] );
+            if(d.province in restCountByState) {
+                restCountByState[d.province].restCount = restCountByState[d.province].restCount+1;
+            }
+            else {
+                restCountByState[d.province]={restCount:1};
+            }
+        });
+
+    ratioVals = [];
+    for (const [key, value] of Object.entries(restCountByState)) {
+        restCountByState[key].ratio = restCountByState[key].restCount / popByState[stateByAbbrev[key]] * 1000000
+        //this ratio says how about restauraunts per million people
+        ratioVals.push(restCountByState[key].ratio)
+        }
+    //console.log(restCountByState, "restauraunt count by state");
+
+   console.log(ratioVals);
+
     //Add pop data to each of the states
     states.features.forEach(d => {
                     state = d.properties.name;
+                    
                     if(state in popByState) {
                         //add to the topojson
                         d.properties.population = popByState[state];
+                        if (abbrevByState[state] in restCountByState) {
+                            d.properties.restCount = restCountByState[abbrevByState[state]].restCount;
+                            d.properties.ratio = restCountByState[abbrevByState[state]].ratio;
+            
+            
+                        }
+                        else { d. properties.restCount = 0;  d.properties.ratio = null;}
                     }
                     else {
                         d.properties.population = null;
                     }
-                });
-    console.log(states);
-                const colorScaleRange = ["#eaeff9", "#bec9e0", "#99abd1", "#6e86b8", "#4e6aa3", "#2e4a85", "#142854"];
-                let popScale = d3.scaleQuantile().domain(popVals).range(colorScaleRange);
-                console.log("popScale",popScale)
-                console.log(counties, "counties")
+                   
+                
+    });
+
+    fipsmap = await d3.csv('countyfipsmappedtostates.csv', d3.autoType);
+    fipsbyState = [];
+    fipsmap.forEach(d => {
+        fipsbyState[d.FIPS] = d.State;
+      
+    });
+     //Add states data to each of the counties
+     counties.features.forEach(d => {
+                    fips = d.id;
+                    
+                    // if(fips in fipsbyState) {
+                    //     //add to the topojson
+                    //     d.properties.state = popByState[state];
+                    //     if (abbrevByState[state] in restCountByState) {
+                    //         d.properties.restCount = restCountByState[abbrevByState[state]].restCount;
+                    //         d.properties.ratio = restCountByState[abbrevByState[state]].ratio;
+            
+            
+                    //     }
+                    //     else { d. properties.restCount = 0;  d.properties.ratio = null;}
+                    // }
+                    // else {
+                    //     d.properties.population = null;
+                    // }
+                   
+                
+    });
+
+    console.log(states,"states");
+    const colorScaleRange = [ "#bdc9e1", "#74a9cf", "#0570b0","#045a8d"];
+   let ratioScale = d3.scaleQuantile().domain(ratioVals).range(colorScaleRange);
+    //let popScale = d3.scaleQuantile().domain(popVals).range(colorScaleRange);
+    // console.log("popScale",popScale)
+    // console.log(counties, "counties")
 
    //ADDING PATHS FOR ZOOM FEATURE
     viewport.append("path")
         .attr("class","graticule")
         .attr("fill","none")
         .attr("d",path(d3.geoGraticule10()));
-    viewport.selectAll(".state").data(states.features)
-        .enter()
-        .append("path")
-        .attr("class","state")
-        .attr("fill", d => { if (d.properties.population===null) {
-                                            return  "#808080"; }
-                                         else {
-                                           return popScale(d.properties.population);}})
-        .attr("d", path);
+    
     viewport.selectAll(".county").data(counties.features)
         .enter()
         .append("path")
         .attr("class","county")
-        .attr("fill","lightgrey")
+        .attr("fill","none")
+        //.attr("opacity", 0.7)
         .attr("visibility", "hidden")
+        .attr("d", path);
+    viewport.selectAll(".state").data(states.features)
+        .enter()
+        .append("path")
+        .attr("class","state")
+        .attr("fill", d => { if (d.properties.ratio===null) {
+                                            return  "#d3d3d3"; }
+                                         else {
+                                           return ratioScale(d.properties.ratio);}})
         .attr("d", path);
     viewport.append("path")
       .datum(countiesMesh)
       .attr("class","county-outline")
       .attr("visibility", "hidden")
-      .attr("fill","lightgrey")
+      //.attr("opacity", 0.7)
+      .attr("fill","none")
       .style("stroke-width", 3)
       .style("stroke", "white")
       .attr("d", path);
@@ -292,6 +368,9 @@ const requestData = async () => {
                 .attr("visibility", (transform.k > 2) ? "visible" : "hidden");
       viewport.selectAll(".county")
                 .attr("visibility", (transform.k > 2) ? "visible" : "hidden");
+        viewport.select(".state")
+                .attr("opacity", (transform.k > 2) ? 0.7 : 1);
+     
         
     }
 
@@ -322,13 +401,7 @@ const requestData = async () => {
       map.transition().duration(1000).call(zoom.transform, newTransform);
 
     }
-    data.forEach( d => {
-            d.latitude = Number(d.latitude);
-            d.longitude = Number(d.longitude);
-            d.position = projection( [d.longitude, d.latitude] );
-
-        });
-        console.log(data);
+    
 
     let circles = map.selectAll("circle.dot").data(data)
                                 .join("circle")
