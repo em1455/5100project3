@@ -346,6 +346,7 @@ const requestData = async () => {
                                                 .attr("r", 8)
                                                 .attr("opacity", 1)
                                                 .attr("fill", "orange")
+                                                hover.attr("visibility","");
                                                 updateMouseover(d3.select(this).datum());  
                                             })
                                 .on("mouseout", function () {
@@ -358,6 +359,49 @@ const requestData = async () => {
                                                 .attr("fill", "red")
                                                 hover.attr("visibility","hidden");
                                 })
+                                
+        const hover = map.append("g").attr("class","hover")
+        
+        // const mouseover = map.append("g").attr("class","mouseover")
+        //                 .attr("transform","translate(970,320)");
+
+        function stringLen(str) {
+            const dummytext = hover.append("text").attr("visibility","hidden");
+            dummytext.text(str)
+            let len = dummytext.node().getComputedTextLength()
+            dummytext.remove()
+            return len;
+        }
+
+        const popup = hover.append("rect").attr("class","frame")
+                                    .attr("x", 40).attr("y", 30)
+                                    .attr("rx", 5).attr("ry", 5)
+                                    .attr("height", 105).attr("fill", "lightyellow")
+                                    .attr("stroke", "black");
+        const textbox = hover.append("g").attr("transform","translate(5,5)").attr("class", "label");
+        const format = d3.format(',d');
+
+        function updateMouseover(d) {
+            textbox.html('');
+
+            let general = `Restaurant Details`;
+            let cuisine_label = `Cuisine: ${d['cuisines']}`;
+            let city = `City: ${d['city']}`;
+            let province = `State: ${d['province']}`;
+
+            let maxWidth = Math.max( stringLen(general), stringLen(cuisine_label), stringLen(city),stringLen(province))
+            popup.attr("width", maxWidth+20);
+
+            textbox.append("text").text(general)
+                .attr("x", 45).attr("y", 45).attr("text-decoration", "underline");
+            textbox.append("text").text(cuisine_label)
+                .attr("x", 45).attr("y", 65);
+            textbox.append("text").text(city)
+                .attr("x", 45).attr("y", 85);
+            textbox.append("text").text(province)
+                .attr("x", 45).attr("y", 105);
+
+        }
 
         var current_filters = {"dietary":"All Dietary","cuisines":"All Cuisines" };
         console.log(current_filters);
@@ -379,46 +423,6 @@ const requestData = async () => {
                     // callgraphs('year', d);
                 })
         })
-
-        const hover = map.append("g").attr("class","hover")
-        
-        // Create a simple mouseover tooltip area
-        const mouseover = map.append("g").attr("class","mouseover")
-                        .attr("transform","translate(970,320)");
-
-        function stringLen(str) {
-            const dummytext = mouseover.append("text").attr("visibility","hidden");
-            dummytext.text(str)
-            let len = dummytext.node().getComputedTextLength()
-            dummytext.remove()
-            return len;
-        }
-
-        const popup = mouseover.append("rect").attr("class","frame")
-                                    .attr("x", 0).attr("y", 0)
-                                    .attr("rx", 5).attr("ry", 5)
-                                    .attr("height", 105).attr("fill", "LightSteelBlue");
-        const textbox = mouseover.append("g").attr("transform","translate(5,5)").attr("class", "label");
-        const format = d3.format(',d');
-
-        function updateMouseover(d) {
-            textbox.html('');
-
-            let cuisine_label = `Cuisine: ${d['cuisines']}`;
-            let city = `Artist: ${d['city']}`;
-            let province = `Year: ${d['province']}`;
-
-            let maxWidth = Math.max( stringLen(cuisine_label), stringLen(city),stringLen(province))
-            popup.attr("width", maxWidth+20);
-
-            textbox.append("text").text(cuisine_label)
-                .attr("x", 555).attr("y", 65).attr("text-decoration", "underline");
-            textbox.append("text").text(city)
-                .attr("x", 555).attr("y", 85);
-            textbox.append("text").text(province)
-                .attr("x", 555).attr("y", 105);
-
-        }
 
         //CUISINE FILTER
         cuisines_ids .forEach(function(d,i){
