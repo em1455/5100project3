@@ -121,7 +121,10 @@
 
         <div class = "box_1">
             <div class="map_positioning">
-                <svg id="us_map" height="600" width="900"></svg>
+                <svg id="us_map" height="600" width="900">
+                    <text id="label" x="775" y="30"  text-anchor="end" alignment-baseline="hanging" 
+                    style="font-weight: bold; font-family: Helvetica; font-size: large;"></text>
+                </svg>
             </div>
 
             <div class = "filters">
@@ -217,7 +220,7 @@ const requestData = async () => {
                         d.properties.population = null;
                     }
                 });
-console.log(states);
+    console.log(states);
                 const colorScaleRange = ["#eaeff9", "#bec9e0", "#99abd1", "#6e86b8", "#4e6aa3", "#2e4a85", "#142854"];
                 let popScale = d3.scaleQuantile().domain(popVals).range(colorScaleRange);
                 console.log("popScale",popScale)
@@ -335,123 +338,202 @@ console.log(states);
                                 .attr("opacity", 0.6)
                                 .attr("cx", d => d.position[0])
                                 .attr("cy", d => d.position[1])
+                                .on("mouseover", function() {
+                                                d3.select(this)
+                                                .transition().duration(100)
+                                                .attr("stroke","black")
+                                                .attr("stroke-width", 3.5)
+                                                .attr("r", 8)
+                                                .attr("opacity", 1)
+                                                .attr("fill", "orange")
+                                                updateMouseover(d3.select(this).datum());  
+                                            })
+                                .on("mouseout", function () {
+                                                d3.select(this)
+                                                .transition().duration(100)
+                                                .attr("stroke","black")
+                                                .attr("stroke-width", 1)
+                                                .attr("r", 6)
+                                                .attr("opacity", 1)
+                                                .attr("fill", "red")
+                                                hover.attr("visibility","hidden");
+                                })
 
-
-var current_filters = {"dietary":"All Dietary","cuisines":"All Cuisines" };
-console.log(current_filters);
-//DIETARY FILTER
-dietary_ids.forEach(function(d,i){
-    d3.select('.dietary_filter')
-        .append("span")
-        .attr('id',d)
-        .text(d)
-        .on('click', function(){
-            changeColor(d,"dietary_ids");
-            if (d === 'All Dietary'){
-                current_filters['dietary']="All Dietary";
-            }
-            else{
-                current_filters['dietary']=d;
-            }
-            updateMap();
-            // callgraphs('year', d);
+        var current_filters = {"dietary":"All Dietary","cuisines":"All Cuisines" };
+        console.log(current_filters);
+        //DIETARY FILTER
+        dietary_ids.forEach(function(d,i){
+            d3.select('.dietary_filter')
+                .append("span")
+                .attr('id',d)
+                .text(d)
+                .on('click', function(){
+                    changeColor(d,"dietary_ids");
+                    if (d === 'All Dietary'){
+                        current_filters['dietary']="All Dietary";
+                    }
+                    else{
+                        current_filters['dietary']=d;
+                    }
+                    updateMap();
+                    // callgraphs('year', d);
+                })
         })
-})
-//CUISINE FILTER
-cuisines_ids .forEach(function(d,i){
-    d3.select('.cuisines_filter')
-        .append("span")
-        .attr('id',d)
-        .text(d)
-        .on('click', function(){
-            changeColor(d,"cuisines_ids");
-            if (d === 'All Cuisines'){
-                current_filters['cuisines']="All Cuisines";
-            }
-            else{
-                current_filters['cuisines']=d;
-            }
-            updateMap();
-    
+
+        const hover = map.append("g").attr("class","hover")
+        
+        // Create a simple mouseover tooltip area
+        const mouseover = map.append("g").attr("class","mouseover")
+                        .attr("transform","translate(970,320)");
+
+        function stringLen(str) {
+            const dummytext = mouseover.append("text").attr("visibility","hidden");
+            dummytext.text(str)
+            let len = dummytext.node().getComputedTextLength()
+            dummytext.remove()
+            return len;
+        }
+
+        const popup = mouseover.append("rect").attr("class","frame")
+                                    .attr("x", 0).attr("y", 0)
+                                    .attr("rx", 5).attr("ry", 5)
+                                    .attr("height", 105).attr("fill", "LightSteelBlue");
+        const textbox = mouseover.append("g").attr("transform","translate(5,5)").attr("class", "label");
+        const format = d3.format(',d');
+
+        function updateMouseover(d) {
+            textbox.html('');
+
+            let cuisine_label = `Cuisine: ${d['cuisines']}`;
+            let city = `Artist: ${d['city']}`;
+            let province = `Year: ${d['province']}`;
+
+            let maxWidth = Math.max( stringLen(cuisine_label), stringLen(city),stringLen(province))
+            popup.attr("width", maxWidth+20);
+
+            textbox.append("text").text(cuisine_label)
+                .attr("x", 555).attr("y", 65).attr("text-decoration", "underline");
+            textbox.append("text").text(city)
+                .attr("x", 555).attr("y", 85);
+            textbox.append("text").text(province)
+                .attr("x", 555).attr("y", 105);
+
+        }
+
+        //CUISINE FILTER
+        cuisines_ids .forEach(function(d,i){
+            d3.select('.cuisines_filter')
+                .append("span")
+                .attr('id',d)
+                .text(d)
+                .on('click', function(){
+                    changeColor(d,"cuisines_ids");
+                    if (d === 'All Cuisines'){
+                        current_filters['cuisines']="All Cuisines";
+                    }
+                    else{
+                        current_filters['cuisines']=d;
+                    }
+                    updateMap();
+            
+                })
         })
-})
 
-function updateMap(){
-            circles.attr('visibility', circleD => {
-                if ((circleD['dietary'].toString() !=current_filters['dietary']) && current_filters['dietary']!="All Dietary"){
-                    return 'hidden';
-                }
-                else if ((circleD['cuisines'].toString() !=current_filters['cuisines']) && current_filters['cuisines']!="All Cuisines"){
-                    return 'hidden';
-                }
-                else{
-                    return "";
-                }
+        function updateMap(){
+                    circles.attr('visibility', circleD => {
+                        if ((circleD['dietary'].toString() !=current_filters['dietary']) && current_filters['dietary']!="All Dietary"){
+                            return 'hidden';
+                        }
+                        else if ((circleD['cuisines'].toString() !=current_filters['cuisines']) && current_filters['cuisines']!="All Cuisines"){
+                            return 'hidden';
+                        }
+                        else{
+                            return "";
+                        }
+                })
+                };
 
-         })
-        };
+        //Cuisine Distribution Bar Chart 
 
-        // //Cuisine Distribution Bar Chart 
+        const svg = d3.select("svg#barchart");
+        const width = svg.attr("width");
+        const height = svg.attr("height");
+        const margin = {top: 10, right: 10, bottom: 50, left: 50};
+        const chartWidth = width - margin.left - margin.right;
+        const chartHeight = height - margin.top - margin.bottom;
 
-        // const svg = d3.select("svg#barchart");
-        // const width = svg.attr("width");
-        // const height = svg.attr("height");
-        // const margin = {top: 10, right: 10, bottom: 50, left: 50};
-        // const chartWidth = width - margin.left - margin.right;
-        // const chartHeight = height - margin.top - margin.bottom;
+        let annotations = svg.append("g").attr("id","annotations");
+        let chartArea = svg.append("g").attr("id","points")
+                        .attr("transform",`translate(${margin.left},${margin.top})`);
 
-        // let annotations = svg.append("g").attr("id","annotations");
-        // let chartArea = svg.append("g").attr("id","points")
-        //                 .attr("transform",`translate(${margin.left},${margin.top})`);
-
-        // const cuisine_ct = await d3.csv("./cuisine_count.csv");
+        const cuisine_ct = await d3.json("./cuisine_count_top10.json");
+        console.log(cuisine_ct)
 
         // cuisine_ct.forEach ( d => {
-        //     d["cuisines"] = Number(d["cuisines"])          
-        // })
-        // console.log(cuisine_ct)
+        //     d["cuisines"] = Number(d["cuisines"])   
+        // })  //only needed for dictionary 
+
+        let countScale = d3.scaleLinear().domain([0,40]).range([chartHeight, 0]);
+
+        let leftAxis = d3.axisLeft(countScale).tickFormat(d3.format('0'));
+        let leftGridlines = d3.axisLeft(countScale) 
+                                .tickSize(-chartWidth-10)
+                                .tickFormat("")
+        annotations.append("g")
+                    .attr("class", "y axis")
+                    .attr("transform",`translate(${margin.left-10},${margin.top})`)
+                    .call(leftAxis)
+        annotations.append("g")
+                    .attr("class", "y gridlines")
+                    .attr("transform",`translate(${margin.left-10},${margin.top})`)
+                    .call(leftGridlines);
+
+        let bottomAxis = d3.axisBottom()
+        let bottomAxisG = annotations.append("g")
+                                    .attr("class", "x axis")
+                                    .attr("transform",`translate(${margin.left},${chartHeight+margin.top+10})`)
 
         // var topCuisines = cuisine_ct.sort(function(a, b) {
         //     return d3.descending(+a.Impressions, +b.Impressions);
-        // }).slice(0, 10);
+        // }).slice(1, 11);
         // console.log(topCuisines)
 
-        // const countScale = d3.scaleLinear().domain([0,40]).range([chartHeight, 0]);
-        // let leftAxis = d3.axisLeft(countScale).tickFormat(d3.format('0'));
-        // let leftGridlines = d3.axisLeft(countScale)
-        //                         .tickSize(-chartWidth-10)
-        //                         .tickFormat("")
-        // annotations.append("g")
-        //             .attr("class", "y axis")
-        //             .attr("transform",`translate(${margin.left-10},${margin.top})`)
-        //             .call(leftAxis)
-        // annotations.append("g")
-        //             .attr("class", "y gridlines")
-        //             .attr("transform",`translate(${margin.left-10},${margin.top})`)
-        //             .call(leftGridlines);
+        // var dict = new Object();
+        // dict = {"American": 29, "Chinese": 8, "Mediterranean": 6, "Indian": 38, "Italian": 18, "Japanese": 5, "Kosher": 6, 
+        //         "Mexican": 8, "Middle Eastern": 8, "Thai": 8 };
 
-        // let bottomAxis = d3.axisBottom()
-        // let bottomAxisG = annotations.append("g")
-        //                             .attr("class", "x axis")
-        //                             .attr("transform",`translate(${margin.left},${chartHeight+margin.top+10})`)
-        
-        // const cuisine_types = ["American", "Chinese", "Mediterranean", "Italian", "Japanese", "Kosher", "Mexican", 
-        //                         "Middle Eastern", "Thai", "Other"] 
-        // const cuisineScale = d3.scaleBand().domain(cuisine_types).range([0, chartWidth])
-        //                                 .padding(0.05);
-        
-        // bottomAxis.scale(cuisineScale)
-        // bottomAxisG.transition().call(bottomAxis);
+        const cuisine_key = Object.keys(cuisine_ct)
+        console.log(cuisine_key)
 
-        // chartArea.selectAll('rect.bar').data( cuisine_ct, d => d.cuisines )
-        //      .join( enter => enter.append('rect')
-        //                           .attr('class','bar')
-        //                           .attr("fill", "steelblue")
-        //                           .attr("x", cuisineScale)
-        //                           .attr("y", d => countScale(d.cuisines))
-        //                           .attr("height", d => countScale(0) - countScale(d.cuisines))
-        //                           .attr("width", cuisineScale.bandwidth())
-        //                           .attr("opacity", 0)) // Set opacity low, then animate to 1 to make them fade in
+        const values = Object.keys(cuisine_ct).map(function(key){
+            return cuisine_ct[key];
+        });
+        console.log(values)
+
+        let cuisineScale = d3.scaleBand().domain(cuisine_key).range([0, chartWidth])
+                                        .padding(0.05);
+
+        bottomAxis.scale(cuisineScale)
+        bottomAxisG.transition().call(bottomAxis);
+
+        let cuisine_ct_array = []
+
+        Object.keys(cuisine_ct).forEach((d) => {
+            const temp = { [d]: cuisine_ct[d] }
+            cuisine_ct_array.push(temp);
+        })
+
+        console.log(cuisine_ct_array);
+
+        chartArea.selectAll('rect.bar').data(cuisine_ct_array)
+                          .join('rect')
+                          .attr('class', 'bar')
+                          .attr('fill', 'orange')
+                          .attr("x", d => cuisineScale(Object.keys(d)[0]))
+                          .attr("y", d => countScale(d[Object.keys(d)[0]]))
+                          .attr("height", d => countScale(0)- countScale(d[Object.keys(d)[0]]))
+                          .attr("width", 20)
+                          .attr("opacity", 1)
 
 
   }

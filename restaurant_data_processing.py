@@ -54,7 +54,9 @@ for original, replacer in veg_dict.items():
 print(veg_df['cuisines'].value_counts())
 
 
-veg_df['cuisines'].value_counts().to_csv(r'cuisine_count.csv')
+veg_df['cuisines'].value_counts()[1:].to_json(r'cuisine_count.json')
+veg_df['cuisines'].value_counts()[1:11].to_json(r'cuisine_count_top10.json')
+veg_df['cuisines'].value_counts()[1:11].to_csv(r'cuisine_count_top10.csv')
 veg_df.to_csv(r'cleaned_restaurants_data.csv')
 
 
