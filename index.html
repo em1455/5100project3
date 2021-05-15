@@ -132,7 +132,7 @@
                 <div class = "dietary_filter">
                     <h4>Dietary</h4>
                 </div>
-                <div class = "cruisine_filter">
+                <div class = "cuisines_filter">
                     <h4>Cuisine:</h4> 
                 </div>
             </div>
@@ -152,8 +152,8 @@
 <script>
  // FILTERING 
     const dietary_ids = ["Vegan","Vegetarian", "Both", "All Dietary"];
-    const cuisines_ids = ["American","General Mediterranean", "Italian", 
-    "Japanese","Kosher","Mexican","Middle Eastern","Thai","Chinese", "All Cuisines"];
+    const cuisines_ids = ["American", "Chinese", "Indian", "Italian", 
+    "Japanese", "Kosher", "Mediterranean", "Mexican", "Middle Eastern", "Thai", "All Cuisines"];
 
 // // CHANGE FITER COLOR
 function changeColor(name, array_name){
@@ -359,11 +359,9 @@ const requestData = async () => {
                                                 .attr("fill", "red")
                                                 hover.attr("visibility","hidden");
                                 })
-                                
-        const hover = map.append("g").attr("class","hover")
         
-        // const mouseover = map.append("g").attr("class","mouseover")
-        //                 .attr("transform","translate(970,320)");
+        //mouseover for circle plots
+        const hover = map.append("g").attr("class","hover")
 
         function stringLen(str) {
             const dummytext = hover.append("text").attr("visibility","hidden");
