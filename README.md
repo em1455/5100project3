@@ -14,6 +14,7 @@
 - US Map ✅
 - Plot restaurants (Carolyn Morikawa) ✅
 - State color luminance/saturation by ratio of veg/vegan restaurants per 100,000 residents (Cynthia Shen) 
+    - mouseover (Emily) ✅
     - color (Cynthia) ✅
     - Legend (Cynthia)
 - Bar graphs

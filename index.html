@@ -73,20 +73,29 @@
     .dietary_filter span{
         margin-right:10px;
         padding: 8px;
+        margin-bottom:5px;
         border: solid black 2px;
         border-radius: 5px;
         background-color: white;
     }
     .cuisines_filter span{
         margin-right:10px;
-        margin-bottom:5px;
-        margin-left:3px;
-        float:left;
         padding: 8px;
-        border: solid black 1px;
+        margin-bottom:5px;
+        float: left;
+        border: solid black 2px;
         border-radius: 5px;
         background-color: white;
     }
+    
+    .price_filter {
+        height: 70px;
+        clear: both; 
+        padding-left:20px;
+        text-align:left;
+        background-color: white;
+        margin-top: -20px;
+      }
 
     .box_2 {
         display: flex;
@@ -115,6 +124,7 @@
         outline: solid 1px black;
         background-color: white;
     }
+ 
 
         </style>
         </head>
@@ -129,13 +139,22 @@
 
             <div class = "filters">
                 <h3>FILTERS</h3>
-                <div class = "dietary_filter">
+                
+                <div class = "dietary_filter" style="padding:10px">
                     <h4>Dietary</h4>
-                </div>
-                <div class = "cuisines_filter">
-                    <h4>Cuisine:</h4> 
-                </div>
+                </div> </br>
+
+                <div class = "cuisines_filter" style="padding: 10px">
+                    <h4>Cuisine</h4>  
+                </div> </br>
+
+                <div class = "price_filter" style="padding: 10px">
+                    <h4> Maximum Price</h4>  
+                    <input id="slider" type="range" min="30000" max="155000" step="10" value="55000" style="width:300px;
+                    height:25px"/>
+                </div> </br> 
             </div>
+            
         </div>
 
         <div class = box_2>
