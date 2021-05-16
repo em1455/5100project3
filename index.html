@@ -163,7 +163,7 @@
 
             <div class = "rectangle">
                 <h4> Average Max Price by Cuisine Vegan vs. Vegetarian </h4>
-                <svg id="barbellchart" height="400" width="600"> </svg>
+                <svg id="barbellchart" height="430" width="625"> </svg>
             </div>
         </div>
 
@@ -701,51 +701,56 @@ const requestData = async () => {
         const barbell = d3.select("svg#barbellchart");
         const barbellWidth = barbell.attr("width");
         const barbellHeight = barbell.attr("height");
-        const barbellMargin = {top: 10, right: 10, bottom: 10, left: 10};
+        const barbellMargin = {top: 10, right: 10, bottom: 50, left: 10};
         const barbellChartWidth = barbellWidth - barbellMargin.left - barbellMargin.right;
         const barbellChartHeight = barbellHeight - barbellMargin.top - barbellMargin.bottom;
 
         let barbellAnnotations = barbell.append("g").attr("id","annotations");
         let barbellChartArea = barbell.append("g").attr("id","points")
-                               .attr("transform",`translate(${barbellMargin.left},${barbellMargin.top})`);
+                               .attr("transform",`translate(${barbellMargin.left+40},${barbellMargin.top})`);
         console.log(priceData)
 
         priceData.forEach( (d) => {
             d["menus.amountMax"] = Number(d["menus.amountMax"]) 
         })
         console.log(priceData)
-        priceExtent = d3.extent(priceData, d => d['menus.amountMax'] );
-        console.log(priceExtent) //[3.916999999999999, 69.42171764705894]
-
-        var priceScale = d3.scaleLinear().domain([0, 70]).range([barbellChartHeight, 0]);
-
-        //    const colorScaleRange = [ "#bdc9e1", "#74a9cf", "#0570b0","#045a8d"];
-
+        
+        // var avgPrices = d3.map(priceData, d => d["menus.amountMax"]) 
         var avgCuisines = d3.map(priceData, d => d.cuisines) 
         var avgDietary = d3.map(priceData, d => d.dietary) 
-                                        
+                
+        var priceScale = d3.scaleLinear().domain([0, 70]).range([barbellChartHeight, 0]);
+
         var dietScale = d3.scaleOrdinal().domain(avgDietary)
                                         .range( ['#045a8d', '#FFA500'] );  // [ vegan (blue), vegetarian (orange)]
 
         var avgCuisineScale = d3.scaleBand().domain(avgCuisines)
                                         .range( [0, barbellChartWidth] );
 
+        priceExtent = d3.extent(priceData, d => d['menus.amountMax'] );
+        console.log(priceExtent) //[3.916999999999999, 69.42171764705894]        
+        const avgPrice = d3.mean(priceData, d => d['menus.amountMax']);
+        const priceDist = Math.max( Math.abs(priceExtent[0] - avgPrice), Math.abs(priceExtent[1] - avgPrice) );
+        console.log(avgPrice, priceDist);
+
+        
         let bleftAxis = d3.axisLeft(priceScale);
         let bleftGridlines = d3.axisLeft(priceScale)
                                 .tickSize(-barbellChartWidth-10)
                                 .tickFormat("")
         barbellAnnotations.append("g")
                     .attr("class", "y axis")
-                    .attr("transform",`translate(${barbellMargin.left+15},${barbellMargin.top})`)
+                    .attr("transform",`translate(${barbellMargin.left+15.5},${barbellMargin.top})`)
                     .call(bleftAxis)
         barbellAnnotations.append("g")
                     .attr("class", "y gridlines")
-                    .attr("transform",`translate(${barbellMargin.left+15},${barbellMargin.top})`)
+                    .attr("transform",`translate(${barbellMargin.left+15.5},${barbellMargin.top})`)
                     .call(bleftGridlines);
+                    
         let bbottomAxis = d3.axisBottom(avgCuisineScale)
         let bbottomAxisG = barbellAnnotations.append("g")
                                     .attr("class", "x axis")
-                                    .attr("transform",`translate(${barbellMargin.left},${barbellChartHeight+barbellMargin.top+10})`)
+                                    .attr("transform",`translate(${barbellMargin.left+7},${barbellChartHeight+barbellMargin.top+10})`)
                                     .call(bbottomAxis); 
 
         lollipop = barbellChartArea.selectAll('g.lollipop').data( priceData, d => d['menus.amountMax'] )
@@ -755,9 +760,19 @@ const requestData = async () => {
         lollipop.append("circle")
                 .attr("class","pop")
                 .attr("r", 8)
+                .attr("stroke", "black")
+                .attr("stroke-width", 1.5)
                 .attr("fill", d => dietScale(d['dietary']))
-                .attr("cx", d => avgCuisineScale(d['cuisines']) ) 
+                .attr("cx", d => avgCuisineScale(avgCuisines) ) 
                 .attr("cy", d => priceScale(d['menus.amountMax']))
+
+        // lollipop.append("line")
+        //         .attr("class","stick")
+        //         .attr("x1", 0 )  
+        //         .attr("x2", 0 )
+        //         .attr("y1", d => Math.min( priceScale(avgPrice), priceScale(d['menus.amountMax']) ) )
+        //         .attr("y2", d => priceDist )
+        
   }
 
   requestData();
