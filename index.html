@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 
 <html lang="en">
@@ -48,7 +47,6 @@
     .filters{
         width: 500px;
         height: 600px;
-        /* top: 50px; */
         margin-left:1px;
         margin-right: 20px;
         padding: 10px;
@@ -174,27 +172,27 @@
     const cuisines_ids = ["American", "Chinese", "Indian", "Italian", 
     "Japanese", "Kosher", "Mediterranean", "Mexican", "Middle Eastern", "Thai", "All Cuisines"];
 
-// // CHANGE FITER COLOR
+// CHANGE FITER COLOR
 function changeColor(name, array_name){
-        var element = document.getElementById(name);
-        element.style.backgroundColor = "skyblue";
-        //find what array to sort through
-        if (array_name === 'dietary_ids'){
-            list_ids = dietary_ids;
-        }//else for other array names
-        else if (array_name === 'cuisines_ids'){
-            list_ids = cuisines_ids;
-        }//else for other array names
-        for (var i=0; i<list_ids.length;i++){
-            var value = list_ids[i];
-            if (value != name){
-                element = document.getElementById(value);
-                if (element.style.backgroundColor === "skyblue"){
-                    element.style.backgroundColor = "white";
-                }
+    var element = document.getElementById(name);
+    element.style.backgroundColor = "skyblue";
+    //find what array to sort through
+    if (array_name === 'dietary_ids'){
+        list_ids = dietary_ids;
+    }//else for other array names
+    else if (array_name === 'cuisines_ids'){
+        list_ids = cuisines_ids;
+    }//else for other array names
+    for (var i=0; i<list_ids.length;i++){
+        var value = list_ids[i];
+        if (value != name){
+            element = document.getElementById(value);
+            if (element.style.backgroundColor === "skyblue"){
+                element.style.backgroundColor = "white";
             }
         }
     }
+}
 
 const requestData = async () => {
 //LOAD Vegetarian/Vegan DATASET
@@ -378,19 +376,18 @@ const requestData = async () => {
 
       // Divide by scale to make sure strokes remain a consistent width during zooming
       viewport.select(".state-outline")
-                  .style("stroke-width", 3 / transform.k);
+              .style("stroke-width", 3 / transform.k);
       viewport.select(".county-outline")
-                  .style("stroke-width", 2 / transform.k);
+              .style("stroke-width", 2 / transform.k);
 
       // Expose county layer when sufficiently zoomed
       viewport.select(".county-outline")
-                .attr("visibility", (transform.k > 2) ? "visible" : "hidden");
+              .attr("visibility", (transform.k > 2) ? "visible" : "hidden");
       viewport.selectAll(".county")
-                .attr("visibility", (transform.k > 2) ? "visible" : "hidden");
-        viewport.select(".state")
-                .attr("opacity", (transform.k > 2) ? 0.7 : 1);
-     
-        
+              .attr("visibility", (transform.k > 2) ? "visible" : "hidden");
+      viewport.select(".state")
+              .attr("opacity", (transform.k > 2) ? 0.7 : 1);
+           
     }
 
     viewport.selectAll(".state").on("click",clicked);
@@ -406,12 +403,10 @@ const requestData = async () => {
       let x = (bounds[0][0] + bounds[1][0]) / 2; // center x of state/county
       let y = (bounds[0][1] + bounds[1][1]) / 2; // center y of state/county
 
-
       let scale = Math.max(10, Math.min(10, 1.2 / Math.max( dx / mapWidth, 
                                                            dy / mapHeight )));
 
       let translate = [mapWidth / 2 - x * scale, mapHeight / 2 - y * scale];
-
 
       let newTransform = d3.zoomIdentity
                             .translate(translate[0],translate[1])
@@ -421,15 +416,94 @@ const requestData = async () => {
 
     }
     
+    // d3.select("input#slider")
+    //   .on("input", function() {showRestaurant(+this.value)})
+    
+    // function showRestaurant(output) {
+
+    //     data.forEach( (d) => {
+    //         if (d.priceRangeMax == "") {
+    //             map.selectAll("circle.dot")
+    //                 .data(d)
+    //                 .join("circle")
+    //                 .attr("class","dot")
+    //                 .attr("r", 6)
+    //                 .attr("fill", "#808080")
+    //                 .attr("opacity", 1)
+    //                 .attr("cx", d => d.position[0])
+    //                 .attr("cy", d => d.position[1])
+    //                 .attr("stroke", "black")
+    //                 .attr("stroke-width", 1.5)
+    //                 .on("mouseover", function() {
+    //                                 d3.select(this)
+    //                                 .transition().duration(100)
+    //                                 .attr("stroke","black")
+    //                                 .attr("stroke-width", 3.5)
+    //                                 .attr("r", 8)
+    //                                 .attr("opacity", 1)
+    //                                 .attr("fill", "#D3D3D3")
+    //                                 hover.attr("visibility","");
+    //                                 updateMouseover(d3.select(this).datum()); })
+    //                 .on("mouseout", function () {
+    //                                 d3.select(this)
+    //                                 .transition().duration(100)
+    //                                 .attr("stroke","black")
+    //                                 .attr("stroke-width", 1.5)
+    //                                 .attr("r", 6)
+    //                                 .attr("opacity", 1)
+    //                                 .attr("fill", "#808080")
+    //                                 hover.attr("visibility","hidden"); })
+    //         }
+    //         else {
+
+    //         }
+            
+    //     })
+
+    //     birthplaceHolder = [];
+    //     birthplace.forEach( (d) => {
+    //     if (fipsHolder.includes(d.fips)) {
+    //         birthplaceHolder.push(d)
+    //     }
+    //     })
+
+    //     // incmap.selectAll("circle.dot")
+    //     //     .data(birthplaceHolder)
+    //     //     .join("circle")
+    //     //     .attr("class","dot")
+    //     //     .attr("cx", d => d.position[0])
+    //     //     .attr("cy", d => d.position[1])
+    //     //     .attr("r", 3.75)
+    //     //     .style("stroke", "black")
+    //     //     .style("stroke-width", 0.75)
+    //     //     .style("fill", "orange")
+    //     //     .style("opacity", 1)
+    //     //     .on("mouseover", function() {
+    //     //         d3.select(this)
+    //     //             .transition().duration(200)
+    //     //             .attr("stroke-width",4)
+    //     //             .style("fill", "LightSteelBlue");
+    //     //         updateMouseover(d3.select(this).datum());
+    //     //     })
+    //     //     .on("mouseout", function() {
+    //     //         d3.select(this)
+    //     //             .transition().duration(200)
+    //     //             .attr("stroke-width",0.75)
+    //     //             .style("fill", "orange");
+    //     //         });
+    //     };
+    //     showRestaurant(40);
 
     let circles = map.selectAll("circle.dot").data(data)
                                 .join("circle")
                                 .attr("class","dot")
-                                .attr("r", 5)
-                                .attr("fill", "red")
-                                .attr("opacity", 0.6)
+                                .attr("r", 6)
+                                .attr("fill", "orange")
+                                .attr("opacity", 1)
                                 .attr("cx", d => d.position[0])
                                 .attr("cy", d => d.position[1])
+                                .attr("stroke", "black")
+                                .attr("stroke-width", 1.5)
                                 .on("mouseover", function() {
                                                 d3.select(this)
                                                 .transition().duration(100)
@@ -437,7 +511,7 @@ const requestData = async () => {
                                                 .attr("stroke-width", 3.5)
                                                 .attr("r", 8)
                                                 .attr("opacity", 1)
-                                                .attr("fill", "orange")
+                                                .attr("fill", "red")
                                                 hover.attr("visibility","");
                                                 updateMouseover(d3.select(this).datum());  
                                             })
@@ -445,10 +519,10 @@ const requestData = async () => {
                                                 d3.select(this)
                                                 .transition().duration(100)
                                                 .attr("stroke","black")
-                                                .attr("stroke-width", 1)
+                                                .attr("stroke-width", 1.5)
                                                 .attr("r", 6)
                                                 .attr("opacity", 1)
-                                                .attr("fill", "red")
+                                                .attr("fill", "orange")
                                                 hover.attr("visibility","hidden");
                                 })
         

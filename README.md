@@ -20,7 +20,7 @@
 - Bar graphs
     - Graph #1: Distribution of top 10 cuisines (Emily) ✅
     - Graph #2: Distribution of dietary (Carolyn) 
-    - Graph #3: Distribution of max price OR lollipop graph of min and max price (Emily)
+    - Graph #3: bar bell chart showing the distribution of all the cuisines and the difference in prices of vegan and vegetarian (Emily)
     - Adding pop up interactions for the graphs (Carolyn)
 
 ## Filters
