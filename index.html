@@ -720,19 +720,16 @@ const requestData = async () => {
         var avgDietary = d3.map(priceData, d => d.dietary) 
                 
         var priceScale = d3.scaleLinear().domain([0, 70]).range([barbellChartHeight, 0]);
-
         var dietScale = d3.scaleOrdinal().domain(avgDietary)
                                         .range( ['#045a8d', '#FFA500'] );  // [ vegan (blue), vegetarian (orange)]
-
         var avgCuisineScale = d3.scaleBand().domain(avgCuisines)
                                         .range( [0, barbellChartWidth] );
 
         priceExtent = d3.extent(priceData, d => d['menus.amountMax'] );
         console.log(priceExtent) //[3.916999999999999, 69.42171764705894]        
-        const avgPrice = d3.mean(priceData, d => d['menus.amountMax']);
-        const priceDist = Math.max( Math.abs(priceExtent[0] - avgPrice), Math.abs(priceExtent[1] - avgPrice) );
-        console.log(avgPrice, priceDist);
-
+        // const avgPrice = d3.mean(priceData, d => d['menus.amountMax']);
+        // const priceDist = Math.max( Math.abs(priceExtent[0] - avgPrice), Math.abs(priceExtent[1] - avgPrice) );
+        // console.log(avgPrice, priceDist);
         
         let bleftAxis = d3.axisLeft(priceScale);
         let bleftGridlines = d3.axisLeft(priceScale)
@@ -770,8 +767,29 @@ const requestData = async () => {
         //         .attr("class","stick")
         //         .attr("x1", 0 )  
         //         .attr("x2", 0 )
-        //         .attr("y1", d => Math.min( priceScale(avgPrice), priceScale(d['menus.amountMax']) ) )
-        //         .attr("y2", d => priceDist )
+        //         .attr("y1", priceData.forEach( (d) => { d => Math.min( avgDietary["vegan"]( d["menus.amountMax"]), avgDietary["vegetarian"]( d["menus.amountMax"]) )}))
+        //         .attr("y2", priceData.forEach( (d) => { d => Math.max( avgDietary["vegan"]( d["menus.amountMax"]), avgDietary["vegetarian"]( d["menus.amountMax"]) )}))
+
+        // console.log(priceData.forEach( (d) => { d => Math.min( avgDietary["vegan"]( d["menus.amountMax"]), avgDietary["vegetarian"]( d["menus.amountMax"]) )}))
+        
+        // lollipop.append("line")
+        //         .attr("class","stick")
+        //         .attr("x1", 0 )  
+        //         .attr("x2", 0 )
+        //         .attr("y1", d => { if (d.dietary == "vegan") { return priceScale(avgPrice) } })
+        //         .attr("y2", d => { if (d.dietary == "vegetarian") { return priceScale(avgPrice) } } )
+
+        // for ( x in avgCuisines) {
+        //     const link = d3.linkHorizontal()({
+        //         source: avgDietary["vegan"],
+        //         target: avgDietary["vegetarian"]
+        //     });
+
+        //     lollipop.append('path')
+        //     .attr('d', link)
+        //     .attr('stroke', 'black')
+        //     .attr('fill', 'none');
+        // };
         
   }
 
