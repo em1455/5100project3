@@ -26,7 +26,18 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 50;
         }
-
+    .c_xlabel{
+          font-family: "Arial";
+          font-size: 15px;
+          margin-bottom:0 ;
+          font-weight: bolder;
+      }
+      .c_ylabel{
+          font-family: "Arial";
+          font-size: 15px;
+          margin-bottom:0 ;
+          font-weight: bolder;
+      }
     .box_1 {
         display: flex;
         width:1430px;
@@ -628,7 +639,7 @@ const requestData = async () => {
         const svg = d3.select("svg#barchart");
         const width = svg.attr("width");
         const height = svg.attr("height");
-        const margin = {top: 10, right: 10, bottom: 50, left: 50};
+        const margin = {top: 40, right: 10, bottom: 70, left: 70};
         const chartWidth = width - margin.left - margin.right;
         const chartHeight = height - margin.top - margin.bottom;
 
@@ -686,13 +697,40 @@ const requestData = async () => {
                           .join('rect')
                           .attr('class', 'bar')
                           .attr('fill', 'orange')
-                          .attr("x", d => cuisineScale(Object.keys(d)[0]))
+                          .attr("x", d => cuisineScale(Object.keys(d)[0])+5)
                           .attr("y", d => countScale(d[Object.keys(d)[0]]))
                           .attr("height", d => countScale(0)- countScale(d[Object.keys(d)[0]]))
-                          .attr("width", 20)
+                          .attr("width", 50)
                           .attr("opacity", 1)
 
-        
+     //Add chart labels
+            //xlabel
+            chartArea.append('text')
+                .attr('class','c_xlabel')
+                .attr('text-anchor','end')
+                .attr('x', chartWidth/2+margin.left-45)
+                .attr('y', chartHeight+margin.bottom-25)
+                .text("Top 10 Cusines");
+
+
+            //ylabel
+            chartArea.append('text')
+                  .attr('class','c_ylabel')
+                  .attr('text-anchor','end')
+                  .attr('x', margin.right/2-125)
+                  .attr('y', -margin.left+20)
+                  .attr("transform", "rotate(-90)")
+                  .text("Type of Cuisine");
+            //title
+            chartArea.append("text")
+                .attr("x", (chartWidth / 2)-10)
+                .attr("y", 0 - margin.top +18)
+                .attr("text-anchor", "middle")
+                .style("font-family", "Arial, Helvetica, sans-serif")
+                .style("font-size", "20px")
+                .style("text-decoration", "underline")
+                .style("font-weight", "bolder")
+                .text("Number of Resturants");
 
         //barbell chart price mean for restaurants 
 
