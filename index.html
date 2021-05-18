@@ -646,6 +646,112 @@ const requestData = async () => {
             }
         
         }
+    // Dietary Distribution Bar Chart
+    dietary_counts = count_dietary_dict(dietary_ids);
+
+//put counts of crashes in dictionaries
+data.forEach(d=>{
+    dietary_counts[d.dietary] +=1;
+    total_count += 1;
+});
+console.log(dietary_counts)
+
+var svg1 = d3.select("svg#dietary_barchart");
+const width1 = svg1.attr("width");
+const height1 = svg1.attr("height");
+const margin1 = {top: 40, right: 10, bottom: 70, left: 70};
+const chartWidth1 = width1 - margin1.left - margin1.right;
+const chartHeight1 = height1 - margin1.top - margin1.bottom;
+
+const dietary_ct = await d3.json("./dietary_count.json");
+console.log(dietary_ct)
+let annotations1 = svg1.append("g").attr("id","annotations");
+let chartArea1 = svg1.append("g").attr("id","points")
+                .attr("transform",`translate(${margin1.left},${margin1.top})`);
+
+let countScale1 = d3.scaleLinear().domain([0,120]).range([chartHeight1,0])
+
+
+let leftAxis1 = d3.axisLeft(countScale1).tickFormat(d3.format('0'));
+let leftGridlines1 = d3.axisLeft(countScale1) 
+                        .tickSize(-chartWidth1-10)
+                        .tickFormat("")
+annotations1.append("g")
+            .attr("class", "y axis")
+            .attr("transform",`translate(${margin1.left-10},${margin1.top})`)
+            .call(leftAxis1)
+annotations1.append("g")
+            .attr("class", "y gridlines")
+            .attr("transform",`translate(${margin1.left-10},${margin1.top})`)
+            .call(leftGridlines1);
+
+
+let bottomAxis1 = d3.axisBottom()
+let bottomAxisG1 = annotations1.append("g")
+                            .attr("class", "x axis")
+                            .attr("transform",`translate(${margin1.left},${chartHeight1+margin1.top+10})`)
+
+const dietary_key = Object.keys(dietary_ct)
+console.log(dietary_key)
+
+const values_1 = Object.keys(dietary_ct).map(function(key1){
+    return dietary_ct[key1];
+});
+console.log(values_1)
+
+let dietaryScale = d3.scaleBand().domain(dietary_key).range([0, chartWidth1])
+                                .padding(0.05);
+
+bottomAxis1.scale(dietaryScale)
+bottomAxisG1.transition().call(bottomAxis1);
+
+let dietary_ct_array = []
+
+Object.keys(dietary_ct).forEach((d) => {
+    const temporary = { [d]: dietary_ct[d] }
+    dietary_ct_array.push(temporary);
+})
+
+console.log(dietary_ct_array);
+svg1.attr('visibility','hidden');
+chartArea1.selectAll('rect.bar').data(dietary_ct_array)
+                  .join('rect')
+                  .attr('class', 'bar')
+                  .attr('fill', 'orange')
+                  .attr("x", d => dietaryScale(Object.keys(d)[0])+80)
+                  .attr("y", d => countScale1(d[Object.keys(d)[0]]))
+                  .attr("height", d => countScale1(0)- countScale1(d[Object.keys(d)[0]]))
+                  .attr("width", 50)
+                  .attr("opacity", 1)
+
+//Add chart labels
+    //xlabel
+  chartArea1.append('text')
+        .attr('class','c_xlabel')
+        .attr('text-anchor','end')
+        .attr('x', chartWidth1/2+margin1.left-45)
+        .attr('y', chartHeight1+margin1.bottom-25)
+        .text("Dietary Types");
+
+
+    //ylabel
+    chartArea1.append('text')
+          .attr('class','c_ylabel')
+          .attr('text-anchor','end')
+          .attr('x', margin1.right/2-125)
+          .attr('y', -margin1.left+20)
+          .attr("transform", "rotate(-90)")
+          .text("Number of Resturants");
+    //title
+    chartArea1.append("text")
+        .attr("x", (chartWidth1 / 2)-10)
+        .attr("y", 0 - margin1.top +18)
+        .attr("text-anchor", "middle")
+        .style("font-family", "Arial, Helvetica, sans-serif")
+        .style("font-size", "20px")
+        .style("text-decoration", "underline")
+        .style("font-weight", "bolder")
+        .text("Number of Resturants per Dietary Restrictions");       
 
         //Cuisine Distribution Bar Chart 
 
