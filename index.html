@@ -830,41 +830,6 @@ const requestData = async () => {
                 .attr("fill", d => dietScale(d['dietary']))
                 .attr("cx", d => avgCuisineScale(avgCuisines) ) 
                 .attr("cy", d => priceScale(d['menus.amountMax']))
-
-        // lollipops.append("line")
-        //    .attr("class","stick")
-        //    .attr("x1", 0 )  // 0 because we have a translate() on the <g> tag for x location
-        //    .attr("x2", 0 )  
-        //    .attr("y1", ppvScale(avgPPV))  
-        //    .attr("y2", d => ppvScale(d['personpervote']))  
-
-        // lollipop.append("line")
-        //         .attr("class","stick")
-        //         .attr("x1", 0 )  
-        //         .attr("x2", 0 )
-        //         .attr("y1", priceData.forEach( (d) => { d => Math.min( avgDietary["vegan"]( d["menus.amountMax"]), avgDietary["vegetarian"]( d["menus.amountMax"]) )}))
-        //         .attr("y2", priceData.forEach( (d) => { d => Math.max( avgDietary["vegan"]( d["menus.amountMax"]), avgDietary["vegetarian"]( d["menus.amountMax"]) )}))
-
-        // console.log(priceData.forEach( (d) => { d => Math.min( avgDietary["vegan"]( d["menus.amountMax"]), avgDietary["vegetarian"]( d["menus.amountMax"]) )}))
-        
-        // lollipop.append("line")
-        //         .attr("class","stick")
-        //         .attr("x1", 0 )  
-        //         .attr("x2", 0 )
-        //         .attr("y1", d => { if (d.dietary == "vegan") { return priceScale(avgPrice) } })
-        //         .attr("y2", d => { if (d.dietary == "vegetarian") { return priceScale(avgPrice) } } )
-
-        // for ( x in avgCuisines) {
-        //     const link = d3.linkHorizontal()({
-        //         source: avgDietary["vegan"],
-        //         target: avgDietary["vegetarian"]
-        //     });
-
-        //     lollipop.append('path')
-        //     .attr('d', link)
-        //     .attr('stroke', 'black')
-        //     .attr('fill', 'none');
-        // };
         
   }
 
