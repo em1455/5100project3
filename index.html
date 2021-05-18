@@ -616,7 +616,7 @@ const requestData = async () => {
                         current_filters['cuisines']=d;
                     }
                     updateResturant();
-                    updateGraphs(d);
+                    popupGraph(d);
             
                 })
         })
@@ -636,7 +636,7 @@ const requestData = async () => {
                 };
 
     //BAR GRAPH SELECTED POP UP
-        function updateGraphs(d){
+        function popupGraph(d){
             var svg =d3.select("svg#barchart");
             if (d != "All Dietary" && d != "All Cuisines"){
                 svg.attr('visibility',"");
