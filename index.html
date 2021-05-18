@@ -112,8 +112,24 @@
         margin-left: auto; 
         margin-right: auto;
     }
+    .box_3 {
+        display: flex;
+        width:1430px;
+        margin-left: auto; 
+        margin-right: auto;
+    }
 
     .barchart-container {
+        width:750px;
+        height: 500px;
+        padding-left:5px;
+        padding-right:5px;
+        margin-left:0px;
+        outline: solid 1px black;
+        background-color:white;
+    }
+
+    .barchart-container2 {
         width:750px;
         height: 500px;
         padding-left:5px;
@@ -166,10 +182,14 @@
             
         </div>
 
-        <div class = box_2>
+        <div class = box_3>
+            <div class="barchart-container2">
+                <h4> Distribution of Restaurants by Cusine</h4>
+                <svg id="cusine_barchart" height="450" width="750" ></svg>            
+            </div>
             <div class="barchart-container">
-                <h4> Distribution of Restaurants by Cuisine </h4>
-                <svg id="barchart" height="450" width="750" ></svg>            
+                <h4> Distribution of Restaurants by Dietary </h4>
+                <svg id="dietary_barchart" height="450" width="750" ></svg>            
             </div>
 
             <div class = "rectangle">
@@ -185,7 +205,7 @@
     "Japanese", "Kosher", "Mediterranean", "Mexican", "Middle Eastern", "Thai", "All Cuisines"];
 
 // CHANGE FITER COLOR
-function changeColor(name, array_name){
+function filterColor(name, array_name){
     var element = document.getElementById(name);
     element.style.backgroundColor = "skyblue";
     //find what array to sort through
@@ -588,7 +608,7 @@ const requestData = async () => {
                 .attr('id',d)
                 .text(d)
                 .on('click', function(){
-                    changeColor(d,"dietary_ids");
+                    filterColor(d,"dietary_ids");
                     if (d === 'All Dietary'){
                         current_filters['dietary']="All Dietary";
                     }
@@ -596,8 +616,14 @@ const requestData = async () => {
                         current_filters['dietary']=d;
                     }
                     updateResturant();
+                    var svg1 =d3.select("svg#dietary_barchart");
+            if (d != "All Dietary" && d != "All Cuisines"){
+                svg1.attr('visibility',"");
+            }
+            else{
+                svg1.attr('visibility',"hidden");
+            }
                     
-                    // callgraphs('year', d);
                 })
         })
 
@@ -608,7 +634,7 @@ const requestData = async () => {
                 .attr('id',d)
                 .text(d)
                 .on('click', function(){
-                    changeColor(d,"cuisines_ids");
+                    filterColor(d,"cuisines_ids");
                     if (d === 'All Cuisines'){
                         current_filters['cuisines']="All Cuisines";
                     }
@@ -616,7 +642,15 @@ const requestData = async () => {
                         current_filters['cuisines']=d;
                     }
                     updateResturant();
-                    popupGraph(d);
+                    var svg =d3.select("svg#cusine_barchart");
+            if (d != "All Dietary" && d != "All Cuisines"){
+                svg.attr('visibility',"");
+            }
+            else{
+                svg.attr('visibility',"hidden");
+            }
+        
+        
             
                 })
         })
@@ -635,21 +669,127 @@ const requestData = async () => {
                 })
                 };
 
-    //BAR GRAPH SELECTED POP UP
-        function popupGraph(d){
-            var svg =d3.select("svg#barchart");
-            if (d != "All Dietary" && d != "All Cuisines"){
-                svg.attr('visibility',"");
+        //Dietary Distributino Bar Chart
+        var total_count = 0;
+        //make count dictionaries
+        function count_dietary_dict(dietary_ids){
+            dictionary = {};
+            for (var i=0; i<dietary_ids.length-1; i++){
+                dictionary[ [dietary_ids[i]] ] = 0;
             }
-            else{
-                svg.attr('visibility',"hidden");
-            }
-        
+            return dictionary;
         }
+
+        dietary_counts = count_dietary_dict(dietary_ids);
+
+        //put counts of crashes in dictionaries
+        data.forEach(d=>{
+            dietary_counts[d.dietary] +=1;
+            total_count += 1;
+        });
+        console.log(dietary_counts)
+
+        var svg1 = d3.select("svg#dietary_barchart");
+        const width1 = svg1.attr("width");
+        const height1 = svg1.attr("height");
+        const margin1 = {top: 40, right: 10, bottom: 70, left: 70};
+        const chartWidth1 = width1 - margin1.left - margin1.right;
+        const chartHeight1 = height1 - margin1.top - margin1.bottom;
+
+        const dietary_ct = await d3.json("./dietary_count.json");
+        console.log(dietary_ct)
+        let annotations1 = svg1.append("g").attr("id","annotations");
+        let chartArea1 = svg1.append("g").attr("id","points")
+                        .attr("transform",`translate(${margin1.left},${margin1.top})`);
+
+        let countScale1 = d3.scaleLinear().domain([0,120]).range([chartHeight1,0])
+    
+        
+        let leftAxis1 = d3.axisLeft(countScale1).tickFormat(d3.format('0'));
+        let leftGridlines1 = d3.axisLeft(countScale1) 
+                                .tickSize(-chartWidth1-10)
+                                .tickFormat("")
+        annotations1.append("g")
+                    .attr("class", "y axis")
+                    .attr("transform",`translate(${margin1.left-10},${margin1.top})`)
+                    .call(leftAxis1)
+        annotations1.append("g")
+                    .attr("class", "y gridlines")
+                    .attr("transform",`translate(${margin1.left-10},${margin1.top})`)
+                    .call(leftGridlines1);
+
+
+        let bottomAxis1 = d3.axisBottom()
+        let bottomAxisG1 = annotations1.append("g")
+                                    .attr("class", "x axis")
+                                    .attr("transform",`translate(${margin1.left},${chartHeight1+margin1.top+10})`)
+
+        const dietary_key = Object.keys(dietary_ct)
+        console.log(dietary_key)
+
+        const values_1 = Object.keys(dietary_ct).map(function(key1){
+            return dietary_ct[key1];
+        });
+        console.log(values_1)
+
+        let dietaryScale = d3.scaleBand().domain(dietary_key).range([0, chartWidth1])
+                                        .padding(0.05);
+
+        bottomAxis1.scale(dietaryScale)
+        bottomAxisG1.transition().call(bottomAxis1);
+
+        let dietary_ct_array = []
+
+        Object.keys(dietary_ct).forEach((d) => {
+            const temporary = { [d]: dietary_ct[d] }
+            dietary_ct_array.push(temporary);
+        })
+
+        console.log(dietary_ct_array);
+        svg1.attr('visibility','hidden');
+        chartArea1.selectAll('rect.bar').data(dietary_ct_array)
+                          .join('rect')
+                          .attr('class', 'bar')
+                          .attr('fill', 'orange')
+                          .attr("x", d => dietaryScale(Object.keys(d)[0])+80)
+                          .attr("y", d => countScale1(d[Object.keys(d)[0]]))
+                          .attr("height", d => countScale1(0)- countScale1(d[Object.keys(d)[0]]))
+                          .attr("width", 50)
+                          .attr("opacity", 1)
+
+      //Add chart labels
+            //xlabel
+          chartArea1.append('text')
+                .attr('class','c_xlabel')
+                .attr('text-anchor','end')
+                .attr('x', chartWidth1/2+margin1.left-45)
+                .attr('y', chartHeight1+margin1.bottom-25)
+                .text("Dietary Types");
+
+
+            //ylabel
+            chartArea1.append('text')
+                  .attr('class','c_ylabel')
+                  .attr('text-anchor','end')
+                  .attr('x', margin1.right/2-125)
+                  .attr('y', -margin1.left+20)
+                  .attr("transform", "rotate(-90)")
+                  .text("Number of Resturants");
+            //title
+            chartArea1.append("text")
+                .attr("x", (chartWidth1 / 2)-10)
+                .attr("y", 0 - margin1.top +18)
+                .attr("text-anchor", "middle")
+                .style("font-family", "Arial, Helvetica, sans-serif")
+                .style("font-size", "20px")
+                .style("text-decoration", "underline")
+                .style("font-weight", "bolder")
+                .text("Number of Resturants per Dietary Restrictions");       
+    
 
         //Cuisine Distribution Bar Chart 
 
-        svg = d3.select("svg#barchart");
+        var svg = d3.select("svg#cusine_barchart");
         const width = svg.attr("width");
         const height = svg.attr("height");
         const margin = {top: 40, right: 10, bottom: 70, left: 70};
@@ -733,7 +873,7 @@ const requestData = async () => {
                   .attr('x', margin.right/2-125)
                   .attr('y', -margin.left+20)
                   .attr("transform", "rotate(-90)")
-                  .text("Type of Cuisine");
+                  .text("Number of Resutants");
             //title
             chartArea.append("text")
                 .attr("x", (chartWidth / 2)-10)
@@ -743,7 +883,7 @@ const requestData = async () => {
                 .style("font-size", "20px")
                 .style("text-decoration", "underline")
                 .style("font-weight", "bolder")
-                .text("Number of Resturants");
+                .text("Number of Resturants per Cusine");
 
         //barbell chart price mean for restaurants 
 
