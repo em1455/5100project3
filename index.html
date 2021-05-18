@@ -779,6 +779,59 @@
                               .attr("height", d => countScale(0)- countScale(d[Object.keys(d)[0]]))
                               .attr("width", 50)
                               .attr("opacity", 1)
+                              .on("mouseover", function() {
+                                d3.select(this)
+                                .transition().duration(100)
+                                .attr("stroke","black")
+                                .attr("width", 50)
+                                .attr("opacity", .8)
+                                .attr("fill", "orange")
+                                cusinehover.attr("visibility","");
+                                updateCusineMouseover(d3.select(this).datum());  
+                            })
+                        .on("mouseout", function () {
+                                d3.select(this)
+                                .transition().duration(100)
+                                .attr("stroke", "black")
+                                .attr("width", 50)
+                                .attr("opacity", 1)
+                                .attr("fill", "orange")
+                                cusinehover.attr("visibility","hidden");
+                })
+
+        //mouseover for lollipop plot
+        const cusinehover = chartArea.append("g").attr("class","hover")
+
+        const cusinepopup = cusinehover.append("rect").attr("class","frame")
+                                    .attr("x", 420).attr("y",89)
+                                    .attr("rx", 5).attr("ry", 5)
+                                    .attr("opacity", 1)
+                                    .attr("height", 75).attr("fill", "lightyellow")
+                                    .attr("stroke-width", 1)
+                                    .attr("stroke", "black");
+        const cusinetextbox = cusinehover.append("g").attr("transform","translate(5,5)").attr("class", "label");
+        const cusineformat = d3.format(',d');
+
+        function updateCusineMouseover(d) {
+            cusinetextbox.html('');
+
+            d['menus.amountMax'] = Number(d['menus.amountMax'])
+            d['menus.amountMax'] = d['menus.amountMax'].toFixed(2);
+
+            let cuisine_label = `Cuisine: ${d['cuisines']}`;
+            let cusine_num = `Number of Resturants: ${cuisine_ct}`;
+         
+
+            let cusinemaxWidth = Math.max( stringLen(cusine_num), stringLen(cuisine_label))
+            cusinepopup.attr("width", cusinemaxWidth+20);
+
+            cusinetextbox.append("text").text(cuisine_label)
+                .attr("x", 425).attr("y", 105) //.attr("text-decoration", "underline");
+                cusinetextbox.append("text").text(cusine_ct)
+                .attr("x", 425).attr("y", 125);
+        
+
+        }
          //Add chart labels
                 //xlabel
                 chartArea.append('text')
