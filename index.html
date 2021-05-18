@@ -768,10 +768,6 @@ const requestData = async () => {
         priceExtent = d3.extent(priceData, d => d['menus.amountMax'] );
         var priceScale = d3.scaleLog().domain([3, 70]).range([barbellChartHeight, 1]);
         console.log(priceExtent) //[3.916999999999999, 69.42171764705894]   
-             
-        // const avgPrice = d3.mean(priceData, d => d['menus.amountMax']);
-        // const priceDist = Math.max( Math.abs(priceExtent[0] - avgPrice), Math.abs(priceExtent[1] - avgPrice) );
-        // console.log(avgPrice);
 
         //dietary stuff
         var avgDietary = d3.select(priceData, d => d.dietary) 
@@ -827,9 +823,74 @@ const requestData = async () => {
                 .attr("r", 8)
                 .attr("stroke", "black")
                 .attr("stroke-width", 1.5)
+                .attr("opacity", 1)
                 .attr("fill", d => dietScale(d['dietary']))
                 .attr("cx", d => avgCuisineScale(avgCuisines) ) 
                 .attr("cy", d => priceScale(d['menus.amountMax']))
+                .on("mouseover", function() {
+                                d3.select(this)
+                                .transition().duration(100)
+                                .attr("stroke","black")
+                                .attr("stroke-width", 3.5)
+                                .attr("r", 10)
+                                .attr("opacity", 1)
+                                .attr("fill", d => dietScale(d['dietary']))
+                                lollihover.attr("visibility","");
+                                updateLolliMouseover(d3.select(this).datum());  
+                            })
+                .on("mouseout", function () {
+                                d3.select(this)
+                                .transition().duration(100)
+                                .attr("stroke", "black")
+                                .attr("stroke-width", 1.5)
+                                .attr("r", 8)
+                                .attr("opacity", 1)
+                                .attr("fill", d => dietScale(d['dietary']))
+                                lollihover.attr("visibility","hidden");
+                })
+
+        //mouseover for lollipop plot
+        const lollihover = barbell.append("g").attr("class","hover")
+
+        const lollipopup = lollihover.append("rect").attr("class","frame")
+                                    .attr("x", 420).attr("y",89)
+                                    .attr("rx", 5).attr("ry", 5)
+                                    .attr("opacity", 1)
+                                    .attr("height", 75).attr("fill", "lightyellow")
+                                    .attr("stroke-width", 1)
+                                    .attr("stroke", "black");
+        const lollitextbox = lollihover.append("g").attr("transform","translate(5,5)").attr("class", "label");
+        const lolliformat = d3.format(',d');
+
+        function updateLolliMouseover(d) {
+            lollitextbox.html('');
+
+            d['menus.amountMax'] = Number(d['menus.amountMax'])
+            d['menus.amountMax'] = d['menus.amountMax'].toFixed(2);
+
+            let cuisine_label = `Cuisine: ${d['cuisines']}`;
+            let diet = `Diet: ${d['dietary']}`;
+            let price_label = `Average Max Price: $${d['menus.amountMax']}`;
+
+            let lollimaxWidth = Math.max( stringLen(diet), stringLen(cuisine_label), stringLen(price_label))
+            lollipopup.attr("width", lollimaxWidth+20);
+
+            lollitextbox.append("text").text(cuisine_label)
+                .attr("x", 425).attr("y", 105) //.attr("text-decoration", "underline");
+            lollitextbox.append("text").text(diet)
+                .attr("x", 425).attr("y", 125);
+            lollitextbox.append("text").text(price_label)
+                .attr("x", 425).attr("y", 145);
+
+        }
+
+        //map legend
+        barbell.append('rect').attr('x', 420).attr('y', 10).attr('width', 170).attr('height', 75).attr('stroke', 'black').attr('fill', 'lightyellow').style("stroke-width", 1).attr("rx", 5).attr("ry", 5);
+        barbell.append("text").attr("x", 430).attr("y", 25).text("Color Range").style("font-size", "15px").attr("alignment-baseline","middle").style("font-weight", "bold")
+        barbell.append("circle").attr("cx",437).attr("cy",47).attr("r", 6).style("fill", "#045a8d").style("stroke", "black").style("stroke-width", 0.75)
+        barbell.append("circle").attr("cx",437).attr("cy",67).attr("r", 6).style("fill", "#FFA500").style("stroke", "black").style("stroke-width", 0.75)
+        barbell.append("text").attr("x", 457).attr("y", 48.5).text(`Vegetarian`).style("font-size", "15px").attr("alignment-baseline","middle")
+        barbell.append("text").attr("x", 457).attr("y", 68.5).text(`Vegan`).style("font-size", "14px").attr("alignment-baseline","middle");
         
   }
 
