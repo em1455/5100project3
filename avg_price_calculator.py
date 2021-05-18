@@ -55,9 +55,12 @@ restaurant["dietary"] = dietary
 restaurant = restaurant[restaurant["dietary"]!="neither"]
 
 ### price calculation
-priceMean = restaurant.pivot_table(index=["dietary","cuisines"], values = ["menus.amountMax"], aggfunc = "mean")
+# priceMean = restaurant.pivot_table(index=["cuisines", "dietary"], values = ["menus.amountMax"], aggfunc = "mean")
+priceMean = restaurant.pivot_table(index=["cuisines"], columns=["dietary"], values = ["menus.amountMax"], aggfunc = "mean")
 
-priceMean.to_csv(r'price_mean_data.csv')
+priceMean.to_csv(r'price_mean_data_pivot2.csv')
+
+priceMean.to_json(r'price_mean_data_json.json',orient="index")
     
 
     

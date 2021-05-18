@@ -745,9 +745,12 @@ const requestData = async () => {
                 .style("font-weight", "bolder")
                 .text("Number of Resturants");
 
-        //barbell chart price mean for restaurants 
 
-        let priceData = await d3.csv("./price_mean_data.csv");
+        // double lollipop / barbell chart price mean for restaurants 
+        // double lollipop / barbell chart price mean for restaurants 
+        // double lollipop / barbell chart price mean for restaurants 
+
+        let priceData = await d3.csv("./original_price_mean_data.csv");
 
         const barbell = d3.select("svg#barbellchart");
         const barbellWidth = barbell.attr("width");
@@ -760,28 +763,28 @@ const requestData = async () => {
         let barbellChartArea = barbell.append("g").attr("id","points")
                                .attr("transform",`translate(${barbellMargin.left+40},${barbellMargin.top})`);
         console.log(priceData)
-
-        priceData.forEach( (d) => {
-            d["menus.amountMax"] = Number(d["menus.amountMax"]) 
-        })
-        console.log(priceData)
-        
-        // var avgPrices = d3.map(priceData, d => d["menus.amountMax"]) 
-        var avgCuisines = d3.map(priceData, d => d.cuisines) 
-        var avgDietary = d3.map(priceData, d => d.dietary) 
-                
+           
+        //price stuff
         var priceScale = d3.scaleLinear().domain([0, 70]).range([barbellChartHeight, 0]);
-        var dietScale = d3.scaleOrdinal().domain(avgDietary)
-                                        .range( ['#045a8d', '#FFA500'] );  // [ vegan (blue), vegetarian (orange)]
-        var avgCuisineScale = d3.scaleBand().domain(avgCuisines)
-                                        .range( [0, barbellChartWidth] );
-
         priceExtent = d3.extent(priceData, d => d['menus.amountMax'] );
-        console.log(priceExtent) //[3.916999999999999, 69.42171764705894]        
+        console.log(priceExtent) //[3.916999999999999, 69.42171764705894]   
+             
         // const avgPrice = d3.mean(priceData, d => d['menus.amountMax']);
         // const priceDist = Math.max( Math.abs(priceExtent[0] - avgPrice), Math.abs(priceExtent[1] - avgPrice) );
-        // console.log(avgPrice, priceDist);
+        // console.log(avgPrice);
+
+        //dietary stuff
+        var avgDietary = d3.select(priceData, d => d.dietary) 
+        console.log(avgDietary)
+        var dietScale = d3.scaleOrdinal().domain(avgDietary)
+                                        .range( ['#045a8d', '#FFA500'] );  // [ vegan (blue), vegetarian (orange)]
         
+        //cuisine stuff
+        var avgCuisines = d3.map(priceData, d => d.cuisines) 
+        var avgCuisineScale = d3.scaleBand().domain(avgCuisines)
+                                        .range( [0, barbellChartWidth] );
+        
+        //axes and labels
         let bleftAxis = d3.axisLeft(priceScale);
         let bleftGridlines = d3.axisLeft(priceScale)
                                 .tickSize(-barbellChartWidth-10)
@@ -801,6 +804,7 @@ const requestData = async () => {
                                     .attr("transform",`translate(${barbellMargin.left+7},${barbellChartHeight+barbellMargin.top+10})`)
                                     .call(bbottomAxis); 
 
+        //lollipops
         lollipop = barbellChartArea.selectAll('g.lollipop').data( priceData, d => d['menus.amountMax'] )
                                     .join('g').attr('class','lollipop')
                                     .attr("transform", d => `translate(${Math.floor(avgCuisineScale(d['cuisines']))},0)`)
@@ -813,6 +817,38 @@ const requestData = async () => {
                 .attr("fill", d => dietScale(d['dietary']))
                 .attr("cx", d => avgCuisineScale(avgCuisines) ) 
                 .attr("cy", d => priceScale(d['menus.amountMax']))
+        
+        lollipop.append("rect")
+                .attr("class", "activeRegion")
+                .attr("x", -10 )
+                .attr("y", avgCuisines.forEach( d => Math.min( priceScale(d['menus.amountMax']))))
+                // .attr("height", d => Math.abs( ppvScale(avgPPV) - ppvScale(d['personpervote']) ))
+                .attr("height", priceData.forEach( d => Math.abs( Math.min(dietScale(d['menus.amountMax'])) - Math.max(dietScale(d['menus.amountMax'])))))
+                .attr("width", 1 );
+
+        const priceDataPivoted = await d3.csv("./price_mean_data_pivot2.csv");
+        console.log(priceDataPivoted)
+        
+        barbellChartArea.selectAll('g.lollipop').data( priceDataPivoted )
+                .join('g').attr('class','line')
+                .attr("transform", d => `translate(${Math.floor(avgCuisineScale(d['cuisines']))},0)`)
+                .append("line")
+                .attr("class","stick")
+                .attr("stroke", "black")
+                .attr("stroke-width", 1)
+                .attr("x1", d => avgCuisineScale(d['cuisines']))
+                .attr("x2", d => avgCuisineScale(d['cuisines']))
+                .attr("y1", d => priceScale(d['vegan']))
+                .attr("y2", d => priceScale(d['vegetarian']))
+
+                //{cusine, veganValue, vegetarianValue},...
+
+        // lollipops.append("line")
+        //    .attr("class","stick")
+        //    .attr("x1", 0 )  // 0 because we have a translate() on the <g> tag for x location
+        //    .attr("x2", 0 )  
+        //    .attr("y1", ppvScale(avgPPV))  
+        //    .attr("y2", d => ppvScale(d['personpervote']))  
 
         // lollipop.append("line")
         //         .attr("class","stick")
