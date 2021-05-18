@@ -595,7 +595,8 @@ const requestData = async () => {
                     else{
                         current_filters['dietary']=d;
                     }
-                    updateMap();
+                    updateResturant();
+                    
                     // callgraphs('year', d);
                 })
         })
@@ -614,12 +615,13 @@ const requestData = async () => {
                     else{
                         current_filters['cuisines']=d;
                     }
-                    updateMap();
+                    updateResturant();
+                    updateGraphs(d);
             
                 })
         })
 
-        function updateMap(){
+        function updateResturant(){
                     circles.attr('visibility', circleD => {
                         if ((circleD['dietary'] !=current_filters['dietary']) && current_filters['dietary']!="All Dietary"){
                             return 'hidden';
@@ -633,10 +635,21 @@ const requestData = async () => {
                 })
                 };
 
+    //BAR GRAPH SELECTED POP UP
+        function updateGraphs(d){
+            var svg =d3.select("svg#barchart");
+            if (d != "All Dietary" && d != "All Cuisines"){
+                svg.attr('visibility',"");
+            }
+            else{
+                svg.attr('visibility',"hidden");
+            }
+        
+        }
 
         //Cuisine Distribution Bar Chart 
 
-        const svg = d3.select("svg#barchart");
+        svg = d3.select("svg#barchart");
         const width = svg.attr("width");
         const height = svg.attr("height");
         const margin = {top: 40, right: 10, bottom: 70, left: 70};
@@ -692,7 +705,7 @@ const requestData = async () => {
         })
 
         console.log(cuisine_ct_array);
-
+        svg.attr('visibility','hidden');
         chartArea.selectAll('rect.bar').data(cuisine_ct_array)
                           .join('rect')
                           .attr('class', 'bar')
