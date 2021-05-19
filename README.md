@@ -13,7 +13,7 @@
 ## Visualizations
 - US Map ✅
 - Plot restaurants (Carolyn Morikawa) ✅
-- State color luminance/saturation by ratio of veg/vegan restaurants per 100,000 residents (Cynthia Shen) 
+- State color luminance/saturation by ratio of veg/vegan restaurants per 100,000 residents 
     - mouseover (Emily) ✅
     - color (Cynthia) ✅
     - Legend (Cynthia)
@@ -32,4 +32,4 @@
 ## Bonus features
 - Zooming in to see county outlines 
     - pan and zoom entire map (Carolyn) ✅
-    - dots zoom (Cynthia)
+    - dots zoom (Cynthia) ✅

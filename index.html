@@ -330,7 +330,8 @@
         });
         console.log(states,"states");
         const colorScaleRange = [ "#bdc9e1", "#74a9cf", "#0570b0","#045a8d"];
-       let ratioScale = d3.scaleQuantile().domain(ratioVals).range(colorScaleRange);
+        let ratioScale = d3.scaleQuantile().domain(ratioVals).range(colorScaleRange);
+        var temp_legend=[0,0,0,0];
         //let popScale = d3.scaleQuantile().domain(popVals).range(colorScaleRange);
         // console.log("popScale",popScale)
         // console.log(counties, "counties")
@@ -356,8 +357,34 @@
             .attr("fill", d => { if (d.properties.ratio===null) {
                                                 return  "#d3d3d3"; }
                                              else {
-                                               return ratioScale(d.properties.ratio);}})
+                                                temp_color = ratioScale(d.properties.ratio);
+
+                                                switch(temp_color){
+                                                    case "#bdc9e1": 
+                                                        if(d.properties.ratio>temp_legend[0]){
+                                                            temp_legend[0] = d.properties.ratio;
+                                                        }
+                                                        break;
+                                                    case "#74a9cf": 
+                                                        if(d.properties.ratio>temp_legend[1]){
+                                                            temp_legend[1] = d.properties.ratio;
+                                                        }
+                                                        break;
+                                                    case "#0570b0": 
+                                                        if(d.properties.ratio>temp_legend[2]){
+                                                            temp_legend[2] = d.properties.ratio;
+                                                        }
+                                                        break;
+                                                    case "#045a8d": 
+                                                        if(d.properties.ratio>temp_legend[3]){
+                                                            temp_legend[3] = d.properties.ratio;
+                                                        }
+                                                        break;
+                                                }
+
+                                                return temp_color;}})
             .attr("d", path);
+            console.log(temp_legend);
         viewport.append("path")
           .datum(countiesMesh)
           .attr("class","county-outline")
@@ -456,6 +483,37 @@
           map.transition().duration(1000).call(zoom.transform, newTransform);
         }
         
+        //Map coloring legend
+
+        // const hover = map.append("g").attr("class","hover")
+            
+        //     const popup = hover.append("rect").attr("class","frame")
+        //                                 .attr("x", 40).attr("y", 30)
+        //                                 .attr("rx", 5).attr("ry", 5)
+        //                                 .attr("height", 105).attr("fill", "lightyellow")
+        //                                 .attr("stroke", "black");
+        //     const textbox = hover.append("g").attr("transform","translate(5,5)").attr("class", "label");
+        //     const format = d3.format(',d');
+
+        const legend = map.append("g").attr("class", "legend");
+        
+
+        legend.append('rect').attr('x', 695).attr('y', 480).attr('width', 205).attr('height', 120).attr('stroke', 'grey').attr('fill', 'white').style("stroke-width", 0.65).attr("rx", 5).attr("ry", 5);
+        legend.append("circle").attr("cx",720).attr("cy",580).attr("r", 6).style("fill", "#bdc9e1").style("stroke", "black").style("stroke-width", 0.75)
+        legend.append("circle").attr("cx",720).attr("cy",560).attr("r", 6).style("fill", "#74a9cf").style("stroke", "black").style("stroke-width", 0.75)
+        legend.append("circle").attr("cx",720).attr("cy",540).attr("r", 6).style("fill", "#0570b0").style("stroke", "black").style("stroke-width", 0.75)
+        legend.append("circle").attr("cx",720).attr("cy",520).attr("r", 6).style("fill", "#045a8d").style("stroke", "black").style("stroke-width", 0.75)
+        legend.append("text").attr("x", 700).attr("y", 495).text("Restauraunts per million people").style("font-size", "14px").attr("alignment-baseline","middle").style("font-weight", "bold").attr("overflow-wrap", "normal");
+        legend.append("text").attr("x", 750).attr("y", 520).text(d3.format(".2f")(`${temp_legend[2]}`)+`-`+d3.format(".2f")(`${temp_legend[3]}`)).style("font-size", "14px").attr("alignment-baseline","middle")
+        legend.append("text").attr("x", 750).attr("y", 540).text(d3.format(".2f")(`${temp_legend[1]}`)+`-`+d3.format(".2f")(`${temp_legend[2]}`)).style("font-size", "14px").attr("alignment-baseline","middle");
+        legend.append("text").attr("x", 750).attr("y", 560).text(d3.format(".2f")(`${temp_legend[0]}`)+`-`+d3.format(".2f")(`${temp_legend[1]}`)).style("font-size", "14px").attr("dominant-baseline","middle")
+        legend.append("text").attr("x", 750).attr("y", 580).text(`0-`+d3.format(".2f")(`${temp_legend[0]}`)).style("font-size", "14px").attr("dominant-baseline","middle")
+
+
+
+
+
+
         // d3.select("input#slider")
         //   .on("input", function() {showRestaurant(+this.value)})
         
