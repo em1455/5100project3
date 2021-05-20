@@ -3,7 +3,7 @@
 <html lang="en">
     <div class = "title">
         <h1> Vegetarian & Vegan Dining in the U.S. </h1>
-        <h3>INFO 5100 Final Project</h3>
+        <h2>INFO 5100 Final Project</h2>
     </div>
 <head>
     <title>Project 3</title>
@@ -12,15 +12,38 @@
     <style>
     
     h1{
-          padding-top: 100;
-          padding-bottom:100;
-          font-size: 50;
+          padding-top: 40px;
+          padding-bottom:40px;
+          font-size: 50px;
           text-align: center;
           font-family: 'Arial';
           color:white;
           font-weight: bolder;
           background-color: navy;
       }
+      h3{
+
+          font-size: 30px;
+          padding-bottom: 5px;
+          padding-top: 5px;
+          text-align: center;
+          font-family: 'Arial';
+          color:black;
+          font-weight: bolder;
+          border-radius:6px;
+          background-color:skyblue
+      }
+      h5{
+
+       font-size: 17px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        text-align: left;
+        font-family: 'Arial';
+        color:black;
+        font-weight: bolder;
+    }
+
     .title {
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
@@ -67,6 +90,7 @@
 
     .cuisines_filter{
         height: 70px;
+        padding-top:100px;
         padding-left:20px;
         text-align:left;
         background-color: white;
@@ -75,6 +99,7 @@
     .dietary_filter{
         height: 70px;
         padding-left:20px;
+        padding-bottom:20px;
         text-align:left;
         background-color: white;
         margin-top: -20px;
@@ -96,7 +121,6 @@
         border-radius: 5px;
         background-color: white;
     }
-    
     .price_filter {
         height: 70px;
         clear: both; 
@@ -107,18 +131,25 @@
       }
 
     .box_2 {
-        display: flex;
+       display: flex;
         width:1430px;
         margin-left: auto; 
         margin-right: auto;
-    }
+    } 
 
     .box_3 {
         display: flex;
         width:1430px;
         margin-left: auto; 
         margin-right: auto;
-    }
+    } 
+    .box_4 {
+        display: block;
+        width:1430px;
+        margin-left: auto; 
+        margin-right: auto;
+    } 
+
 
     .barchart-container {
         width: 695px;
@@ -142,7 +173,7 @@
     .rectangle{
         width: 640px;
         height: 500px;
-        margin-left:600px;
+        margin-left:400px;
         margin-right: 700px;
         padding-left: 100px;
         padding-right:10px;
@@ -164,12 +195,12 @@
             <div class = "filters">
                 <h3>FILTERS</h3>
                 
-                <div class = "dietary_filter" style="padding:10px">
-                    <h4>Dietary</h4>
+                <div class = "dietary_filter" style="padding-top:40px" style="padding-bottom:40px">
+                    <h5>Dietary:</h5>
                 </div> </br>
 
-                <div class = "cuisines_filter" style="padding: 10px">
-                    <h4>Cuisine</h4>  
+                <div class = "cuisines_filter" style="padding-bottom: 40px">
+                    <h5>Cuisine:</h5>  
                 </div> </br>
 
     
@@ -177,23 +208,25 @@
             
         </div>
 
-        <div class = box_2>
-            <div class="barchart-container2">
-                <h4> Distribution of Restaurants by Cuisine </h4>
-                <svg id="cusine_barchart" height="450" width="695" ></svg>            
-            </div>
-            <div class = box_3>
+        <div class = box_3>
+            <div class = box_2>
                 <div class="barchart-container">
                     <h4> Distribution of Restaurants by Dietary Restrictions </h4>
                     <svg id="dietary_barchart" height="450" width="695" ></svg>            
                 </div>
+            <div class="barchart-container2">
+                <h4> Distribution of Restaurants by Cuisine </h4>
+                <svg id="cusine_barchart" height="450" width="695" ></svg>            
             </div>
-            </div>
+        </div>
+    </div>
+            
+            </div class= box_4>
                 <div class = "rectangle">
                     <h4> Average Max Price by Cuisine Vegan vs. Vegetarian </h4>
                     <svg id="barbellchart" height="430" width="600"> </svg>
                 </div>
-            
+         </div>   
     <script>
      // FILTERING 
         const dietary_ids = ["Vegan","Vegetarian", "Both", "All Dietary"];
@@ -344,7 +377,6 @@
                                                         }
                                                         break;
                                                 }
-
                                                 return temp_color;}})
             .attr("d", path);
             console.log(temp_legend);
@@ -396,7 +428,6 @@
                                                     .attr("fill", "orange")
                                                     hover.attr("visibility","hidden");
                                     })
-
         // PANNING AND ZOOM
         var zoom = d3.zoom()
                       .scaleExtent([1,10])
@@ -421,7 +452,6 @@
                     .attr("r", 6/transform.k)
                     .attr("stroke-width", 1.5/transform.k);
         }
-
         viewport.selectAll(".state").on("click",clicked);
         viewport.selectAll(".county").on("click",clicked);
         function clicked(event, d) {
@@ -438,8 +468,8 @@
                                 .translate(translate[0],translate[1])
                                 .scale(scale);
           map.transition().duration(1000).call(zoom.transform, newTransform);
-        }
-        
+        }  
+        //CREATING LEGEND   
         const legend = map.append("g").attr("class", "legend");
         legend.append('rect').attr('x', 695).attr('y', 480).attr('width', 205).attr('height', 120).attr('stroke', 'grey').attr('fill', 'white').style("stroke-width", 0.65).attr("rx", 5).attr("ry", 5);
         legend.append("circle").attr("cx",720).attr("cy",580).attr("r", 6).style("fill", "#bdc9e1").style("stroke", "black").style("stroke-width", 0.75)
@@ -451,9 +481,7 @@
         legend.append("text").attr("x", 750).attr("y", 540).text(d3.format(".2f")(`${temp_legend[1]}`)+`-`+d3.format(".2f")(`${temp_legend[2]}`)).style("font-size", "14px").attr("alignment-baseline","middle");
         legend.append("text").attr("x", 750).attr("y", 560).text(d3.format(".2f")(`${temp_legend[0]}`)+`-`+d3.format(".2f")(`${temp_legend[1]}`)).style("font-size", "14px").attr("dominant-baseline","middle")
         legend.append("text").attr("x", 750).attr("y", 580).text(`0-`+d3.format(".2f")(`${temp_legend[0]}`)).style("font-size", "14px").attr("dominant-baseline","middle")
-
-
-            
+      
         //MOUSEOVER FOR CIRCLE PLOTS
             const hover = map.append("g").attr("class","hover")
             function stringLen(str) {
