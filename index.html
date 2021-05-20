@@ -3,7 +3,7 @@
         <html lang="en">
         <div class = "title">
             <h1> Vegetarian & Vegan Dining in the U.S. </h1>
-            <h2>This project uses a Vegetarian & Vegan resturant dataset to explore the following questions...
+            <h2>This project uses a Vegetarian & Vegan resturant dataset to explore the following questions...<br>
                 1. Which state offers the most number of veg/vegan restaurants per 100,000 residents? <br>
                 2. Which cuisine is the most popular amongst the existing veg/vegan restaurants? </h2>
             <p> Use the filters on the right to explore how various factors
@@ -833,10 +833,16 @@
                     .call(bleftGridlines);
                     
         let bbottomAxis = d3.axisBottom(avgCuisineScale)
-        let bbottomAxisG = barbellAnnotations.append("g")
-                                    .attr("class", "x axis")
-                                    .attr("transform",`translate(${barbellMargin.left+7},${barbellChartHeight+barbellMargin.top+10})`)
-                                    .call(bbottomAxis); 
+       barbell.append("g").attr("class","xaxis")
+                    .attr("transform","translate("+margin.left+","+(margin.top+chartHeight+10)+")")
+                    .call(bbottomAxis)
+                    .selectAll("text")
+                    .style('text-anchor','end')
+                    .attr("transform", "rotate(-40), translate(-5,-5)");
+        // let bbottomAxisG = barbellAnnotations.append("g")
+        //                             .attr("class", "x axis")
+        //                             .attr("transform",`translate(${barbellMargin.left+7},${barbellChartHeight+barbellMargin.top+10})`)
+        //                             .call(bbottomAxis); 
         const priceDataPivoted = await d3.csv("./price_mean_data_pivot2.csv");
         console.log(priceDataPivoted) 
         barbellChartArea.selectAll('g.linepop').data( priceDataPivoted )
