@@ -1,185 +1,200 @@
-<!DOCTYPE HTML>
+        <!DOCTYPE HTML>
 
-<html lang="en">
-    <div class = "title">
-        <h1> Vegetarian & Vegan Dining in the U.S. </h1>
-        <h2>INFO 5100 Final Project</h2>
-    </div>
-<head>
-    <title>Project 3</title>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
-    <style>
-    
-    h1{
-          padding-top: 40px;
-          padding-bottom:40px;
-          font-size: 50px;
-          text-align: center;
-          font-family: 'Arial';
-          color:white;
-          font-weight: bolder;
-          background-color: navy;
-      }
-      h3{
+        <html lang="en">
+        <div class = "title">
+            <h1> Vegetarian & Vegan Dining in the U.S. </h1>
+            <h2>This project uses a Vegetarian & Vegan resturant dataset to explore the following questions...
+                1. Which state offers the most number of veg/vegan restaurants per 100,000 residents? <br>
+                2. Which cuisine is the most popular amongst the existing veg/vegan restaurants? </h2>
+            <p> Use the filters on the right to explore how various factors
+                contirbute to Vegetarian & Vegan Resturants in the U.S! Furthermore, feel free to zoom in on the map for a
+                closer and more percise view of a particular resturant or state.
+            </p>
+        </div>
+        <head>
+        <title>Project 3</title>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <script src="https://d3js.org/topojson.v3.min.js"></script>
+        <style>
 
-          font-size: 30px;
-          padding-bottom: 5px;
-          padding-top: 5px;
-          text-align: center;
-          font-family: 'Arial';
-          color:black;
-          font-weight: bolder;
-          border-radius:6px;
-          background-color:skyblue
-      }
-      h5{
-
-       font-size: 17px;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        text-align: left;
-        font-family: 'Arial';
-        color:black;
-        font-weight: bolder;
-    }
-
-    .title {
+        h1{
+                padding-top: 40px;
+                padding-bottom:40px;
+                font-size: 50px;
+                text-align: center;
+                font-family: 'Arial';
+                color:white;
+                font-weight: bolder;
+                background-color: navy;
+            }
+        h2{
+            font-size: 20px;
+            padding-bottom: 10px;
+            padding-top: 10px;
             text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 50;
+            font-family: 'Arial';
+            color:black;
+            background-color:lightseagreen;
         }
-    .c_xlabel{
-          font-family: "Arial";
-          font-size: 15px;
-          margin-bottom:0 ;
-          font-weight: bolder;
-      }
-      .c_ylabel{
-          font-family: "Arial";
-          font-size: 15px;
-          margin-bottom:0 ;
-          font-weight: bolder;
-      }
-    .box_1 {
-        display: flex;
-        width:1430px;
-        margin-left: auto; 
-        margin-right: auto;
-    }
+            h3{
 
-    .map_positioning{
-        flex: 1;
-        width:900px;
-        height: 600px;
-        margin-left:0px;
-        padding:10px;
-        outline: solid 1px black;
-        background-color:white;
-    }
+                font-size: 30px;
+                padding-bottom: 5px;
+                padding-top: 5px;
+                text-align: center;
+                font-family: 'Arial';
+                color:black;
+                font-weight: bolder;
+                border-radius:6px;
+                background-color:skyblue
+            }
+            h5{
 
-    .filters{
-        width: 500px;
-        height: 600px;
-        margin-left:1px;
-        margin-right: 20px;
-        padding: 10px;
-        outline: solid 1px black;
-        background-color: white;
-    }
+            font-size: 17px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            text-align: left;
+            font-family: 'Arial';
+            color:black;
+            font-weight: bolder;
+        }
 
-    .cuisines_filter{
-        height: 70px;
-        padding-top:100px;
-        padding-left:20px;
-        text-align:left;
-        background-color: white;
-        margin-top: -20px;
-    }
-    .dietary_filter{
-        height: 70px;
-        padding-left:20px;
-        padding-bottom:20px;
-        text-align:left;
-        background-color: white;
-        margin-top: -20px;
-    }
-    .dietary_filter span{
-        margin-right:10px;
-        padding: 8px;
-        margin-bottom:5px;
-        border: solid black 2px;
-        border-radius: 5px;
-        background-color: white;
-    }
-    .cuisines_filter span{
-        margin-right:10px;
-        padding: 8px;
-        margin-bottom:5px;
-        float: left;
-        border: solid black 2px;
-        border-radius: 5px;
-        background-color: white;
-    }
-    .price_filter {
-        height: 70px;
-        clear: both; 
-        padding-left:20px;
-        text-align:left;
-        background-color: white;
-        margin-top: -20px;
-      }
+        .title {
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 50;
+            }
+        .c_xlabel{
+                font-family: "Arial";
+                font-size: 15px;
+                margin-bottom:0 ;
+                font-weight: bolder;
+            }
+            .c_ylabel{
+                font-family: "Arial";
+                font-size: 15px;
+                margin-bottom:0 ;
+                font-weight: bolder;
+            }
+        .box_1 {
+            display: flex;
+            width:1430px;
+            margin-left: auto; 
+            margin-right: auto;
+        }
 
-    .box_2 {
-       display: flex;
-        width:1430px;
-        margin-left: auto; 
-        margin-right: auto;
-    } 
+        .map_positioning{
+            flex: 1;
+            width:900px;
+            height: 600px;
+            margin-left:0px;
+            padding:10px;
+            outline: solid 1px black;
+            background-color:white;
+        }
 
-    .box_3 {
-        display: flex;
-        width:1430px;
-        margin-left: auto; 
-        margin-right: auto;
-    } 
-    .box_4 {
-        display: block;
-        width:1430px;
-        margin-left: auto; 
-        margin-right: auto;
-    } 
+        .filters{
+            width: 500px;
+            height: 600px;
+            margin-left:1px;
+            margin-right: 20px;
+            padding: 10px;
+            outline: solid 1px black;
+            background-color: white;
+        }
+
+        .cuisines_filter{
+            height: 70px;
+            padding-top:100px;
+            padding-left:20px;
+            text-align:left;
+            background-color: white;
+            margin-top: -20px;
+        }
+        .dietary_filter{
+            height: 70px;
+            padding-left:20px;
+            padding-bottom:20px;
+            text-align:left;
+            background-color: white;
+            margin-top: -20px;
+        }
+        .dietary_filter span{
+            margin-right:10px;
+            padding: 8px;
+            margin-bottom:5px;
+            border: solid black 2px;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .cuisines_filter span{
+            margin-right:10px;
+            padding: 8px;
+            margin-bottom:5px;
+            float: left;
+            border: solid black 2px;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .price_filter {
+            height: 70px;
+            clear: both; 
+            padding-left:20px;
+            text-align:left;
+            background-color: white;
+            margin-top: -20px;
+            }
+
+        .box_2 {
+            display: flex;
+            width:1430px;
+            margin-left: auto; 
+            margin-right: auto;
+        } 
+
+        .box_3 {
+            display: flex;
+            width:1430px;
+            margin-left: auto; 
+            margin-right: auto;
+        } 
+        .box_4 {
+            display: block;
+            width:1430px;
+            margin-left: auto; 
+            margin-right: auto;
+        } 
 
 
-    .barchart-container {
-        width: 695px;
-        height: 500px;
-        padding-left:5px;
-        padding-right:5px;
-        margin-left:0px;
-        outline: solid 1px black;
-        background-color:white;
-    }
+        .barchart-container {
+            width: 695px;
+            height: 500px;
+            padding-left:5px;
+            padding-right:5px;
+            margin-left:0px;
+            outline: solid 1px black;
+            background-color:white;
+        }
 
-    .barchart-container2 {
-        width:695px;
-        height: 500px;
-        padding-left:5px;
-        padding-right:5px;
-        margin-left:0px;
-        outline: solid 1px black;
-        background-color:white;
-    }
-    .rectangle{
-        width: 640px;
-        height: 500px;
-        margin-left:400px;
-        margin-right: 700px;
-        padding-left: 100px;
-        padding-right:10px;
-        outline: solid 1px black;
-        background-color: white;
-    }
+        .barchart-container2 {
+            width:695px;
+            height: 500px;
+            padding-left:5px;
+            padding-right:5px;
+            margin-left:0px;
+            outline: solid 1px black;
+            background-color:white;
+        }
+        .rectangle{
+            width: 640px;
+            height: 500px;
+            margin-left:400px;
+            margin-right: 700px;
+            padding-left: 100px;
+            padding-right:10px;
+            outline: solid 1px black;
+            background-color: white;
+        }
  
         </style>
         </head>
@@ -191,20 +206,17 @@
                     style="font-weight: bold; font-family: Helvetica; font-size: large;"></text>
                 </svg>
             </div>
+        <div class = "filters">
+            <h3>FILTERS</h3>
+            
+            <div class = "dietary_filter" style="padding-top:40px" style="padding-bottom:40px">
+                <h5>Dietary:</h5>
+            </div> </br>
 
-            <div class = "filters">
-                <h3>FILTERS</h3>
-                
-                <div class = "dietary_filter" style="padding-top:40px" style="padding-bottom:40px">
-                    <h5>Dietary:</h5>
-                </div> </br>
-
-                <div class = "cuisines_filter" style="padding-bottom: 40px">
-                    <h5>Cuisine:</h5>  
-                </div> </br>
-
-    
-            </div>
+            <div class = "cuisines_filter" style="padding-bottom: 40px">
+                <h5>Cuisine:</h5>  
+        </div> </br>
+        </div>
             
         </div>
 
@@ -217,48 +229,48 @@
             <div class="barchart-container2">
                 <h4> Distribution of Restaurants by Cuisine </h4>
                 <svg id="cusine_barchart" height="450" width="695" ></svg>            
-            </div>
         </div>
-    </div>
-            
-            </div class= box_4>
-                <div class = "rectangle">
-                    <h4> Average Max Price by Cuisine Vegan vs. Vegetarian </h4>
-                    <svg id="barbellchart" height="430" width="600"> </svg>
-                </div>
-         </div>   
-    <script>
-     // FILTERING 
+        </div>
+        </div>
+                
+                </div class= box_4>
+                    <div class = "rectangle">
+                        <h4> Average Max Price by Cuisine Vegan vs. Vegetarian </h4>
+                        <svg id="barbellchart" height="430" width="600"> </svg>
+                    </div>
+                </div>   
+        <script>
+        // FILTERING 
         const dietary_ids = ["Vegan","Vegetarian", "Both", "All Dietary"];
         const cuisines_ids = ["American", "Chinese", "Indian", "Italian", 
         "Japanese", "Kosher", "Mediterranean", "Mexican", "Middle Eastern", "Thai", "All Cuisines"];
-    // CHANGE FITER COLOR
-    function filterColor(name, array_name){
-        var element = document.getElementById(name);
-        element.style.backgroundColor = "skyblue";
-        if (array_name === 'dietary_ids'){
-            list_ids = dietary_ids;
-        }
-        else if (array_name === 'cuisines_ids'){
-            list_ids = cuisines_ids;
-        }
-        for (var i=0; i<list_ids.length;i++){
-            var value = list_ids[i];
-            if (value != name){
-                element = document.getElementById(value);
-                if (element.style.backgroundColor === "skyblue"){
-                    element.style.backgroundColor = "white";
+        // CHANGE FITER COLOR
+        function filterColor(name, array_name){
+            var element = document.getElementById(name);
+            element.style.backgroundColor = "skyblue";
+            if (array_name === 'dietary_ids'){
+                list_ids = dietary_ids;
+            }
+            else if (array_name === 'cuisines_ids'){
+                list_ids = cuisines_ids;
+            }
+            for (var i=0; i<list_ids.length;i++){
+                var value = list_ids[i];
+                if (value != name){
+                    element = document.getElementById(value);
+                    if (element.style.backgroundColor === "skyblue"){
+                        element.style.backgroundColor = "white";
+                    }
                 }
             }
         }
-    }
-    const requestData = async () => {
-    //LOAD VEGETARIAN/VEGAN DATASET
-      var data = await d3.csv("./cleaned_restaurants_data.csv");
-           console.log(data, "restauraunt data")
-     //LOAD MAP DATASET   
+        const requestData = async () => {
+        //LOAD VEGETARIAN/VEGAN DATASET
+        var data = await d3.csv("./cleaned_restaurants_data.csv");
+        console.log(data, "restauraunt data")
+        //LOAD MAP DATASET   
         const us = await d3.json("./counties-10m.json");
-      
+        
         //LOAD POPULATION DATASET
         let pop = await d3.csv('USpopulation2019.csv', d3.autoType);
         console.log(pop, "population csv")
@@ -321,8 +333,7 @@
         fipsmap = await d3.csv('countyfipsmappedtostates.csv', d3.autoType);
         fipsbyState = [];
         fipsmap.forEach(d => {
-            fipsbyState[d.FIPS] = d.State;
-          
+            fipsbyState[d.FIPS] = d.State;      
         });
          // ADD STATES DATA TO COUNTRIES
          counties.features.forEach(d => {
@@ -351,33 +362,33 @@
             .append("path")
             .attr("class","state")
             .attr("fill", d => { if (d.properties.ratio===null) {
-                                                return  "#d3d3d3"; }
-                                             else {
-                                                temp_color = ratioScale(d.properties.ratio);
+                            return  "#d3d3d3"; }
+                            else {
+                            temp_color = ratioScale(d.properties.ratio);
 
-                                                switch(temp_color){
-                                                    case "#bdc9e1": 
-                                                        if(d.properties.ratio>temp_legend[0]){
-                                                            temp_legend[0] = d.properties.ratio;
-                                                        }
-                                                        break;
-                                                    case "#74a9cf": 
-                                                        if(d.properties.ratio>temp_legend[1]){
-                                                            temp_legend[1] = d.properties.ratio;
-                                                        }
-                                                        break;
-                                                    case "#0570b0": 
-                                                        if(d.properties.ratio>temp_legend[2]){
-                                                            temp_legend[2] = d.properties.ratio;
-                                                        }
-                                                        break;
-                                                    case "#045a8d": 
-                                                        if(d.properties.ratio>temp_legend[3]){
-                                                            temp_legend[3] = d.properties.ratio;
-                                                        }
-                                                        break;
-                                                }
-                                                return temp_color;}})
+                            switch(temp_color){
+                                case "#bdc9e1": 
+                                    if(d.properties.ratio>temp_legend[0]){
+                                        temp_legend[0] = d.properties.ratio;
+                                    }
+                                    break;
+                                case "#74a9cf": 
+                                    if(d.properties.ratio>temp_legend[1]){
+                                        temp_legend[1] = d.properties.ratio;
+                                    }
+                                    break;
+                                case "#0570b0": 
+                                    if(d.properties.ratio>temp_legend[2]){
+                                        temp_legend[2] = d.properties.ratio;
+                                    }
+                                    break;
+                                case "#045a8d": 
+                                    if(d.properties.ratio>temp_legend[3]){
+                                        temp_legend[3] = d.properties.ratio;
+                                    }
+                                    break;
+                            }
+                            return temp_color;}})
             .attr("d", path);
             console.log(temp_legend);
         viewport.append("path")
@@ -397,37 +408,37 @@
           .attr("d", path);
 
           let circles = viewport.selectAll("circle.dot").data(data)
-                                    .join("circle")
-                                    .attr("class","dot")
-                                    .attr("r", 6)
-                                    .attr("fill", "orange")
+                    .join("circle")
+                    .attr("class","dot")
+                    .attr("r", 6)
+                    .attr("fill", "orange")
+                    .attr("opacity", 1)
+                    .attr("cx", d => d.position[0])
+                    .attr("cy", d => d.position[1])
+                    .attr("stroke", "black")
+                    .attr("stroke-width", 1.5)
+                    .on("mouseover", function() {
+                                    console.log(d3.select(this));
+                                    d3.select(this)
+                                    .transition().duration(100)
+                                    .attr("stroke","black")
+                                    .attr("stroke-width", d3.select(this).attr("stroke-width") * 1.5)
+                                    .attr("r", d3.select(this).attr("r") * 1.5)
                                     .attr("opacity", 1)
-                                    .attr("cx", d => d.position[0])
-                                    .attr("cy", d => d.position[1])
-                                    .attr("stroke", "black")
-                                    .attr("stroke-width", 1.5)
-                                    .on("mouseover", function() {
-                                                    console.log(d3.select(this));
-                                                    d3.select(this)
-                                                    .transition().duration(100)
-                                                    .attr("stroke","black")
-                                                    .attr("stroke-width", d3.select(this).attr("stroke-width") * 1.5)
-                                                    .attr("r", d3.select(this).attr("r") * 1.5)
-                                                    .attr("opacity", 1)
-                                                    .attr("fill", "red")
-                                                    hover.attr("visibility","");
-                                                    updateMouseover(d3.select(this).datum());  
-                                                })
-                                    .on("mouseout", function () {
-                                                    d3.select(this)
-                                                    .transition().duration(100)
-                                                    .attr("stroke","black")
-                                                    .attr("stroke-width", d3.select(this).attr("stroke-width") / 1.5)
-                                                    .attr("r", d3.select(this).attr("r") / 1.5)
-                                                    .attr("opacity", 1)
-                                                    .attr("fill", "orange")
-                                                    hover.attr("visibility","hidden");
-                                    })
+                                    .attr("fill", "red")
+                                    hover.attr("visibility","");
+                                    updateMouseover(d3.select(this).datum());  
+                                })
+                    .on("mouseout", function () {
+                                    d3.select(this)
+                                    .transition().duration(100)
+                                    .attr("stroke","black")
+                                    .attr("stroke-width", d3.select(this).attr("stroke-width") / 1.5)
+                                    .attr("r", d3.select(this).attr("r") / 1.5)
+                                    .attr("opacity", 1)
+                                    .attr("fill", "orange")
+                                    hover.attr("visibility","hidden");
+                    })
         // PANNING AND ZOOM
         var zoom = d3.zoom()
                       .scaleExtent([1,10])
@@ -483,336 +494,330 @@
         legend.append("text").attr("x", 750).attr("y", 580).text(`0-`+d3.format(".2f")(`${temp_legend[0]}`)).style("font-size", "14px").attr("dominant-baseline","middle")
       
         //MOUSEOVER FOR CIRCLE PLOTS
-            const hover = map.append("g").attr("class","hover")
-            function stringLen(str) {
-                const dummytext = hover.append("text").attr("visibility","hidden");
-                dummytext.text(str)
-                let len = dummytext.node().getComputedTextLength()
-                dummytext.remove()
-                return len;
-            }
+        const hover = map.append("g").attr("class","hover")
+        function stringLen(str) {
+            const dummytext = hover.append("text").attr("visibility","hidden");
+            dummytext.text(str)
+            let len = dummytext.node().getComputedTextLength()
+            dummytext.remove()
+            return len;
+        }
+        const popup = hover.append("rect").attr("class","frame")
+                                    .attr("x", 40).attr("y", 20)
+                                    .attr("rx", 5).attr("ry", 5)
+                                    .attr("height", 105).attr("fill", "lightyellow")
+                                    .attr("stroke", "black");
+        const textbox = hover.append("g").attr("transform","translate(5,5)").attr("class", "label");
+        const format = d3.format(',d');
+        function updateMouseover(d) {
+            textbox.html('');
+            let general = `Restaurant Details`;
+            let cuisine_label = `Cuisine: ${d['cuisines']}`;
+            let city = `City: ${d['city']}`;
+            let province = `State: ${d['province']}`;
+            let maxWidth = Math.max( stringLen(general), stringLen(cuisine_label), stringLen(city),stringLen(province))
+            popup.attr("width", maxWidth+20);
+            textbox.append("text").text(general)
+                .attr("x", 45).attr("y", 45).attr("text-decoration", "underline");
+            textbox.append("text").text(cuisine_label)
+                .attr("x", 45).attr("y", 65);
+            textbox.append("text").text(city)
+                .attr("x", 45).attr("y", 85);
+            textbox.append("text").text(province)
+                .attr("x", 45).attr("y", 105);
+        }
+        var current_filters = {"dietary":"All Dietary","cuisines":"All Cuisines" };
+        console.log(current_filters);
 
-            const popup = hover.append("rect").attr("class","frame")
-                                        .attr("x", 40).attr("y", 30)
-                                        .attr("rx", 5).attr("ry", 5)
-                                        .attr("height", 105).attr("fill", "lightyellow")
-                                        .attr("stroke", "black");
-            const textbox = hover.append("g").attr("transform","translate(5,5)").attr("class", "label");
-            const format = d3.format(',d');
-            function updateMouseover(d) {
-                textbox.html('');
-                let general = `Restaurant Details`;
-                let cuisine_label = `Cuisine: ${d['cuisines']}`;
-                let city = `City: ${d['city']}`;
-                let province = `State: ${d['province']}`;
-                let maxWidth = Math.max( stringLen(general), stringLen(cuisine_label), stringLen(city),stringLen(province))
-                popup.attr("width", maxWidth+20);
-                textbox.append("text").text(general)
-                    .attr("x", 45).attr("y", 45).attr("text-decoration", "underline");
-                textbox.append("text").text(cuisine_label)
-                    .attr("x", 45).attr("y", 65);
-                textbox.append("text").text(city)
-                    .attr("x", 45).attr("y", 85);
-                textbox.append("text").text(province)
-                    .attr("x", 45).attr("y", 105);
-            }
-            var current_filters = {"dietary":"All Dietary","cuisines":"All Cuisines" };
-            console.log(current_filters);
-
-            //DIETARY FILTER
-            dietary_ids.forEach(function(d,i){
-                d3.select('.dietary_filter')
-                    .append("span")
-                    .attr('id',d)
-                    .text(d)
-                    .on('click', function(){
-                        filterColor(d,"dietary_ids");
-                        if (d === 'All Dietary'){
-                            current_filters['dietary']="All Dietary";
-                        }
-                        else{
-                            current_filters['dietary']=d;
-                        }
-                        updateResturant();
-                        
-                    })
-            })
-            //CUISINE FILTER
-            cuisines_ids .forEach(function(d,i){
-                d3.select('.cuisines_filter')
-                    .append("span")
-                    .attr('id',d)
-                    .text(d)
-                    .on('click', function(){
-                        filterColor(d,"cuisines_ids");
-                        if (d === 'All Cuisines'){
-                            current_filters['cuisines']="All Cuisines";
-                        }
-                        else{
-                            current_filters['cuisines']=d
-                            var svg1 =d3.select("svg#dietary_barchart");
-                            
-
-                        }
-                        updateResturant();
-            
-                    })
-            })
-            function updateResturant(){
-                        circles.attr('visibility', circleS => {
-                            if ((circleS['dietary'] !=current_filters['dietary']) && current_filters['dietary']!="All Dietary"){
-                                return 'hidden';
-                            }
-                            else if ((circleS['cuisines']!=current_filters['cuisines']) && current_filters['cuisines']!="All Cuisines"){
-                                return 'hidden';
-                            }
-                            else {
-                                return "";
-                            }
-                    })      
-                    };
-
-            //DIETARY DISTRIBUTION BAR CHART
-            var total_count = 0;
-            //DIETARY COUNTS
-            function count_dietary_dict(dietary_ids){
-                dictionary = {};
-                for (var i=0; i<dietary_ids.length-1; i++){
-                    dictionary[ [dietary_ids[i]] ] = 0;
-                }
-                return dictionary;
-            }
-            dietary_counts = count_dietary_dict(dietary_ids);
-            data.forEach(d=>{
-                dietary_counts[d.dietary] +=1;
-                total_count += 1;
-            });
-            console.log(dietary_counts)
-            var svg1 = d3.select("svg#dietary_barchart");
-            const width1 = svg1.attr("width");
-            const height1 = svg1.attr("height");
-            const margin1 = {top: 40, right: 10, bottom: 70, left: 70};
-            const chartWidth1 = width1 - margin1.left - margin1.right;
-            const chartHeight1 = height1 - margin1.top - margin1.bottom;
-            const dietary_ct = await d3.json("./dietary_count.json");
-            console.log(dietary_ct)
-            let annotations1 = svg1.append("g").attr("id","annotations");
-            let chartArea1 = svg1.append("g").attr("id","points")
-                            .attr("transform",`translate(${margin1.left},${margin1.top})`);
-            let countScale1 = d3.scaleLinear().domain([0,120]).range([chartHeight1,0])
-        
-            
-            let leftAxis1 = d3.axisLeft(countScale1).tickFormat(d3.format('0'));
-            let leftGridlines1 = d3.axisLeft(countScale1) 
-                                    .tickSize(-chartWidth1-10)
-                                    .tickFormat("")
-            annotations1.append("g")
-                        .attr("class", "y axis")
-                        .attr("transform",`translate(${margin1.left-10},${margin1.top})`)
-                        .call(leftAxis1)
-            annotations1.append("g")
-                        .attr("class", "y gridlines")
-                        .attr("transform",`translate(${margin1.left-10},${margin1.top})`)
-                        .call(leftGridlines1);
-            let bottomAxis1 = d3.axisBottom()
-            let bottomAxisG1 = annotations1.append("g")
-                                        .attr("class", "x axis")
-                                        .attr("transform",`translate(${margin1.left},${chartHeight1+margin1.top+10})`)
-            const dietary_key = Object.keys(dietary_ct)
-            console.log(dietary_key)
-            const values_1 = Object.keys(dietary_ct).map(function(key1){
-                return dietary_ct[key1];
-            });
-            console.log(values_1)
-            let dietaryScale = d3.scaleBand().domain(dietary_key).range([0, chartWidth1])
-                                            .padding(0.05);
-            bottomAxis1.scale(dietaryScale)
-            bottomAxisG1.transition().call(bottomAxis1);
-            let dietary_ct_array = []
-            Object.keys(dietary_ct).forEach((d) => {
-                const temporary = { [d]: dietary_ct[d] }
-                dietary_ct_array.push(temporary);
-            })
-            console.log(dietary_ct_array);
-            chartArea1.selectAll('rect.bar').data(dietary_ct_array)
-                              .join('rect')
-                              .attr('class', 'bar')
-                              .attr('fill', 'orange')
-                              .attr("x", d => dietaryScale(Object.keys(d)[0])+45)
-                              .attr("y", d => countScale1(d[Object.keys(d)[0]]))
-                              .attr("height", d => countScale1(0)- countScale1(d[Object.keys(d)[0]]))
-                              .attr("width", 100)
-                              .attr("opacity", 1)
-                            .on("mouseover", function() {
-                                d3.select(this)
-                                .transition().duration(100)
-                                .attr("width", 100)
-                                .attr("opacity", .8)
-                                .attr("fill", "red")                          
-                            })
-                        .on("mouseout", function () {
-                                d3.select(this)
-                                .transition().duration(100)
-                                .attr("width", 100)
-                                .attr("opacity", 1)
-                                .attr("fill", "orange")
-                            })
-                    
-              
-          //BAR CHART LABELS
-            // X AXIS LABEL
-              chartArea1.append('text')
-                    .attr('class','c_xlabel')
-                    .attr('text-anchor','end')
-                    .attr('x', chartWidth1/2+margin1.left-45)
-                    .attr('y', chartHeight1+margin1.bottom-25)
-                    .text("Dietary Types");
-            // Y AXIS LABEL
-                chartArea1.append('text')
-                      .attr('class','c_ylabel')
-                      .attr('text-anchor','end')
-                      .attr('x', margin1.right/2-125)
-                      .attr('y', -margin1.left+20)
-                      .attr("transform", "rotate(-90)")
-                      .text("Number of Resturants");
-            // TITLE
-                chartArea1.append("text")
-                    .attr("x", (chartWidth1 / 2)-10)
-                    .attr("y", 0 - margin1.top +18)
-                    .attr("text-anchor", "middle")
-                    .style("font-family", "Arial, Helvetica, sans-serif")
-                    .style("font-size", "20px")
-                    .style("text-decoration", "underline")
-                    .style("font-weight", "bolder")
-                    .text("Number of Resturants per Dietary Restrictions");       
-        
-            // CUSINE DISTRIBUTION BAR CHART
-            var svg = d3.select("svg#cusine_barchart");
-            const width = svg.attr("width");
-            const height = svg.attr("height");
-            const margin = {top: 40, right: 10, bottom: 70, left: 70};
-            const chartWidth = width - margin.left - margin.right;
-            const chartHeight = height - margin.top - margin.bottom;
-            let annotations = svg.append("g").attr("id","annotations");
-            let chartArea = svg.append("g").attr("id","points")
-                            .attr("transform",`translate(${margin.left},${margin.top})`);
-            const cuisine_ct = await d3.json("./cuisine_count_top10.json");
-            console.log(cuisine_ct)
-            let countScale = d3.scaleLinear().domain([0,40]).range([chartHeight, 0]);
-            let leftAxis = d3.axisLeft(countScale).tickFormat(d3.format('0'));
-            let leftGridlines = d3.axisLeft(countScale) 
-                                    .tickSize(-chartWidth-10)
-                                    .tickFormat("")
-            annotations.append("g")
-                        .attr("class", "y axis")
-                        .attr("transform",`translate(${margin.left-10},${margin.top})`)
-                        .call(leftAxis)
-            annotations.append("g")
-                        .attr("class", "y gridlines")
-                        .attr("transform",`translate(${margin.left-10},${margin.top})`)
-                        .call(leftGridlines);
-            let bottomAxis = d3.axisBottom()
-            let bottomAxisG = annotations.append("g")
-                                        .attr("class", "x axis")
-                                        .attr("transform",`translate(${margin.left},${chartHeight+margin.top+10})`)
-            const cuisine_key = Object.keys(cuisine_ct)
-            console.log(cuisine_key)
-            const values = Object.keys(cuisine_ct).map(function(key){
-                return cuisine_ct[key];
-            });
-            console.log(values)
-            let cuisineScale = d3.scaleBand().domain(cuisine_key).range([0, chartWidth])
-                                            .padding(0.05);
-            bottomAxis.scale(cuisineScale)
-            bottomAxisG.transition().call(bottomAxis);
-            let cuisine_ct_array = []
-            Object.keys(cuisine_ct).forEach((d) => {
-                const temp = { [d]: cuisine_ct[d] }
-                cuisine_ct_array.push(temp);
-            })
-            console.log(cuisine_ct_array);
-            chartArea.selectAll('rect.bar').data(cuisine_ct_array)
-                              .join('rect')
-                              .attr('class', 'bar')
-                              .attr('fill', 'orange')
-                              .attr("x", d => cuisineScale(Object.keys(d)[0])+5)
-                              .attr("y", d => countScale(d[Object.keys(d)[0]]))
-                              .attr("height", d => countScale(0)- countScale(d[Object.keys(d)[0]]))
-                              .attr("width", 50)
-                              .attr("opacity", 1)
-                              .on("mouseover", function() {
-                                d3.select(this)
-                                .transition().duration(100)
-                                .attr("width", 50)
-                                .attr("opacity", .8)
-                                .attr("fill", "red")
-                      
-                            })
-                        .on("mouseout", function () {
-                                d3.select(this)
-                                .transition().duration(100)
-                                .attr("width", 50)
-                                .attr("opacity", 1)
-                                .attr("fill", "orange")
+        //DIETARY FILTER
+        dietary_ids.forEach(function(d,i){
+            d3.select('.dietary_filter')
+                .append("span")
+                .attr('id',d)
+                .text(d)
+                .on('click', function(){
+                    filterColor(d,"dietary_ids");
+                    if (d === 'All Dietary'){
+                        current_filters['dietary']="All Dietary";
+                    }
+                    else{
+                        current_filters['dietary']=d;
+                    }
+                    updateResturant();      
                 })
-         //BAR CHART LABELS
-             //X AXIS
-                chartArea.append('text')
-                    .attr('class','c_xlabel')
+        })
+        //CUISINE FILTER
+        cuisines_ids .forEach(function(d,i){
+            d3.select('.cuisines_filter')
+                .append("span")
+                .attr('id',d)
+                .text(d)
+                .on('click', function(){
+                    filterColor(d,"cuisines_ids");
+                    if (d === 'All Cuisines'){
+                        current_filters['cuisines']="All Cuisines";
+                    }
+                    else{
+                        current_filters['cuisines']=d
+                        var svg1 =d3.select("svg#dietary_barchart");
+                    }
+                    updateResturant();
+                })
+        })
+        function updateResturant(){
+                    circles.attr('visibility', circleS => {
+                        if ((circleS['dietary'] !=current_filters['dietary']) && current_filters['dietary']!="All Dietary"){
+                            return 'hidden';
+                        }
+                        else if ((circleS['cuisines']!=current_filters['cuisines']) && current_filters['cuisines']!="All Cuisines"){
+                            return 'hidden';
+                        }
+                        else {
+                            return "";
+                        }
+                })      
+                };
+
+
+        //DIETARY DISTRIBUTION BAR CHART
+        var total_count = 0;
+        //DIETARY COUNTS
+        function count_dietary_dict(dietary_ids){
+            dictionary = {};
+            for (var i=0; i<dietary_ids.length-1; i++){
+                dictionary[ [dietary_ids[i]] ] = 0;
+            }
+            return dictionary;
+        }
+        dietary_counts = count_dietary_dict(dietary_ids);
+        data.forEach(d=>{
+            dietary_counts[d.dietary] +=1;
+            total_count += 1;
+        });
+        console.log(dietary_counts)
+        var svg1 = d3.select("svg#dietary_barchart");
+        const width1 = svg1.attr("width");
+        const height1 = svg1.attr("height");
+        const margin1 = {top: 40, right: 10, bottom: 70, left: 70};
+        const chartWidth1 = width1 - margin1.left - margin1.right;
+        const chartHeight1 = height1 - margin1.top - margin1.bottom;
+        const dietary_ct = await d3.json("./dietary_count.json");
+        console.log(dietary_ct)
+        let annotations1 = svg1.append("g").attr("id","annotations");
+        let chartArea1 = svg1.append("g").attr("id","points")
+                        .attr("transform",`translate(${margin1.left},${margin1.top})`);
+        let countScale1 = d3.scaleLinear().domain([0,120]).range([chartHeight1,0])
+    
+        
+        let leftAxis1 = d3.axisLeft(countScale1).tickFormat(d3.format('0'));
+        let leftGridlines1 = d3.axisLeft(countScale1) 
+                                .tickSize(-chartWidth1-10)
+                                .tickFormat("")
+        annotations1.append("g")
+                    .attr("class", "y axis")
+                    .attr("transform",`translate(${margin1.left-10},${margin1.top})`)
+                    .call(leftAxis1)
+        annotations1.append("g")
+                    .attr("class", "y gridlines")
+                    .attr("transform",`translate(${margin1.left-10},${margin1.top})`)
+                    .call(leftGridlines1);
+        let bottomAxis1 = d3.axisBottom()
+        let bottomAxisG1 = annotations1.append("g")
+                                    .attr("class", "x axis")
+                                    .attr("transform",`translate(${margin1.left},${chartHeight1+margin1.top+10})`)
+    
+        const dietary_key = Object.keys(dietary_ct)
+        console.log(dietary_key)
+        const values_1 = Object.keys(dietary_ct).map(function(key1){
+            return dietary_ct[key1];
+        });
+        console.log(values_1)
+        let dietaryScale = d3.scaleBand().domain(dietary_key).range([0, chartWidth1])
+                                        .padding(0.05);
+        bottomAxis1.scale(dietaryScale)
+        bottomAxisG1.transition().call(bottomAxis1);
+        let dietary_ct_array = []
+        Object.keys(dietary_ct).forEach((d) => {
+            const temporary = { [d]: dietary_ct[d] }
+            dietary_ct_array.push(temporary);
+        })
+        console.log(dietary_ct_array);
+        chartArea1.selectAll('rect.bar').data(dietary_ct_array)
+                            .join('rect')
+                            .attr('class', 'bar')
+                            .attr('fill', 'orange')
+                            .attr("x", d => dietaryScale(Object.keys(d)[0])+45)
+                            .attr("y", d => countScale1(d[Object.keys(d)[0]]))
+                            .attr("height", d => countScale1(0)- countScale1(d[Object.keys(d)[0]]))
+                            .attr("width", 100)
+                            .attr("opacity", 1)
+                        .on("mouseover", function() {
+                            d3.select(this)
+                            .transition().duration(100)
+                            .attr("width", 100)
+                            .attr("opacity", .8)
+                            .attr("fill", "red")                          
+                        })
+                    .on("mouseout", function () {
+                            d3.select(this)
+                            .transition().duration(100)
+                            .attr("width", 100)
+                            .attr("opacity", 1)
+                            .attr("fill", "orange")
+                        })
+                                  
+        //BAR CHART LABELS
+        // X AXIS LABEL
+            chartArea1.append('text')
+                .attr('class','c_xlabel')
+                .attr('text-anchor','end')
+                .attr('x', chartWidth1/2+margin1.left-45)
+                .attr('y', chartHeight1+margin1.bottom-25)
+                .text("Dietary Types");
+        // Y AXIS LABEL
+            chartArea1.append('text')
+                    .attr('class','c_ylabel')
                     .attr('text-anchor','end')
-                    .attr('x', chartWidth/2+margin.left-45)
-                    .attr('y', chartHeight+margin.bottom-25)
-                    .text("Top 10 Cusines");
-             // Y AXIS
-                chartArea.append('text')
-                      .attr('class','c_ylabel')
-                      .attr('text-anchor','end')
-                      .attr('x', margin.right/2-125)
-                      .attr('y', -margin.left+20)
-                      .attr("transform", "rotate(-90)")
-                      .text("Number of Resutants");
-                //title
-                chartArea.append("text")
-                    .attr("x", (chartWidth / 2)-10)
-                    .attr("y", 0 - margin.top +18)
-                    .attr("text-anchor", "middle")
-                    .style("font-family", "Arial, Helvetica, sans-serif")
-                    .style("font-size", "20px")
-                    .style("text-decoration", "underline")
-                    .style("font-weight", "bolder")
-                    .text("Number of Resturants per Cusine");
+                    .attr('x', margin1.right/2-105)
+                    .attr('y', -margin1.left+20)
+                    .attr("transform", "rotate(-90)")
+                    .text("Number of Resturants");
+        // TITLE
+            chartArea1.append("text")
+                .attr("x", (chartWidth1 / 2)-10)
+                .attr("y", 0 - margin1.top +18)
+                .attr("text-anchor", "middle")
+                .style("font-family", "Arial, Helvetica, sans-serif")
+                .style("font-size", "20px")
+                .style("text-decoration", "underline")
+                .style("font-weight", "bolder")
+                .text("Number of Resturants per Dietary Restrictions");       
+    
+        // CUSINE DISTRIBUTION BAR CHART
+        var svg = d3.select("svg#cusine_barchart");
+        const width = svg.attr("width");
+        const height = svg.attr("height");
+        const margin = {top: 40, right: 10, bottom: 80, left: 70};
+        const chartWidth = width - margin.left - margin.right;
+        const chartHeight = height - margin.top - margin.bottom;
+        let annotations = svg.append("g").attr("id","annotations");
+        let chartArea = svg.append("g").attr("id","points")
+                        .attr("transform",`translate(${margin.left},${margin.top})`);
+        const cuisine_ct = await d3.json("./cuisine_count_top10.json");
+        console.log(cuisine_ct)
+        let countScale = d3.scaleLinear().domain([0,40]).range([chartHeight, 0]);
+        let leftAxis = d3.axisLeft(countScale).tickFormat(d3.format('0'));
+        let leftGridlines = d3.axisLeft(countScale) 
+                                .tickSize(-chartWidth-10)
+                                .tickFormat("")
+        annotations.append("g")
+                    .attr("class", "y axis")
+                    .attr("transform",`translate(${margin.left-10},${margin.top})`)
+                    .call(leftAxis)
+        annotations.append("g")
+                    .attr("class", "y gridlines")
+                    .attr("transform",`translate(${margin.left-10},${margin.top})`)
+                    .call(leftGridlines);
+        let bottomAxis = d3.axisBottom()                 
+        const cuisine_key = Object.keys(cuisine_ct)
+        console.log(cuisine_key)
+        const values = Object.keys(cuisine_ct).map(function(key){
+            return cuisine_ct[key];
+        });
+        console.log(values)
+        let cuisineScale = d3.scaleBand().domain(cuisine_key).range([0, chartWidth])
+                                      .padding(0.05);
+        bottomAxis.scale(cuisineScale)
+        svg.append("g").attr("class","xaxis")
+                    .attr("transform","translate("+margin.left+","+(margin.top+chartHeight+10)+")")
+                    .call(bottomAxis)
+                    .selectAll("text")
+                    .style('text-anchor','end')
+                    .attr("transform", "rotate(-40), translate(-5,-5)");
+        let cuisine_ct_array = []
+        Object.keys(cuisine_ct).forEach((d) => {
+            const temp = { [d]: cuisine_ct[d] }
+            cuisine_ct_array.push(temp);
+        })
+        console.log(cuisine_ct_array);
+        chartArea.selectAll('rect.bar').data(cuisine_ct_array)
+                            .join('rect')
+                            .attr('class', 'bar')
+                            .attr('fill', 'orange')
+                            .attr("x", d => cuisineScale(Object.keys(d)[0])+5)
+                            .attr("y", d => countScale(d[Object.keys(d)[0]]))
+                            .attr("height", d => countScale(0)- countScale(d[Object.keys(d)[0]]))
+                            .attr("width", 50)
+                            .attr("opacity", 1)
+                            .on("mouseover", function() {
+                            d3.select(this)
+                            .transition().duration(100)
+                            .attr("width", 50)
+                            .attr("opacity", .8)
+                            .attr("fill", "red")
+                        })
+                    .on("mouseout", function () {
+                            d3.select(this)
+                            .transition().duration(100)
+                            .attr("width", 50)
+                            .attr("opacity", 1)
+                            .attr("fill", "orange")
+            })
+
+        //BAR CHART LABELS
+        //X AXIS
+        chartArea.append('text')
+            .attr('class','c_xlabel')
+            .attr('text-anchor','end')
+            .attr('x', chartWidth/2+margin.left-45)
+            .attr('y', chartHeight+margin.bottom-20)
+            .text("Top 10 Cusines");
+        // Y AXIS
+        chartArea.append('text')
+                .attr('class','c_ylabel')
+                .attr('text-anchor','end')
+                .attr('x', margin.right/2-105)
+                .attr('y', -margin.left+20)
+                .attr("transform", "rotate(-90)")
+                .text("Number of Resutants");
+        //TITLE
+        chartArea.append("text")
+            .attr("x", (chartWidth / 2)-10)
+            .attr("y", 0 - margin.top +18)
+            .attr("text-anchor", "middle")
+            .style("font-family", "Arial, Helvetica, sans-serif")
+            .style("font-size", "20px")
+            .style("text-decoration", "underline")
+            .style("font-weight", "bolder")
+            .text("Number of Resturants per Cusine");
+
         //LOAD PRICE DATA 
         let priceData = await d3.csv("./original_price_mean_data.csv");
-
         const barbell = d3.select("svg#barbellchart");
         const barbellWidth = barbell.attr("width");
         const barbellHeight = barbell.attr("height");
-        const barbellMargin = {top: 10, right: 10, bottom: 50, left: 10};
+        const barbellMargin = {top: 30, right: 10, bottom: 50, left: 30};
         const barbellChartWidth = barbellWidth - barbellMargin.left - barbellMargin.right;
         const barbellChartHeight = barbellHeight - barbellMargin.top - barbellMargin.bottom;
-
         let barbellAnnotations = barbell.append("g").attr("id","annotations");
         let barbellChartArea = barbell.append("g").attr("id","points")
                                .attr("transform",`translate(${barbellMargin.left+40},${barbellMargin.top})`);
         console.log(priceData)
-           
-        //price stuff
+          
+        //PRICE INFO
         priceExtent = d3.extent(priceData, d => d['menus.amountMax'] );
         var priceScale = d3.scaleLog().domain([3, 70]).range([barbellChartHeight, 1]);
-        console.log(priceExtent) //[3.916999999999999, 69.42171764705894]   
-
-        //dietary stuff
+        console.log(priceExtent)   
+        //DIETARY INFO
         var avgDietary = d3.select(priceData, d => d.dietary) 
         console.log(avgDietary)
         var dietScale = d3.scaleOrdinal().domain(avgDietary)
-                                        .range( ['#045a8d', '#FFA500'] );  // [ vegan (blue), vegetarian (orange)]
-        
-        //cuisine stuff
+                                        .range( ['#045a8d', '#FFA500'] ); 
+        //CUSINE INFO
         var avgCuisines = d3.map(priceData, d => d.cuisines) 
         var avgCuisineScale = d3.scaleBand().domain(avgCuisines)
                                         .range( [0, barbellChartWidth] );
-        
-        //axes and labels
+        //LOLLIPOP AXIS/LABELS
         let bleftAxis = d3.axisLeft(priceScale)
                           .tickFormat(d3.format("$~f"));
         let bleftGridlines = d3.axisLeft(priceScale)
@@ -832,10 +837,8 @@
                                     .attr("class", "x axis")
                                     .attr("transform",`translate(${barbellMargin.left+7},${barbellChartHeight+barbellMargin.top+10})`)
                                     .call(bbottomAxis); 
-
         const priceDataPivoted = await d3.csv("./price_mean_data_pivot2.csv");
-        console.log(priceDataPivoted)
-        
+        console.log(priceDataPivoted) 
         barbellChartArea.selectAll('g.linepop').data( priceDataPivoted )
                 .join('g').attr('class','line')
                 .append("line")
@@ -912,21 +915,43 @@
                 .attr("x", 425).attr("y", 125);
             lollitextbox.append("text").text(price_label)
                 .attr("x", 425).attr("y", 145);
-
         }
-
+                //BAR CHART LABELS
+        // X AXIS LABEL
+        barbellChartArea.append('text')
+                .attr('class','c_xlabel')
+                .attr('text-anchor','end')
+                .attr('x', barbellWidth/2+barbellMargin.left)
+                .attr('y', barbellHeight+barbellMargin.bottom+10)
+                .text("Top 10 Cusines");
+        // Y AXIS LABEL
+        barbellChartArea.append('text')
+                    .attr('class','c_ylabel')
+                    .attr('text-anchor','end')
+                    .attr('x', barbellMargin.right/2-105)
+                    .attr('y', -barbellMargin.left-30)
+                    .attr("transform", "rotate(-90)")
+                    .text("Average Price Range");
+        // TITLE
+        barbellChartArea.append("text")
+                .attr("x", (barbellWidth / 2)-10)
+                .attr("y", 0 - barbellMargin.top +16)
+                .attr("text-anchor", "middle")
+                .style("font-family", "Arial, Helvetica, sans-serif")
+                .style("font-size", "20px")
+                .style("text-decoration", "underline")
+                .style("font-weight", "bolder")
+                .text("Top 10 Cusines and Average Price Points");       
+    
         //MAP LEGEND
         barbell.append('rect').attr('x', 420).attr('y', 10).attr('width', 170).attr('height', 75).attr('stroke', 'black').attr('fill', 'lightyellow').style("stroke-width", 1).attr("rx", 5).attr("ry", 5);
         barbell.append("text").attr("x", 430).attr("y", 25).text("Color Range").style("font-size", "15px").attr("alignment-baseline","middle").style("font-weight", "bold")
         barbell.append("circle").attr("cx",437).attr("cy",47).attr("r", 6).style("fill", "#045a8d").style("stroke", "black").style("stroke-width", 0.75)
         barbell.append("circle").attr("cx",437).attr("cy",67).attr("r", 6).style("fill", "#FFA500").style("stroke", "black").style("stroke-width", 0.75)
         barbell.append("text").attr("x", 457).attr("y", 48.5).text(`Vegetarian`).style("font-size", "15px").attr("alignment-baseline","middle")
-        barbell.append("text").attr("x", 457).attr("y", 68.5).text(`Vegan`).style("font-size", "14px").attr("alignment-baseline","middle");
+        barbell.append("text").attr("x", 457).attr("y", 68.5).text(`Vegan`).style("font-size", "14px").attr("alignment-baseline","middle");      
+        }
+        requestData();
         
-  }
-
-  requestData();
-  
-  
-</script>
-        </html>
+        </script>
+                </html>
