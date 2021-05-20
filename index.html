@@ -140,18 +140,16 @@
         background-color:white;
     }
     .rectangle{
-        width: 700px;
+        width: 640px;
         height: 500px;
-        display:block;
-        margin-left:1px;
-        margin-right: 20px;
-        padding-left: 10px;
+        margin-left:600px;
+        margin-right: 700px;
+        padding-left: 100px;
         padding-right:10px;
         outline: solid 1px black;
         background-color: white;
     }
  
-
         </style>
         </head>
 
@@ -174,11 +172,7 @@
                     <h4>Cuisine</h4>  
                 </div> </br>
 
-                <div class = "price_filter" style="padding: 10px">
-                    <h4> Maximum Price</h4>  
-                    <input id="slider" type="range" min="30000" max="155000" step="10" value="55000" style="width:300px;
-                    height:25px"/>
-                </div> </br> 
+    
             </div>
             
         </div>
@@ -190,14 +184,14 @@
             </div>
             <div class = box_3>
                 <div class="barchart-container">
-                    <h4> Distribution of Restaurants by Dietary Resstriction </h4>
+                    <h4> Distribution of Restaurants by Dietary Restrictions </h4>
                     <svg id="dietary_barchart" height="450" width="695" ></svg>            
                 </div>
-
+            </div>
             </div>
                 <div class = "rectangle">
                     <h4> Average Max Price by Cuisine Vegan vs. Vegetarian </h4>
-                    <svg id="barbellchart" height="430" width="625"> </svg>
+                    <svg id="barbellchart" height="430" width="600"> </svg>
                 </div>
             
     <script>
@@ -209,13 +203,12 @@
     function filterColor(name, array_name){
         var element = document.getElementById(name);
         element.style.backgroundColor = "skyblue";
-        //find what array to sort through
         if (array_name === 'dietary_ids'){
             list_ids = dietary_ids;
-        }//else for other array names
+        }
         else if (array_name === 'cuisines_ids'){
             list_ids = cuisines_ids;
-        }//else for other array names
+        }
         for (var i=0; i<list_ids.length;i++){
             var value = list_ids[i];
             if (value != name){
@@ -227,13 +220,13 @@
         }
     }
     const requestData = async () => {
-    //LOAD Vegetarian/Vegan DATASET
+    //LOAD VEGETARIAN/VEGAN DATASET
       var data = await d3.csv("./cleaned_restaurants_data.csv");
            console.log(data, "restauraunt data")
      //LOAD MAP DATASET   
         const us = await d3.json("./counties-10m.json");
       
-        //LOAD Population DATASET
+        //LOAD POPULATION DATASET
         let pop = await d3.csv('USpopulation2019.csv', d3.autoType);
         console.log(pop, "population csv")
         popByState = [];
@@ -245,12 +238,7 @@
             abbrevByState[d.NAME] = d.abbreviation;
         });
         let popVals = d3.map(pop, d => d.population_estimate2019);
-        // console.log(popVals);
-        // console.log(popByState);
-        // console.log(abbrevByState, "state abbreviations")
-       
-        const states = topojson.feature(us, us.objects.states);       
-       
+        const states = topojson.feature(us, us.objects.states);          
         const statesMesh = topojson.mesh(us, us.objects.states);
         const counties = topojson.feature(us, us.objects.counties);
          console.log(counties, "counties")          
@@ -261,7 +249,8 @@
         var projection = d3.geoAlbersUsa().scale(800).translate([487.5, 305]);
         let path = d3.geoPath().projection(projection);
         let viewport = map.append("g");
-        //Process restaraunt data to get counts per state as well as to update lat and long
+
+        // PROCESS RESTURANT DATA TO GET COUNTS & UPDATE LAT/LONG
         restCountByState = {"CA": {restCount: 0, ratio:0}, "NY": {restCount:0, ratio:0}};
         data.forEach( d => {
                 d.latitude = Number(d.latitude);
@@ -277,17 +266,14 @@
         ratioVals = [];
         for (const [key, value] of Object.entries(restCountByState)) {
             restCountByState[key].ratio = restCountByState[key].restCount / popByState[stateByAbbrev[key]] * 1000000
-            //this ratio says how about restauraunts per million people
             ratioVals.push(restCountByState[key].ratio)
             }
-        //console.log(restCountByState, "restauraunt count by state");
        console.log(ratioVals);
-        //Add pop data to each of the states
+
+        //POPULATION DATA TO STATES
         states.features.forEach(d => {
                         state = d.properties.name;
-                        
                         if(state in popByState) {
-                            //add to the topojson
                             d.properties.population = popByState[state];
                             if (abbrevByState[state] in restCountByState) {
                                 d.properties.restCount = restCountByState[abbrevByState[state]].restCount;
@@ -297,9 +283,7 @@
                         }
                         else {
                             d.properties.population = null;
-                        }
-                       
-                    
+                        }            
         });
         fipsmap = await d3.csv('countyfipsmappedtostates.csv', d3.autoType);
         fipsbyState = [];
@@ -307,34 +291,14 @@
             fipsbyState[d.FIPS] = d.State;
           
         });
-         //Add states data to each of the counties
+         // ADD STATES DATA TO COUNTRIES
          counties.features.forEach(d => {
                         fips = d.id;
-                        
-                        // if(fips in fipsbyState) {
-                        //     //add to the topojson
-                        //     d.properties.state = popByState[state];
-                        //     if (abbrevByState[state] in restCountByState) {
-                        //         d.properties.restCount = restCountByState[abbrevByState[state]].restCount;
-                        //         d.properties.ratio = restCountByState[abbrevByState[state]].ratio;
-                
-                
-                        //     }
-                        //     else { d. properties.restCount = 0;  d.properties.ratio = null;}
-                        // }
-                        // else {
-                        //     d.properties.population = null;
-                        // }
-                       
-                    
         });
         console.log(states,"states");
         const colorScaleRange = [ "#bdc9e1", "#74a9cf", "#0570b0","#045a8d"];
         let ratioScale = d3.scaleQuantile().domain(ratioVals).range(colorScaleRange);
         var temp_legend=[0,0,0,0];
-        //let popScale = d3.scaleQuantile().domain(popVals).range(colorScaleRange);
-        // console.log("popScale",popScale)
-        // console.log(counties, "counties")
 
        //ADDING PATHS FOR ZOOM FEATURE
         viewport.append("path")
@@ -347,7 +311,6 @@
             .append("path")
             .attr("class","county")
             .attr("fill","none")
-            //.attr("opacity", 0.7)
             .attr("visibility", "hidden")
             .attr("d", path);
         viewport.selectAll(".state").data(states.features)
@@ -389,7 +352,6 @@
           .datum(countiesMesh)
           .attr("class","county-outline")
           .attr("visibility", "hidden")
-          //.attr("opacity", 0.7)
           .attr("fill","none")
           .style("stroke-width", 3)
           .style("stroke", "white")
@@ -435,24 +397,19 @@
                                                     hover.attr("visibility","hidden");
                                     })
 
-        // panning AND ZOOM HERE
-        
+        // PANNING AND ZOOM
         var zoom = d3.zoom()
                       .scaleExtent([1,10])
-                      //.translateExtent([[-50,-50],[mapWidth+50,mapHeight+50]])  // to lock to edges
-        
                       .on("zoom", mapZoomed);
         map.call(zoom);
-        map.call(zoom.transform, d3.zoomIdentity); // Executes zoomed() once because we technically have changed the transform
+        map.call(zoom.transform, d3.zoomIdentity); 
         function mapZoomed({transform}) {
-          // Transform the group object to reflect the zoom action
           viewport.attr("transform", transform.toString() );
-          // Divide by scale to make sure strokes remain a consistent width during zooming
           viewport.select(".state-outline")
                   .style("stroke-width", 3 / transform.k);
           viewport.select(".county-outline")
                   .style("stroke-width", 2 / transform.k);
-          // Expose county layer when sufficiently zoomed
+          // LAYERING ZOOM
           viewport.select(".county-outline")
                   .attr("visibility", (transform.k > 2) ? "visible" : "hidden");
           viewport.selectAll(".county")
@@ -483,21 +440,7 @@
           map.transition().duration(1000).call(zoom.transform, newTransform);
         }
         
-        //Map coloring legend
-
-        // const hover = map.append("g").attr("class","hover")
-            
-        //     const popup = hover.append("rect").attr("class","frame")
-        //                                 .attr("x", 40).attr("y", 30)
-        //                                 .attr("rx", 5).attr("ry", 5)
-        //                                 .attr("height", 105).attr("fill", "lightyellow")
-        //                                 .attr("stroke", "black");
-        //     const textbox = hover.append("g").attr("transform","translate(5,5)").attr("class", "label");
-        //     const format = d3.format(',d');
-
         const legend = map.append("g").attr("class", "legend");
-        
-
         legend.append('rect').attr('x', 695).attr('y', 480).attr('width', 205).attr('height', 120).attr('stroke', 'grey').attr('fill', 'white').style("stroke-width", 0.65).attr("rx", 5).attr("ry", 5);
         legend.append("circle").attr("cx",720).attr("cy",580).attr("r", 6).style("fill", "#bdc9e1").style("stroke", "black").style("stroke-width", 0.75)
         legend.append("circle").attr("cx",720).attr("cy",560).attr("r", 6).style("fill", "#74a9cf").style("stroke", "black").style("stroke-width", 0.75)
@@ -510,88 +453,8 @@
         legend.append("text").attr("x", 750).attr("y", 580).text(`0-`+d3.format(".2f")(`${temp_legend[0]}`)).style("font-size", "14px").attr("dominant-baseline","middle")
 
 
-
-
-
-
-        // d3.select("input#slider")
-        //   .on("input", function() {showRestaurant(+this.value)})
-        
-        // function showRestaurant(output) {
-        //     data.forEach( (d) => {
-        //         if (d.priceRangeMax == "") {
-        //             map.selectAll("circle.dot")
-        //                 .data(d)
-        //                 .join("circle")
-        //                 .attr("class","dot")
-        //                 .attr("r", 6)
-        //                 .attr("fill", "#808080")
-        //                 .attr("opacity", 1)
-        //                 .attr("cx", d => d.position[0])
-        //                 .attr("cy", d => d.position[1])
-        //                 .attr("stroke", "black")
-        //                 .attr("stroke-width", 1.5)
-        //                 .on("mouseover", function() {
-        //                                 d3.select(this)
-        //                                 .transition().duration(100)
-        //                                 .attr("stroke","black")
-        //                                 .attr("stroke-width", 3.5)
-        //                                 .attr("r", 8)
-        //                                 .attr("opacity", 1)
-        //                                 .attr("fill", "#D3D3D3")
-        //                                 hover.attr("visibility","");
-        //                                 updateMouseover(d3.select(this).datum()); })
-        //                 .on("mouseout", function () {
-        //                                 d3.select(this)
-        //                                 .transition().duration(100)
-        //                                 .attr("stroke","black")
-        //                                 .attr("stroke-width", 1.5)
-        //                                 .attr("r", 6)
-        //                                 .attr("opacity", 1)
-        //                                 .attr("fill", "#808080")
-        //                                 hover.attr("visibility","hidden"); })
-        //         }
-        //         else {
-        //         }
-                
-        //     })
-        //     birthplaceHolder = [];
-        //     birthplace.forEach( (d) => {
-        //     if (fipsHolder.includes(d.fips)) {
-        //         birthplaceHolder.push(d)
-        //     }
-        //     })
-        //     // incmap.selectAll("circle.dot")
-        //     //     .data(birthplaceHolder)
-        //     //     .join("circle")
-        //     //     .attr("class","dot")
-        //     //     .attr("cx", d => d.position[0])
-        //     //     .attr("cy", d => d.position[1])
-        //     //     .attr("r", 3.75)
-        //     //     .style("stroke", "black")
-        //     //     .style("stroke-width", 0.75)
-        //     //     .style("fill", "orange")
-        //     //     .style("opacity", 1)
-        //     //     .on("mouseover", function() {
-        //     //         d3.select(this)
-        //     //             .transition().duration(200)
-        //     //             .attr("stroke-width",4)
-        //     //             .style("fill", "LightSteelBlue");
-        //     //         updateMouseover(d3.select(this).datum());
-        //     //     })
-        //     //     .on("mouseout", function() {
-        //     //         d3.select(this)
-        //     //             .transition().duration(200)
-        //     //             .attr("stroke-width",0.75)
-        //     //             .style("fill", "orange");
-        //     //         });
-        //     };
-        //     showRestaurant(40);
-
-
-
             
-            //mouseover for circle plots
+        //MOUSEOVER FOR CIRCLE PLOTS
             const hover = map.append("g").attr("class","hover")
             function stringLen(str) {
                 const dummytext = hover.append("text").attr("visibility","hidden");
@@ -627,6 +490,7 @@
             }
             var current_filters = {"dietary":"All Dietary","cuisines":"All Cuisines" };
             console.log(current_filters);
+
             //DIETARY FILTER
             dietary_ids.forEach(function(d,i){
                 d3.select('.dietary_filter')
@@ -642,13 +506,6 @@
                             current_filters['dietary']=d;
                         }
                         updateResturant();
-                        var svg1 =d3.select("svg#dietary_barchart");
-                if (d != "All Dietary" && d != "All Cuisines"){
-                    svg1.attr('visibility',"");
-                }
-                else{
-                    svg1.attr('visibility',"hidden");
-                }
                         
                     })
             })
@@ -664,37 +521,32 @@
                             current_filters['cuisines']="All Cuisines";
                         }
                         else{
-                            current_filters['cuisines']=d;
+                            current_filters['cuisines']=d
+                            var svg1 =d3.select("svg#dietary_barchart");
+                            
+
                         }
                         updateResturant();
-                        var svg =d3.select("svg#cusine_barchart");
-                if (d != "All Dietary" && d != "All Cuisines"){
-                    svg.attr('visibility',"");
-                }
-                else{
-                    svg.attr('visibility',"hidden");
-                }
             
-            
-                
                     })
             })
             function updateResturant(){
-                        circles.attr('visibility', circleD => {
-                            if ((circleD['dietary'] !=current_filters['dietary']) && current_filters['dietary']!="All Dietary"){
+                        circles.attr('visibility', circleS => {
+                            if ((circleS['dietary'] !=current_filters['dietary']) && current_filters['dietary']!="All Dietary"){
                                 return 'hidden';
                             }
-                            else if ((circleD['cuisines']!=current_filters['cuisines']) && current_filters['cuisines']!="All Cuisines"){
+                            else if ((circleS['cuisines']!=current_filters['cuisines']) && current_filters['cuisines']!="All Cuisines"){
                                 return 'hidden';
                             }
-                            else{
+                            else {
                                 return "";
                             }
-                    })
+                    })      
                     };
-            //Dietary Distributino Bar Chart
+
+            //DIETARY DISTRIBUTION BAR CHART
             var total_count = 0;
-            //make count dictionaries
+            //DIETARY COUNTS
             function count_dietary_dict(dietary_ids){
                 dictionary = {};
                 for (var i=0; i<dietary_ids.length-1; i++){
@@ -703,7 +555,6 @@
                 return dictionary;
             }
             dietary_counts = count_dietary_dict(dietary_ids);
-            //put counts of crashes in dictionaries
             data.forEach(d=>{
                 dietary_counts[d.dietary] +=1;
                 total_count += 1;
@@ -755,25 +606,40 @@
                 dietary_ct_array.push(temporary);
             })
             console.log(dietary_ct_array);
-            svg1.attr('visibility','hidden');
             chartArea1.selectAll('rect.bar').data(dietary_ct_array)
                               .join('rect')
                               .attr('class', 'bar')
                               .attr('fill', 'orange')
-                              .attr("x", d => dietaryScale(Object.keys(d)[0])+80)
+                              .attr("x", d => dietaryScale(Object.keys(d)[0])+45)
                               .attr("y", d => countScale1(d[Object.keys(d)[0]]))
                               .attr("height", d => countScale1(0)- countScale1(d[Object.keys(d)[0]]))
-                              .attr("width", 50)
+                              .attr("width", 100)
                               .attr("opacity", 1)
-          //Add chart labels
-                //xlabel
+                            .on("mouseover", function() {
+                                d3.select(this)
+                                .transition().duration(100)
+                                .attr("width", 100)
+                                .attr("opacity", .8)
+                                .attr("fill", "red")                          
+                            })
+                        .on("mouseout", function () {
+                                d3.select(this)
+                                .transition().duration(100)
+                                .attr("width", 100)
+                                .attr("opacity", 1)
+                                .attr("fill", "orange")
+                            })
+                    
+              
+          //BAR CHART LABELS
+            // X AXIS LABEL
               chartArea1.append('text')
                     .attr('class','c_xlabel')
                     .attr('text-anchor','end')
                     .attr('x', chartWidth1/2+margin1.left-45)
                     .attr('y', chartHeight1+margin1.bottom-25)
                     .text("Dietary Types");
-                //ylabel
+            // Y AXIS LABEL
                 chartArea1.append('text')
                       .attr('class','c_ylabel')
                       .attr('text-anchor','end')
@@ -781,7 +647,7 @@
                       .attr('y', -margin1.left+20)
                       .attr("transform", "rotate(-90)")
                       .text("Number of Resturants");
-                //title
+            // TITLE
                 chartArea1.append("text")
                     .attr("x", (chartWidth1 / 2)-10)
                     .attr("y", 0 - margin1.top +18)
@@ -792,7 +658,7 @@
                     .style("font-weight", "bolder")
                     .text("Number of Resturants per Dietary Restrictions");       
         
-            //Cuisine Distribution Bar Chart 
+            // CUSINE DISTRIBUTION BAR CHART
             var svg = d3.select("svg#cusine_barchart");
             const width = svg.attr("width");
             const height = svg.attr("height");
@@ -837,7 +703,6 @@
                 cuisine_ct_array.push(temp);
             })
             console.log(cuisine_ct_array);
-            svg.attr('visibility','hidden');
             chartArea.selectAll('rect.bar').data(cuisine_ct_array)
                               .join('rect')
                               .attr('class', 'bar')
@@ -850,65 +715,27 @@
                               .on("mouseover", function() {
                                 d3.select(this)
                                 .transition().duration(100)
-                                .attr("stroke","black")
                                 .attr("width", 50)
                                 .attr("opacity", .8)
-                                .attr("fill", "orange")
-                                cusinehover.attr("visibility","");
-                                updateCusineMouseover(d3.select(this).datum());  
+                                .attr("fill", "red")
+                      
                             })
                         .on("mouseout", function () {
                                 d3.select(this)
                                 .transition().duration(100)
-                                .attr("stroke", "black")
                                 .attr("width", 50)
                                 .attr("opacity", 1)
                                 .attr("fill", "orange")
-                                cusinehover.attr("visibility","hidden");
                 })
-
-        //mouseover for lollipop plot
-        const cusinehover = chartArea.append("g").attr("class","hover")
-
-        const cusinepopup = cusinehover.append("rect").attr("class","frame")
-                                    .attr("x", 420).attr("y",89)
-                                    .attr("rx", 5).attr("ry", 5)
-                                    .attr("opacity", 1)
-                                    .attr("height", 75).attr("fill", "lightyellow")
-                                    .attr("stroke-width", 1)
-                                    .attr("stroke", "black");
-        const cusinetextbox = cusinehover.append("g").attr("transform","translate(5,5)").attr("class", "label");
-        const cusineformat = d3.format(',d');
-
-        function updateCusineMouseover(d) {
-            cusinetextbox.html('');
-
-            d['menus.amountMax'] = Number(d['menus.amountMax'])
-            d['menus.amountMax'] = d['menus.amountMax'].toFixed(2);
-
-            let cuisine_label = `Cuisine: ${d['cuisines']}`;
-            let cusine_num = `Number of Resturants: ${cuisine_ct}`;
-         
-
-            let cusinemaxWidth = Math.max( stringLen(cusine_num), stringLen(cuisine_label))
-            cusinepopup.attr("width", cusinemaxWidth+20);
-
-            cusinetextbox.append("text").text(cuisine_label)
-                .attr("x", 425).attr("y", 105) //.attr("text-decoration", "underline");
-                cusinetextbox.append("text").text(cusine_ct)
-                .attr("x", 425).attr("y", 125);
-        
-
-        }
-         //Add chart labels
-                //xlabel
+         //BAR CHART LABELS
+             //X AXIS
                 chartArea.append('text')
                     .attr('class','c_xlabel')
                     .attr('text-anchor','end')
                     .attr('x', chartWidth/2+margin.left-45)
                     .attr('y', chartHeight+margin.bottom-25)
                     .text("Top 10 Cusines");
-                //ylabel
+             // Y AXIS
                 chartArea.append('text')
                       .attr('class','c_ylabel')
                       .attr('text-anchor','end')
@@ -926,12 +753,7 @@
                     .style("text-decoration", "underline")
                     .style("font-weight", "bolder")
                     .text("Number of Resturants per Cusine");
-
-
-        // double lollipop / barbell chart price mean for restaurants 
-        // double lollipop / barbell chart price mean for restaurants 
-        // double lollipop / barbell chart price mean for restaurants 
-
+        //LOAD PRICE DATA 
         let priceData = await d3.csv("./original_price_mean_data.csv");
 
         const barbell = d3.select("svg#barbellchart");
@@ -1025,13 +847,13 @@
                                 .transition().duration(100)
                                 .attr("stroke", "black")
                                 .attr("stroke-width", 1.5)
-                                .attr("r", 8)
+                                .attr("r", 10)
                                 .attr("opacity", 1)
                                 .attr("fill", d => dietScale(d['dietary']))
                                 lollihover.attr("visibility","hidden");
                 })
 
-        //mouseover for lollipop plot
+        //MOUSEOVER FOR LOLLIPOP CHART
         const lollihover = barbell.append("g").attr("class","hover")
 
         const lollipopup = lollihover.append("rect").attr("class","frame")
@@ -1046,7 +868,6 @@
 
         function updateLolliMouseover(d) {
             lollitextbox.html('');
-
             d['menus.amountMax'] = Number(d['menus.amountMax'])
             d['menus.amountMax'] = d['menus.amountMax'].toFixed(2);
 
@@ -1058,7 +879,7 @@
             lollipopup.attr("width", lollimaxWidth+20);
 
             lollitextbox.append("text").text(cuisine_label)
-                .attr("x", 425).attr("y", 105) //.attr("text-decoration", "underline");
+                .attr("x", 425).attr("y", 105) 
             lollitextbox.append("text").text(diet)
                 .attr("x", 425).attr("y", 125);
             lollitextbox.append("text").text(price_label)
@@ -1066,7 +887,7 @@
 
         }
 
-        //map legend
+        //MAP LEGEND
         barbell.append('rect').attr('x', 420).attr('y', 10).attr('width', 170).attr('height', 75).attr('stroke', 'black').attr('fill', 'lightyellow').style("stroke-width", 1).attr("rx", 5).attr("ry", 5);
         barbell.append("text").attr("x", 430).attr("y", 25).text("Color Range").style("font-size", "15px").attr("alignment-baseline","middle").style("font-weight", "bold")
         barbell.append("circle").attr("cx",437).attr("cy",47).attr("r", 6).style("fill", "#045a8d").style("stroke", "black").style("stroke-width", 0.75)
