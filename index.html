@@ -378,7 +378,7 @@
             .append("path")
             .attr("class","state")
             .attr("fill", d => { if (d.properties.ratio===null) {
-                            return  "#d3d3d3"; }
+                            return  "#9a9a9a"; }
                             else {
                             temp_color = ratioScale(d.properties.ratio);
 
@@ -498,16 +498,19 @@
         }  
         //CREATING LEGEND   
         const legend = map.append("g").attr("class", "legend");
-        legend.append('rect').attr('x', 695).attr('y', 480).attr('width', 205).attr('height', 120).attr('stroke', 'grey').attr('fill', 'white').style("stroke-width", 0.65).attr("rx", 5).attr("ry", 5);
-        legend.append("circle").attr("cx",720).attr("cy",580).attr("r", 6).style("fill", "#bdc9e1").style("stroke", "black").style("stroke-width", 0.75)
-        legend.append("circle").attr("cx",720).attr("cy",560).attr("r", 6).style("fill", "#74a9cf").style("stroke", "black").style("stroke-width", 0.75)
-        legend.append("circle").attr("cx",720).attr("cy",540).attr("r", 6).style("fill", "#0570b0").style("stroke", "black").style("stroke-width", 0.75)
-        legend.append("circle").attr("cx",720).attr("cy",520).attr("r", 6).style("fill", "#045a8d").style("stroke", "black").style("stroke-width", 0.75)
-        legend.append("text").attr("x", 700).attr("y", 495).text("Restaurants per million people").style("font-size", "14px").attr("alignment-baseline","middle").style("font-weight", "bold").attr("overflow-wrap", "normal");
-        legend.append("text").attr("x", 750).attr("y", 520).text(d3.format(".2f")(`${temp_legend[2]}`)+`-`+d3.format(".2f")(`${temp_legend[3]}`)).style("font-size", "14px").attr("alignment-baseline","middle")
-        legend.append("text").attr("x", 750).attr("y", 540).text(d3.format(".2f")(`${temp_legend[1]}`)+`-`+d3.format(".2f")(`${temp_legend[2]}`)).style("font-size", "14px").attr("alignment-baseline","middle");
-        legend.append("text").attr("x", 750).attr("y", 560).text(d3.format(".2f")(`${temp_legend[0]}`)+`-`+d3.format(".2f")(`${temp_legend[1]}`)).style("font-size", "14px").attr("dominant-baseline","middle")
-        legend.append("text").attr("x", 750).attr("y", 580).text(`0-`+d3.format(".2f")(`${temp_legend[0]}`)).style("font-size", "14px").attr("dominant-baseline","middle")
+        legend.append('rect').attr('x', 740).attr('y', 450).attr('width', 160).attr('height', 150).attr('stroke', 'grey').attr('fill', 'white').style("stroke-width", 0.65).attr("rx", 5).attr("ry", 5);
+        legend.append("rect").attr("x",755).attr("y",560).attr("width", 10).attr("height", 10).style("fill", "#bdc9e1").style("stroke", "black").style("stroke-width", 0.75)
+        legend.append("rect").attr("x",755).attr("y",540).attr("width", 10).attr("height", 10).style("fill", "#74a9cf").style("stroke", "black").style("stroke-width", 0.75)
+        legend.append("rect").attr("x",755).attr("y",520).attr("width", 10).attr("height", 10).style("fill", "#0570b0").style("stroke", "black").style("stroke-width", 0.75)
+        legend.append("rect").attr("x",755).attr("y",500).attr("width", 10).attr("height", 10).style("fill", "#045a8d").style("stroke", "black").style("stroke-width", 0.75)
+        legend.append("rect").attr("x",755).attr("y",580).attr("width", 10).attr("height", 10).style("fill", "#9a9a9a").style("stroke", "black").style("stroke-width", 0.75)
+        legend.append("text").attr("x", 775).attr("y", 587).text("No restauraunt data").style("font-size", "15px").attr("alignment-baseline","middle").attr("overflow-wrap", "normal");
+        legend.append("text").attr("x", 750).attr("y", 465).text("Restaurants per").style("font-size", "15px").attr("alignment-baseline","middle").style("font-weight", "bold").attr("overflow-wrap", "normal");
+        legend.append("text").attr("x", 750).attr("y", 480).text("million people").style("font-size", "15px").attr("alignment-baseline","middle").style("font-weight", "bold").attr("overflow-wrap", "normal");
+        legend.append("text").attr("x", 775).attr("y", 507).text(d3.format(".2f")(`${temp_legend[2]}`)+`-`+d3.format(".2f")(`${temp_legend[3]}`)).style("font-size", "15px").attr("alignment-baseline","middle")
+        legend.append("text").attr("x", 775).attr("y", 527).text(d3.format(".2f")(`${temp_legend[1]}`)+`-`+d3.format(".2f")(`${temp_legend[2]}`)).style("font-size", "15px").attr("alignment-baseline","middle");
+        legend.append("text").attr("x", 775).attr("y", 547).text(d3.format(".2f")(`${temp_legend[0]}`)+`-`+d3.format(".2f")(`${temp_legend[1]}`)).style("font-size", "15px").attr("dominant-baseline","middle")
+        legend.append("text").attr("x", 775).attr("y", 567).text(`0-`+d3.format(".2f")(`${temp_legend[0]}`)).style("font-size", "14px").attr("dominant-baseline","middle")
       
         //MOUSEOVER FOR CIRCLE PLOTS
         const hover = map.append("g").attr("class","hover")
@@ -976,7 +979,7 @@
         barbell.append("circle").attr("cx",437).attr("cy",47).attr("r", 6).style("fill", "#045a8d").style("stroke", "black").style("stroke-width", 0.75)
         barbell.append("circle").attr("cx",437).attr("cy",67).attr("r", 6).style("fill", "#FFA500").style("stroke", "black").style("stroke-width", 0.75)
         barbell.append("text").attr("x", 457).attr("y", 48.5).text(`Vegetarian`).style("font-size", "15px").attr("alignment-baseline","middle")
-        barbell.append("text").attr("x", 457).attr("y", 68.5).text(`Vegan`).style("font-size", "14px").attr("alignment-baseline","middle");
+        barbell.append("text").attr("x", 457).attr("y", 68.5).text(`Vegan`).style("font-size", "15px").attr("alignment-baseline","middle");
 
     //     //LOLLIPOP AXIS/LABELS
     //     let bleftAxis = d3.axisLeft(priceScale)
