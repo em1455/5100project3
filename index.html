@@ -565,7 +565,6 @@
                     updateResturant();      
                 })
         })
-
     
         //CUISINE FILTER
         cuisines_ids .forEach(function(d,i){
@@ -575,17 +574,32 @@
                 .text(d)
                 .on('click', function(){
                     filterColor(d,"cuisines_ids");
-                    if (d === 'All Cuisines'){
-                        current_filters['cuisines']="All Cuisines";
-                    }
-                    else{
-                        current_filters['cuisines']=d
-                        var svg1 =d3.select("svg#dietary_barchart");
-                    }
-                    updateResturant();
+                    const filter = d
+                    //current_filters['cuisines']="Vegan";
+                    chartArea.selectAll('rect.bar').data(cuisine_ct_array)
+                            .attr('fill', c =>  Object.keys(c)[0] === filter ? 'blue' : 'orange')
+                    updateResturant();      
                 })
         })
-        
+
+        // cuisines_ids .forEach(function(d,i){
+        //     d3.select('.cuisines_filter')
+        //         .append("span")
+        //         .attr('id',d)
+        //         .text(d)
+        //         .on('click', function(){
+        //             filterColor(d,"cuisines_ids");
+        //             if (d === 'All Cuisines'){
+        //                 current_filters['cuisines']="All Cuisines";
+        //             }
+        //             else{
+        //                 current_filters['cuisines']=d
+        //                 var svg1 =d3.select("svg#dietary_barchart");
+        //             }
+        //             updateResturant();
+        //         })
+        // })
+
         function updateResturant(){
                     circles.attr('visibility', circleS => {
                         if ((circleS['dietary'] !=current_filters['dietary']) && current_filters['dietary']!="All Dietary"){
