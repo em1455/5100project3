@@ -4,7 +4,7 @@
     <div class = "title">
         <h1> Vegetarian & Vegan Dining in the U.S. </h1>
         <h2>This project uses a Vegetarian & Vegan restaurant dataset to explore the following questions...<br>
-            1. Which state offers the most number of veg/vegan restaurants per 100,000 residents? <br>
+            1. Which state offers the most number of veg/vegan restaurants per million residents? <br>
             2. Which cuisine is the most popular amongst the existing veg/vegan restaurants? </h2>
         <p style="font-size:large; margin-left: 50px; margin-right: 50px"> Use the filters on the right to explore how various factors
             contribute to Vegetarian & Vegan Restaurants in the U.S! Furthermore, feel free to zoom in on the map for a
@@ -551,7 +551,7 @@
                     const filter = d
                     // current_filters['dietary']="Vegetarian";
                     chartArea1.selectAll('rect.bar').data(dietary_ct_array)
-                        .attr('fill', c =>  Object.keys(c)[0] === filter ? 'blue' : 'orange');
+                        .attr('fill', c =>  Object.keys(c)[0] === filter ? 'navy' : 'orange');
                     if (d === 'All Dietary'){
                         current_filters['dietary']="All Dietary";
                     }
@@ -573,7 +573,7 @@
                     const filter = d
                     current_filters['cuisines']="Vegan";
                     chartArea.selectAll('rect.bar').data(cuisine_ct_array)
-                            .attr('fill', c =>  Object.keys(c)[0] === filter ? 'blue' : 'orange');
+                            .attr('fill', c =>  Object.keys(c)[0] === filter ? 'navy' : 'orange');
                     if (d === 'All Cuisines'){
                         current_filters['cuisines']="All Cuisines";
                     }
