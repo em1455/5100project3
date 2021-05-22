@@ -16,7 +16,7 @@
 - State color luminance/saturation by ratio of veg/vegan restaurants per 100,000 residents 
     - mouseover (Emily) ✅
     - color (Cynthia) ✅
-    - Legend (Cynthia)
+    - Legend (Cynthia) ✅
 - Bar graphs
     - Graph #1: Distribution of top 10 cuisines (Emily) ✅
     - Graph #2: Distribution of dietary (Carolyn) 
