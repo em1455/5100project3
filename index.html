@@ -255,6 +255,7 @@
                 <svg id="barbellchart" height="450" width="695"> </svg>
             </div>
         </div>   
+
         <script>
         // FILTERING 
         const dietary_ids = ["Vegan","Vegetarian", "Both", "All Dietary"];
@@ -549,6 +550,7 @@
         console.log(current_filters);
 
         //DIETARY FILTER
+
         dietary_ids.forEach(function(d,i){
             d3.select('.dietary_filter')
                 .append("span")
@@ -556,15 +558,15 @@
                 .text(d)
                 .on('click', function(){
                     filterColor(d,"dietary_ids");
-                    if (d === 'All Dietary'){
-                        current_filters['dietary']="All Dietary";
-                    }
-                    else{
-                        current_filters['dietary']=d;
-                    }
+                    const filter = d
+                    current_filters['dietary']="Vegan";
+                    chartArea1.selectAll('rect.bar').data(dietary_ct_array)
+                        .attr('fill', c =>  Object.keys(c)[0] === filter ? 'blue' : 'orange')
                     updateResturant();      
                 })
         })
+
+    
         //CUISINE FILTER
         cuisines_ids .forEach(function(d,i){
             d3.select('.cuisines_filter')
@@ -583,6 +585,7 @@
                     updateResturant();
                 })
         })
+        
         function updateResturant(){
                     circles.attr('visibility', circleS => {
                         if ((circleS['dietary'] !=current_filters['dietary']) && current_filters['dietary']!="All Dietary"){
@@ -599,6 +602,7 @@
 
         filterColor("All Dietary","dietary_ids");
         filterColor("All Cuisines","cuisines_ids" );
+        
         //DIETARY DISTRIBUTION BAR CHART
         var total_count = 0;
         //DIETARY COUNTS
