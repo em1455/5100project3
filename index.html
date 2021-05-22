@@ -681,20 +681,6 @@
                             .attr("height", d => countScale1(0)- countScale1(d[Object.keys(d)[0]]))
                             .attr("width", 100)
                             .attr("opacity", 1)
-                        .on("mouseover", function() {
-                            d3.select(this)
-                            .transition().duration(100)
-                            .attr("width", 100)
-                            .attr("opacity", .8)
-                            .attr("fill", "red")                          
-                        })
-                    .on("mouseout", function () {
-                            d3.select(this)
-                            .transition().duration(100)
-                            .attr("width", 100)
-                            .attr("opacity", 1)
-                            .attr("fill", "orange")
-                        })
                                     
         //BAR CHART LABELS
         // X AXIS LABEL
@@ -786,20 +772,6 @@
                             .attr("height", d => countScale(0)- countScale(d[Object.keys(d)[0]]))
                             .attr("width", 50)
                             .attr("opacity", 1)
-                            .on("mouseover", function() {
-                            d3.select(this)
-                            .transition().duration(100)
-                            .attr("width", 50)
-                            .attr("opacity", .8)
-                            .attr("fill", "red")
-                        })
-                    .on("mouseout", function () {
-                            d3.select(this)
-                            .transition().duration(100)
-                            .attr("width", 50)
-                            .attr("opacity", 1)
-                            .attr("fill", "orange")
-            })
 
         //BAR CHART LABELS
         //X AXIS
